@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:medicine_reminder/core/routes/app_routes.dart';
 import 'package:medicine_reminder/core/theme/app_theme.dart';
 import 'package:medicine_reminder/core/theme/cubit/theme_cubit.dart';
-import 'package:medicine_reminder/features/splash/presentation/views/setting_view.dart';
-import 'package:medicine_reminder/features/splash/presentation/views/splash_view.dart';
 import 'package:medicine_reminder/generated/l10n.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -28,12 +27,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<ThemeCubit, ThemeMode>(
       builder: (context, state) {
-        return MaterialApp(
-          
+        return MaterialApp.router(
+          debugShowCheckedModeBanner: false,
           theme: AppTheme.lightTheme,
           darkTheme: AppTheme.darkTheme,
           themeMode: state,
-          locale: Locale('en'),
+          locale: Locale('ar'),
           localizationsDelegates: [
             S.delegate,
             GlobalMaterialLocalizations.delegate,
@@ -41,7 +40,7 @@ class MyApp extends StatelessWidget {
             GlobalCupertinoLocalizations.delegate,
           ],
           supportedLocales: S.delegate.supportedLocales,
-          home: SettingsScreen(),
+         routerConfig: AppRoutes.router,
         );
       },
     );

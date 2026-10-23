@@ -1,3 +1,6 @@
 {
-    "title":"flutter Localization"
+"appName": "Medicine ",
+"appName1": "Reminder",
+"splashTitle":"Your medicines, on time."
+
 }

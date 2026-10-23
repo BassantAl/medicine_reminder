@@ -1,5 +1,6 @@
-
 import 'package:flutter/material.dart';
+import 'package:medicine_reminder/core/theme/medicine_status_colors.dart';
+
 import 'app_colors_light.dart';
 import 'app_colors_dark.dart';
 
@@ -13,6 +14,7 @@ abstract final class AppTheme {
       seedColor: AppColorsLight.primary,
       brightness: Brightness.light,
       surface: AppColorsLight.surface,
+      secondary: AppColorsLight.taken,
     ),
 
     appBarTheme: const AppBarTheme(
@@ -21,7 +23,21 @@ abstract final class AppTheme {
       elevation: 0,
     ),
 
+    textTheme: const TextTheme(
+      headlineLarge: TextStyle(color: AppColorsLight.heading),
+      bodyLarge: TextStyle(color: AppColorsLight.textPrimary),
+      bodyMedium: TextStyle(color: AppColorsLight.textSecondary),
+    ),
+
     dividerColor: AppColorsLight.border,
+    extensions: const [
+      MedicineStatusColors(
+        taken: AppColorsLight.taken,
+        pending: AppColorsLight.pending,
+        missed: AppColorsLight.missed,
+        skipped: AppColorsLight.skipped,
+      ),
+    ],
   );
 
   static final ThemeData darkTheme = ThemeData(
@@ -41,6 +57,20 @@ abstract final class AppTheme {
       elevation: 0,
     ),
 
+    textTheme: const TextTheme(
+      headlineLarge: TextStyle(color: AppColorsDark.heading),
+      bodyLarge: TextStyle(color: AppColorsDark.textPrimary),
+      bodyMedium: TextStyle(color: AppColorsDark.textSecondary),
+    ),
+
     dividerColor: AppColorsDark.border,
+    extensions: const [
+      MedicineStatusColors(
+        taken: AppColorsDark.taken,
+        pending: AppColorsDark.pending,
+        missed: AppColorsDark.missed,
+        skipped: AppColorsDark.skipped,
+      ),
+    ],
   );
 }

@@ -55,11 +55,21 @@ class S {
     return Localizations.of<S>(context, S);
   }
 
-  /// `flutter Localization`
-  String get title {
+  /// `Medicine `
+  String get appName {
+    return Intl.message('Medicine ', name: 'appName', desc: '', args: []);
+  }
+
+  /// `Reminder`
+  String get appName1 {
+    return Intl.message('Reminder', name: 'appName1', desc: '', args: []);
+  }
+
+  /// `Your medicines, on time.`
+  String get splashTitle {
     return Intl.message(
-      'flutter Localization',
-      name: 'title',
+      'Your medicines, on time.',
+      name: 'splashTitle',
       desc: '',
       args: [],
     );
