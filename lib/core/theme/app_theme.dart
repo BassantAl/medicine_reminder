@@ -14,7 +14,7 @@ abstract final class AppTheme {
       seedColor: AppColorsLight.primary,
       brightness: Brightness.light,
       surface: AppColorsLight.surface,
-      secondary: AppColorsLight.taken,
+      secondary: AppColorsLight.primaryLight,
     ),
 
     appBarTheme: const AppBarTheme(
@@ -46,6 +46,7 @@ abstract final class AppTheme {
     scaffoldBackgroundColor: AppColorsDark.background,
 
     colorScheme: ColorScheme.fromSeed(
+      secondary: AppColorsDark.primaryLight,
       seedColor: AppColorsDark.primary,
       brightness: Brightness.dark,
       surface: AppColorsDark.surface,

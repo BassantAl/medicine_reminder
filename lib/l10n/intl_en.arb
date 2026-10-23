@@ -1,6 +1,13 @@
 {
 "appName": "Medicine ",
 "appName1": "Reminder",
-"splashTitle":"Your medicines, on time."
+"splashTitle":"Your medicines, on time.",
+"onboardingPage1Title":"Add Your Medicines and\nSet Reminders",
+"onboardingPage2Title":"Get Reminders\nat the Right Time",
+"onboardingPage3Title":"Track Your Progress",
+"onboardingPage1Subtitle":"Keep track of your medications and\nschedule your dose times with ease.",
+"onboardingPage2Subtitle":"Receive notifications for your doses, so\nyou never miss your medicine.",
+"onboardingPage3Subtitle":"Review your medication history and understand\nyour daily adherence with effortless visual\nsummaries.",
+"skip": "Skip"
 
 }

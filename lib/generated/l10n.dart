@@ -74,6 +74,71 @@ class S {
       args: [],
     );
   }
+
+  /// `Add Your Medicines and\nSet Reminders`
+  String get onboardingPage1Title {
+    return Intl.message(
+      'Add Your Medicines and\nSet Reminders',
+      name: 'onboardingPage1Title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Get Reminders\nat the Right Time`
+  String get onboardingPage2Title {
+    return Intl.message(
+      'Get Reminders\nat the Right Time',
+      name: 'onboardingPage2Title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Track Your Progress`
+  String get onboardingPage3Title {
+    return Intl.message(
+      'Track Your Progress',
+      name: 'onboardingPage3Title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Keep track of your medications and\nschedule your dose times with ease.`
+  String get onboardingPage1Subtitle {
+    return Intl.message(
+      'Keep track of your medications and\nschedule your dose times with ease.',
+      name: 'onboardingPage1Subtitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Receive notifications for your doses, so\nyou never miss your medicine.`
+  String get onboardingPage2Subtitle {
+    return Intl.message(
+      'Receive notifications for your doses, so\nyou never miss your medicine.',
+      name: 'onboardingPage2Subtitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Review your medication history and understand\nyour daily adherence with effortless visual\nsummaries.`
+  String get onboardingPage3Subtitle {
+    return Intl.message(
+      'Review your medication history and understand\nyour daily adherence with effortless visual\nsummaries.',
+      name: 'onboardingPage3Subtitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Skip`
+  String get skip {
+    return Intl.message('Skip', name: 'skip', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

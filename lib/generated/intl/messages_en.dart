@@ -24,6 +24,25 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
     "appName": MessageLookupByLibrary.simpleMessage("Medicine "),
     "appName1": MessageLookupByLibrary.simpleMessage("Reminder"),
+    "onboardingPage1Subtitle": MessageLookupByLibrary.simpleMessage(
+      "Keep track of your medications and\nschedule your dose times with ease.",
+    ),
+    "onboardingPage1Title": MessageLookupByLibrary.simpleMessage(
+      "Add Your Medicines and\nSet Reminders",
+    ),
+    "onboardingPage2Subtitle": MessageLookupByLibrary.simpleMessage(
+      "Receive notifications for your doses, so\nyou never miss your medicine.",
+    ),
+    "onboardingPage2Title": MessageLookupByLibrary.simpleMessage(
+      "Get Reminders\nat the Right Time",
+    ),
+    "onboardingPage3Subtitle": MessageLookupByLibrary.simpleMessage(
+      "Review your medication history and understand\nyour daily adherence with effortless visual\nsummaries.",
+    ),
+    "onboardingPage3Title": MessageLookupByLibrary.simpleMessage(
+      "Track Your Progress",
+    ),
+    "skip": MessageLookupByLibrary.simpleMessage("Skip"),
     "splashTitle": MessageLookupByLibrary.simpleMessage(
       "Your medicines, on time.",
     ),

@@ -24,6 +24,25 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
     "appName": MessageLookupByLibrary.simpleMessage("منبّه "),
     "appName1": MessageLookupByLibrary.simpleMessage("الدواء"),
+    "onboardingPage1Subtitle": MessageLookupByLibrary.simpleMessage(
+      "نظّم أدويتك وحدّد مواعيد جرعاتك\nبسهولة وفي مكان واحد.",
+    ),
+    "onboardingPage1Title": MessageLookupByLibrary.simpleMessage(
+      "أضف أدويتك\nوحدّد مواعيدها",
+    ),
+    "onboardingPage2Subtitle": MessageLookupByLibrary.simpleMessage(
+      "تصلك تنبيهات بمواعيد جرعاتك\nلتتذكّر تناول دوائك في الوقت المحدد.",
+    ),
+    "onboardingPage2Title": MessageLookupByLibrary.simpleMessage(
+      "تلقَّ تذكيراتك\nفي الوقت المناسب",
+    ),
+    "onboardingPage3Subtitle": MessageLookupByLibrary.simpleMessage(
+      "راجع سجل أدويتك وتابع مدى التزامك اليومي\nمن خلال ملخصات مرئية واضحة.",
+    ),
+    "onboardingPage3Title": MessageLookupByLibrary.simpleMessage(
+      "تابع مدى التزامك بالعلاج",
+    ),
+    "skip": MessageLookupByLibrary.simpleMessage("تخطي"),
     "splashTitle": MessageLookupByLibrary.simpleMessage(
       "رفيقك اليومي لتذكيرك بمواعيد أدويتك",
     ),

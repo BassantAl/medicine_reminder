@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
           theme: AppTheme.lightTheme,
           darkTheme: AppTheme.darkTheme,
           themeMode: state,
-          locale: Locale('en'),
+          locale: Locale('ar'),
           localizationsDelegates: [
             S.delegate,
             GlobalMaterialLocalizations.delegate,
@@ -40,7 +40,7 @@ class MyApp extends StatelessWidget {
             GlobalCupertinoLocalizations.delegate,
           ],
           supportedLocales: S.delegate.supportedLocales,
-         routerConfig: AppRoutes.router,
+          routerConfig: AppRoutes.router,
         );
       },
     );
