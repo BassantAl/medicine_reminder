@@ -1,8 +1,10 @@
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:medicine_reminder/core/routes/app_routes.dart';
 import 'package:medicine_reminder/core/theme/app_styles.dart';
-import 'package:medicine_reminder/core/widgets/custom_button.dart';
 import 'package:medicine_reminder/features/onboarding/presentation/views/widgets/custom_onboarding_page_view.dart';
+import 'package:medicine_reminder/features/onboarding/presentation/views/widgets/manage_buttons_apperance.dart';
 import 'package:medicine_reminder/generated/l10n.dart';
 
 class OnboardingViewBody extends StatefulWidget {
@@ -41,9 +43,17 @@ class _OnboardingViewBodyState extends State<OnboardingViewBody> {
           children: [
             Align(
               alignment: Alignment.centerRight,
-              child: Text(
-                S.of(context).skip,
-                style: AppStyles.bold14(context: context),
+              child: Visibility(
+                visible: currentPage!=2,
+                child: TextButton(
+                  onPressed: () {
+                    GoRouter.of(context).pushReplacement(AppRoutes.homeView);
+                  },
+                  child: Text(
+                    S.of(context).skip,
+                    style: AppStyles.bold14(context: context),
+                  ),
+                ),
               ),
             ),
             Expanded(child: CustomOnboardingPageView(controller: controller)),
@@ -55,7 +65,10 @@ class _OnboardingViewBodyState extends State<OnboardingViewBody> {
               ),
             ),
             const SizedBox(height: 40),
-            CustomPrimaryButton(text: 'Next', onPressed: () {}),
+            ManageButtonsApperance(
+              cureentIndex: currentPage.round(),
+              pageController: controller,
+            ),
             const SizedBox(height: 20),
           ],
         ),

@@ -8,6 +8,9 @@
 "onboardingPage1Subtitle":"Keep track of your medications and\nschedule your dose times with ease.",
 "onboardingPage2Subtitle":"Receive notifications for your doses, so\nyou never miss your medicine.",
 "onboardingPage3Subtitle":"Review your medication history and understand\nyour daily adherence with effortless visual\nsummaries.",
-"skip": "Skip"
+"skip": "Skip",
+  "next": "Next",
+    "back": "Back",
+  "getStarted": "Get Started"
 
 }

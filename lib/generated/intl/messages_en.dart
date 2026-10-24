@@ -24,6 +24,9 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
     "appName": MessageLookupByLibrary.simpleMessage("Medicine "),
     "appName1": MessageLookupByLibrary.simpleMessage("Reminder"),
+    "back": MessageLookupByLibrary.simpleMessage("Back"),
+    "getStarted": MessageLookupByLibrary.simpleMessage("Get Started"),
+    "next": MessageLookupByLibrary.simpleMessage("Next"),
     "onboardingPage1Subtitle": MessageLookupByLibrary.simpleMessage(
       "Keep track of your medications and\nschedule your dose times with ease.",
     ),

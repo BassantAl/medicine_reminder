@@ -139,6 +139,21 @@ class S {
   String get skip {
     return Intl.message('Skip', name: 'skip', desc: '', args: []);
   }
+
+  /// `Next`
+  String get next {
+    return Intl.message('Next', name: 'next', desc: '', args: []);
+  }
+
+  /// `Back`
+  String get back {
+    return Intl.message('Back', name: 'back', desc: '', args: []);
+  }
+
+  /// `Get Started`
+  String get getStarted {
+    return Intl.message('Get Started', name: 'getStarted', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
