@@ -42,7 +42,7 @@ abstract class AppRoutes {
               ),
             ],
           ),
-           StatefulShellBranch(
+          StatefulShellBranch(
             routes: [
               GoRoute(
                 path: analyticsView,
@@ -52,7 +52,7 @@ abstract class AppRoutes {
               ),
             ],
           ),
-           StatefulShellBranch(
+          StatefulShellBranch(
             routes: [
               GoRoute(
                 path: settingsView,

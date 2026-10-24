@@ -4,7 +4,7 @@ import 'package:medicine_reminder/core/theme/medicine_status_colors.dart';
 import 'package:medicine_reminder/core/utils/size_config.dart';
 
 abstract class AppStyles {
-  static TextStyle extraBold30({required BuildContext context, Color? color,}) {
+  static TextStyle extraBold30({required BuildContext context, Color? color}) {
     return Theme.of(context).textTheme.headlineLarge!.copyWith(
       color: color,
       fontSize: getResponsiveFontsize(context: context, fontSize: 30),
@@ -12,27 +12,30 @@ abstract class AppStyles {
     );
   }
 
-  static TextStyle bold14({required BuildContext context,}) {
+  static TextStyle bold14({required BuildContext context}) {
     return Theme.of(context).textTheme.bodySmall!.copyWith(
       fontSize: getResponsiveFontsize(context: context, fontSize: 14),
       fontWeight: FontWeight.bold,
-      color: Theme.of(context).extension<MedicineStatusColors>()!.taken
+      color: Theme.of(context).extension<MedicineStatusColors>()!.taken,
     );
   }
-  static TextStyle regular16({required BuildContext context,}) {
+
+  static TextStyle regular16({required BuildContext context}) {
     return Theme.of(context).textTheme.bodySmall!.copyWith(
       fontSize: getResponsiveFontsize(context: context, fontSize: 16),
-      fontWeight:FontWeight.w400 ,
+      fontWeight: FontWeight.w400,
     );
   }
-    static TextStyle bold18({required BuildContext context,}) {
+
+  static TextStyle bold18({required BuildContext context}) {
     return TextStyle(
-      color: isLight(context)?Colors.white: Colors.black,
+      color: isLight(context) ? Colors.white : Colors.black,
       fontSize: getResponsiveFontsize(context: context, fontSize: 18),
-      fontWeight:FontWeight.bold ,
+      fontWeight: FontWeight.bold,
     );
   }
-  static TextStyle bold24({required BuildContext context,}) {
+
+  static TextStyle bold24({required BuildContext context}) {
     return Theme.of(context).textTheme.headlineLarge!.copyWith(
       fontSize: getResponsiveFontsize(context: context, fontSize: 24),
       fontWeight: FontWeight.bold,

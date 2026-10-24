@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 
 @immutable
-class MedicineStatusColors
-    extends ThemeExtension<MedicineStatusColors> {
+class MedicineStatusColors extends ThemeExtension<MedicineStatusColors> {
   final Color taken;
   final Color pending;
   final Color missed;
@@ -31,10 +30,7 @@ class MedicineStatusColors
   }
 
   @override
-  MedicineStatusColors lerp(
-    covariant MedicineStatusColors? other,
-    double t,
-  ) {
+  MedicineStatusColors lerp(covariant MedicineStatusColors? other, double t) {
     if (other == null) return this;
 
     return MedicineStatusColors(

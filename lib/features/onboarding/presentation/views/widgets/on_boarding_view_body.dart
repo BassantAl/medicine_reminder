@@ -41,7 +41,7 @@ class _OnboardingViewBodyState extends State<OnboardingViewBody> {
           children: [
             ManageSkipApperance(currentPage: currentPage),
             SizedBox(
-              height: 365,
+              height: 400,
               child: CustomOnboardingPageView(controller: controller),
             ),
             SizedBox(height: 8),

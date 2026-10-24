@@ -1,4 +1,4 @@
 abstract class SizeConfig {
-  static const maxMobileSize=600;
-  static const maxTabletSize=1100;
+  static const maxMobileSize = 600;
+  static const maxTabletSize = 1100;
 }

@@ -5,10 +5,7 @@ import 'package:medicine_reminder/features/onboarding/presentation/views/widgets
 import 'package:medicine_reminder/generated/l10n.dart';
 
 class CustomOnboardingPageView extends StatefulWidget {
-  const CustomOnboardingPageView({
-    super.key,
-    required this.controller,
-  });
+  const CustomOnboardingPageView({super.key, required this.controller});
 
   final PageController controller;
 
@@ -17,8 +14,7 @@ class CustomOnboardingPageView extends StatefulWidget {
       _CustomOnboardingPageViewState();
 }
 
-class _CustomOnboardingPageViewState
-    extends State<CustomOnboardingPageView> {
+class _CustomOnboardingPageViewState extends State<CustomOnboardingPageView> {
   late List<OnbardingModel> onboardingPageViewItemsContent;
 
   @override
