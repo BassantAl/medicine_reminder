@@ -4,16 +4,16 @@ import 'package:medicine_reminder/features/onboarding/presentation/views/widgets
 import 'package:medicine_reminder/features/onboarding/presentation/views/widgets/manage_buttons_apperance.dart';
 import 'package:medicine_reminder/features/onboarding/presentation/views/widgets/manage_skip_apperance.dart';
 
-class OnboardingViewBody extends StatefulWidget {
-  const OnboardingViewBody({super.key});
+class OnBoardingMobileViewBody extends StatefulWidget {
+  const OnBoardingMobileViewBody({super.key});
 
   @override
-  State<OnboardingViewBody> createState() => _OnboardingViewBodyState();
+  State<OnBoardingMobileViewBody> createState() => _OnBoardingMobileViewBodyState();
 }
 
 late PageController controller;
 
-class _OnboardingViewBodyState extends State<OnboardingViewBody> {
+class _OnBoardingMobileViewBodyState extends State<OnBoardingMobileViewBody> {
   double currentPage = 0;
   @override
   void initState() {

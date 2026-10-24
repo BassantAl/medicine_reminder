@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -12,14 +13,17 @@ void main() async {
   final preferences = await SharedPreferences.getInstance();
 
   runApp(
-    // DevicePreview(
-    // enabled: true,
-    // builder:(context)=> const MyApp())
+    // BlocProvider(
+    //   create: (context) => ThemeCubit(preferences),
+    //   child: DevicePreview(
+    //   enabled: true,
+    //   builder:(context)=> const MyApp()),
+    // )
     BlocProvider(
       create: (context) => ThemeCubit(preferences),
       child: const MyApp(),
     ),
-  );
+   );
 }
 
 class MyApp extends StatelessWidget {
