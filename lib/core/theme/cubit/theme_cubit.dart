@@ -1,15 +1,17 @@
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:shared_preferences/shared_preferences.dart';
+import 'package:medicine_reminder/core/services/shared_refernces_singletone.dart';
 
 class ThemeCubit extends Cubit<ThemeMode> {
-  ThemeCubit(this.preferences) : super(_getInitialTheme(preferences));
-  final SharedPreferences preferences;
+  ThemeCubit() : super(_getInitialTheme());
 
   static const String _themeKey = 'theme_mode';
 
-  static ThemeMode _getInitialTheme(SharedPreferences preferences) {
-    final savedTheme = preferences.getString(_themeKey);
+  static ThemeMode _getInitialTheme() {
+    final savedTheme = SharedReferncesSingletone.getString(
+      key: _themeKey,
+    );
 
     return ThemeMode.values.firstWhere(
       (mode) => mode.name == savedTheme,
@@ -17,8 +19,13 @@ class ThemeCubit extends Cubit<ThemeMode> {
     );
   }
 
-  Future<void> changeTheme(ThemeMode mode) async {
-    await preferences.setString(_themeKey, mode.name);
+  Future<void> changeTheme(ThemeMode mode)async  {
+    await SharedReferncesSingletone.setString(
+      key: _themeKey,
+      value: mode.name,
+    );
+
     emit(mode);
   }
 }
+

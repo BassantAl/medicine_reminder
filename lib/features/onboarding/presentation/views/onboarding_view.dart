@@ -23,7 +23,16 @@ class OnboardingView extends StatelessWidget {
           );
         },
         tabletLayout: (context) {
-          return SingleChildScrollView(child: OnBoardingTabletViewBody());
+          return LayoutBuilder(
+            builder: (context, constraints) {
+              return SingleChildScrollView(
+                child: ConstrainedBox(
+                  constraints: BoxConstraints(minHeight: constraints.maxHeight),
+                  child: const OnBoardingTabletViewBody(),
+                ),
+              );
+            },
+          );
         },
       ),
     );

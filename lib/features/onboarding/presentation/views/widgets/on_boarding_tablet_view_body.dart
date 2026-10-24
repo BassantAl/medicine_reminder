@@ -45,7 +45,7 @@ class _OnBoardingTabletViewBodyState extends State<OnBoardingTabletViewBody> {
         child: ConstrainedBox(
           constraints: const BoxConstraints(maxWidth: 800),
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 48,vertical: 60),
+            padding: const EdgeInsets.symmetric(horizontal: 48,),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [

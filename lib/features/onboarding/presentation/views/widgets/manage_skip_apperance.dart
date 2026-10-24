@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:medicine_reminder/core/constants/constants.dart';
 import 'package:medicine_reminder/core/routes/app_routes.dart';
+import 'package:medicine_reminder/core/services/shared_refernces_singletone.dart';
 import 'package:medicine_reminder/core/theme/app_styles.dart';
 import 'package:medicine_reminder/generated/l10n.dart';
 
@@ -17,6 +19,10 @@ class ManageSkipApperance extends StatelessWidget {
         alignment: Alignment.topRight,
         child: TextButton(
           onPressed: () {
+            SharedReferncesSingletone.setBool(
+              key: keyOfonboardingIsSeen,
+              value: true,
+            );
             GoRouter.of(context).pushReplacement(AppRoutes.homeView);
           },
           child: Text(

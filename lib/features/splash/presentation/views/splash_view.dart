@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:medicine_reminder/core/constants/constants.dart';
 import 'package:medicine_reminder/core/routes/app_routes.dart';
+import 'package:medicine_reminder/core/services/shared_refernces_singletone.dart';
 import 'package:medicine_reminder/features/splash/presentation/views/widgets/splash_view_body.dart';
 
 class SplashView extends StatefulWidget {
@@ -13,7 +15,7 @@ class SplashView extends StatefulWidget {
 class _SplashViewState extends State<SplashView> {
   @override
   void initState() {
-    Future.delayed(Duration(seconds: 3), () {
+    Future.delayed(Duration(seconds: 2), () {
       manageNavigation();
     });
     super.initState();
@@ -29,6 +31,13 @@ class _SplashViewState extends State<SplashView> {
   }
 
   void manageNavigation() {
-    GoRouter.of(context).pushReplacement(AppRoutes.onboardingView);
+    bool isOnboardingSeen = SharedReferncesSingletone.getBool(
+      key: keyOfonboardingIsSeen,
+    );
+    if (isOnboardingSeen) {
+      GoRouter.of(context).pushReplacement(AppRoutes.homeView);
+    } else if (isOnboardingSeen==false) {
+      GoRouter.of(context).pushReplacement(AppRoutes.onboardingView);
+    }
   }
 }
