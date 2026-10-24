@@ -1,11 +1,8 @@
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
-import 'package:medicine_reminder/core/routes/app_routes.dart';
-import 'package:medicine_reminder/core/theme/app_styles.dart';
 import 'package:medicine_reminder/features/onboarding/presentation/views/widgets/custom_onboarding_page_view.dart';
 import 'package:medicine_reminder/features/onboarding/presentation/views/widgets/manage_buttons_apperance.dart';
-import 'package:medicine_reminder/generated/l10n.dart';
+import 'package:medicine_reminder/features/onboarding/presentation/views/widgets/manage_skip_apperance.dart';
 
 class OnboardingViewBody extends StatefulWidget {
   const OnboardingViewBody({super.key});
@@ -41,21 +38,7 @@ class _OnboardingViewBodyState extends State<OnboardingViewBody> {
         padding: const EdgeInsets.symmetric(horizontal: 24),
         child: Column(
           children: [
-            Align(
-              alignment: Alignment.centerRight,
-              child: Visibility(
-                visible: currentPage!=2,
-                child: TextButton(
-                  onPressed: () {
-                    GoRouter.of(context).pushReplacement(AppRoutes.homeView);
-                  },
-                  child: Text(
-                    S.of(context).skip,
-                    style: AppStyles.bold14(context: context),
-                  ),
-                ),
-              ),
-            ),
+            ManageSkipApperance(currentPage: currentPage),
             Expanded(child: CustomOnboardingPageView(controller: controller)),
             DotsIndicator(
               dotsCount: 3,

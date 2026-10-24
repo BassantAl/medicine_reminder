@@ -13,7 +13,7 @@ class SplashView extends StatefulWidget {
 class _SplashViewState extends State<SplashView> {
   @override
   void initState() {
-    Future.delayed(Duration(seconds: 2), () {
+    Future.delayed(Duration(seconds: 3), () {
       manageNavigation();
     });
     super.initState();
@@ -21,7 +21,7 @@ class _SplashViewState extends State<SplashView> {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(body: SafeArea(child: SplashViewBody()));
+    return const Scaffold(body: SafeArea(child: Center(child: SingleChildScrollView(child: SplashViewBody()))));
   }
 
   void manageNavigation() {

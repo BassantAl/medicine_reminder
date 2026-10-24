@@ -10,12 +10,14 @@ class SplashViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          SvgPicture.asset(Assets.resourceImagesAppIcon),
-          Text.rich(
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        SvgPicture.asset(Assets.resourceImagesAppIcon),
+        FittedBox(
+          fit: BoxFit.scaleDown,
+          alignment: Alignment.center,
+          child: Text.rich(
             TextSpan(
               children: [
                 TextSpan(
@@ -34,12 +36,14 @@ class SplashViewBody extends StatelessWidget {
               ],
             ),
           ),
-          const SizedBox(height: 8),
-          Text(S.of(context).splashTitle),
-        ],
-      ),
+        ),
+        const SizedBox(height: 8),
+        FittedBox(
+          fit: BoxFit.scaleDown,
+          alignment: Alignment.center,
+          child: Text(S.of(context).splashTitle),
+        ),
+      ],
     );
   }
 }
-
-
