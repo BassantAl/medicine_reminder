@@ -14,9 +14,25 @@ class OnboardingPageViewItem extends StatelessWidget {
         children: [
           SvgPicture.asset(onbardingModel.image),
           const SizedBox(height: 30),
-          Text(onbardingModel.title,style: AppStyles.bold24(context: context),textAlign: TextAlign.center,),
-          const SizedBox(height: 8,),
-          Text(onbardingModel.subtitle,style: AppStyles.regular16(context: context),textAlign: TextAlign.center,),
+          FittedBox(
+            fit: BoxFit.scaleDown,
+            alignment: Alignment.center,
+            child: Text(
+              onbardingModel.title,
+              style: AppStyles.bold24(context: context),
+              textAlign: TextAlign.center,
+            ),
+          ),
+          const SizedBox(height: 8),
+          FittedBox(
+            fit: BoxFit.scaleDown,
+            alignment: Alignment.center,
+            child: Text(
+              onbardingModel.subtitle,
+              style: AppStyles.regular16(context: context),
+              textAlign: TextAlign.center,
+            ),
+          ),
         ],
       ),
     );

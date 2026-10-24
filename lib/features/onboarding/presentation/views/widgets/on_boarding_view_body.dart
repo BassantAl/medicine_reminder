@@ -37,9 +37,14 @@ class _OnboardingViewBodyState extends State<OnboardingViewBody> {
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 24),
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             ManageSkipApperance(currentPage: currentPage),
-            Expanded(child: CustomOnboardingPageView(controller: controller)),
+            SizedBox(
+              height: 365,
+              child: CustomOnboardingPageView(controller: controller),
+            ),
+            SizedBox(height: 8),
             DotsIndicator(
               dotsCount: 3,
               position: currentPage,
@@ -47,7 +52,7 @@ class _OnboardingViewBodyState extends State<OnboardingViewBody> {
                 activeColor: Theme.of(context).colorScheme.primary,
               ),
             ),
-            const SizedBox(height: 40),
+            const SizedBox(height: 20),
             ManageButtonsApperance(
               cureentIndex: currentPage.round(),
               pageController: controller,

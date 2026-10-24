@@ -12,6 +12,9 @@ void main() async {
   final preferences = await SharedPreferences.getInstance();
 
   runApp(
+    // DevicePreview(
+    // enabled: true,
+    // builder:(context)=> const MyApp())
     BlocProvider(
       create: (context) => ThemeCubit(preferences),
       child: const MyApp(),

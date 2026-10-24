@@ -12,9 +12,9 @@ class ManageSkipApperance extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Visibility(
-      visible: currentPage <= 1,
+      visible: currentPage <= 1.5,
       child: Align(
-        alignment: Alignment.centerRight,
+        alignment: Alignment.topRight,
         child: TextButton(
           onPressed: () {
             GoRouter.of(context).pushReplacement(AppRoutes.homeView);
