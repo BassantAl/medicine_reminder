@@ -38,6 +38,15 @@ abstract final class AppTheme {
         skipped: AppColorsLight.skipped,
       ),
     ],
+    bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+      backgroundColor: AppColorsLight.surface,
+      selectedItemColor: AppColorsLight.primary,
+      unselectedItemColor: AppColorsLight.textSecondary,
+      selectedLabelStyle: TextStyle(fontWeight: FontWeight.w600),
+      unselectedLabelStyle: TextStyle(fontWeight: FontWeight.w400),
+      type: BottomNavigationBarType.fixed,
+      elevation: 0,
+    ),
   );
 
   static final ThemeData darkTheme = ThemeData(
@@ -73,5 +82,14 @@ abstract final class AppTheme {
         skipped: AppColorsDark.skipped,
       ),
     ],
+    bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+      backgroundColor: AppColorsDark.surface,
+      selectedItemColor: AppColorsDark.primary,
+      unselectedItemColor: AppColorsDark.textSecondary,
+      selectedLabelStyle: TextStyle(fontWeight: FontWeight.w600),
+      unselectedLabelStyle: TextStyle(fontWeight: FontWeight.w400),
+      type: BottomNavigationBarType.fixed,
+      elevation: 0,
+    ),
   );
 }

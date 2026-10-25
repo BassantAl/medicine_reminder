@@ -22,11 +22,19 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+    "analytics": MessageLookupByLibrary.simpleMessage("الإحصائيات"),
     "appName": MessageLookupByLibrary.simpleMessage("منبّه "),
     "appName1": MessageLookupByLibrary.simpleMessage("الدواء"),
     "back": MessageLookupByLibrary.simpleMessage("رجوع"),
     "getStarted": MessageLookupByLibrary.simpleMessage("ابدأ الآن"),
+    "home": MessageLookupByLibrary.simpleMessage("الرئيسية"),
     "next": MessageLookupByLibrary.simpleMessage("التالي"),
+    "noMedicinesYet": MessageLookupByLibrary.simpleMessage(
+      "لا توجد أدوية حتى الآن",
+    ),
+    "noMedicinesYetDescription": MessageLookupByLibrary.simpleMessage(
+      "لم تضف أي أدوية حتى الآن. أضف دواءك الأول لبدء متابعة جرعاتك.",
+    ),
     "onboardingPage1Subtitle": MessageLookupByLibrary.simpleMessage(
       "نظّم أدويتك وحدّد مواعيد جرعاتك\nبسهولة وفي مكان واحد.",
     ),
@@ -45,6 +53,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "onboardingPage3Title": MessageLookupByLibrary.simpleMessage(
       "تابع مدى التزامك بالعلاج",
     ),
+    "settings": MessageLookupByLibrary.simpleMessage("الإعدادات"),
     "skip": MessageLookupByLibrary.simpleMessage("تخطي"),
     "splashTitle": MessageLookupByLibrary.simpleMessage(
       "رفيقك اليومي لتذكيرك بمواعيد أدويتك",

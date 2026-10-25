@@ -11,6 +11,13 @@
 "skip": "Skip",
   "next": "Next",
     "back": "Back",
-  "getStarted": "Get Started"
+  "getStarted": "Get Started",
+  "noMedicinesYetDescription": "You haven't added any medicines yet. Add your first medicine to start tracking your doses.",
+  "home": "Home",
+  "analytics": "Analytics",
+  "settings": "Settings",
+  "noMedicinesYet": "No Medicines Yet"
+
+
 
 }

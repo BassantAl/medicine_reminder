@@ -22,11 +22,17 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+    "analytics": MessageLookupByLibrary.simpleMessage("Analytics"),
     "appName": MessageLookupByLibrary.simpleMessage("Medicine "),
     "appName1": MessageLookupByLibrary.simpleMessage("Reminder"),
     "back": MessageLookupByLibrary.simpleMessage("Back"),
     "getStarted": MessageLookupByLibrary.simpleMessage("Get Started"),
+    "home": MessageLookupByLibrary.simpleMessage("Home"),
     "next": MessageLookupByLibrary.simpleMessage("Next"),
+    "noMedicinesYet": MessageLookupByLibrary.simpleMessage("No Medicines Yet"),
+    "noMedicinesYetDescription": MessageLookupByLibrary.simpleMessage(
+      "You haven\'t added any medicines yet. Add your first medicine to start tracking your doses.",
+    ),
     "onboardingPage1Subtitle": MessageLookupByLibrary.simpleMessage(
       "Keep track of your medications and\nschedule your dose times with ease.",
     ),
@@ -45,6 +51,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "onboardingPage3Title": MessageLookupByLibrary.simpleMessage(
       "Track Your Progress",
     ),
+    "settings": MessageLookupByLibrary.simpleMessage("Settings"),
     "skip": MessageLookupByLibrary.simpleMessage("Skip"),
     "splashTitle": MessageLookupByLibrary.simpleMessage(
       "Your medicines, on time.",

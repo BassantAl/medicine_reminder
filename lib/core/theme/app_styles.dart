@@ -35,10 +35,26 @@ abstract class AppStyles {
     );
   }
 
-  static TextStyle bold24({required BuildContext context}) {
+  static TextStyle bold25({required BuildContext context}) {
     return Theme.of(context).textTheme.headlineLarge!.copyWith(
+      fontSize: getResponsiveFontsize(context: context, fontSize: 25),
+      fontWeight: FontWeight.bold,
+    );
+  }
+
+  static TextStyle bold24({required BuildContext context}) {
+    return Theme.of(context).textTheme.headlineSmall!.copyWith(
       fontSize: getResponsiveFontsize(context: context, fontSize: 24),
       fontWeight: FontWeight.bold,
+      color: Theme.of(context).colorScheme.onSurface,
+    );
+  }
+
+  static TextStyle regular14({required BuildContext context, Color? color}) {
+    return Theme.of(context).textTheme.bodyMedium!.copyWith(
+      fontSize: getResponsiveFontsize(context: context, fontSize: 14),
+      fontWeight: FontWeight.w400,
+      color: color ?? Theme.of(context).colorScheme.onSurfaceVariant,
     );
   }
 

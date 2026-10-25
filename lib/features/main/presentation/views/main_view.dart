@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:medicine_reminder/generated/l10n.dart';
 
 class MainView extends StatelessWidget {
   const MainView({super.key, required this.navigationShell});
@@ -13,18 +14,22 @@ class MainView extends StatelessWidget {
         onTap: (value) {
           navigationShell.goBranch(value);
         },
-        items: const [
+        items: [
           BottomNavigationBarItem(
             icon: Icon(Icons.home_outlined),
-            label: 'Home',
+            activeIcon: Icon(Icons.home),
+            label: S.of(context).home,
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.analytics_outlined),
-            label: 'Analytics',
+            activeIcon: Icon(Icons.analytics),
+
+            label: S.of(context).analytics,
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.settings_outlined),
-            label: 'Settings',
+            activeIcon: Icon(Icons.settings),
+            label: S.of(context).settings,
           ),
         ],
       ),

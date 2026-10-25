@@ -12,6 +12,11 @@
   "skip": "تخطي",
   "next": "التالي",
   "back": "رجوع",
-  "getStarted": "ابدأ الآن"
+  "getStarted": "ابدأ الآن",
+  "noMedicinesYetDescription": "لم تضف أي أدوية حتى الآن. أضف دواءك الأول لبدء متابعة جرعاتك.",
+  "home": "الرئيسية",
+  "analytics": "الإحصائيات",
+  "settings": "الإعدادات",
+  "noMedicinesYet": "لا توجد أدوية حتى الآن"
 
 }

@@ -154,6 +154,41 @@ class S {
   String get getStarted {
     return Intl.message('Get Started', name: 'getStarted', desc: '', args: []);
   }
+
+  /// `You haven't added any medicines yet. Add your first medicine to start tracking your doses.`
+  String get noMedicinesYetDescription {
+    return Intl.message(
+      'You haven\'t added any medicines yet. Add your first medicine to start tracking your doses.',
+      name: 'noMedicinesYetDescription',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Home`
+  String get home {
+    return Intl.message('Home', name: 'home', desc: '', args: []);
+  }
+
+  /// `Analytics`
+  String get analytics {
+    return Intl.message('Analytics', name: 'analytics', desc: '', args: []);
+  }
+
+  /// `Settings`
+  String get settings {
+    return Intl.message('Settings', name: 'settings', desc: '', args: []);
+  }
+
+  /// `No Medicines Yet`
+  String get noMedicinesYet {
+    return Intl.message(
+      'No Medicines Yet',
+      name: 'noMedicinesYet',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
