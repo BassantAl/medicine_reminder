@@ -16,8 +16,21 @@
   "home": "Home",
   "analytics": "Analytics",
   "settings": "Settings",
-  "noMedicinesYet": "No Medicines Yet"
-
+  "noMedicinesYet": "No Medicines Yet",
+  
+  "medicineDetails": "Medicine Details",
+  "medicineName": "Medicine Name",
+  "enterMedicineName": "Enter medicine name",
+  "doseAmount": "Dose Amount",
+  "foodInstructions": "Food Instructions",
+  "noInstruction": "No Instruction",
+  "beforeFood": "Before Food",
+  "afterFood": "After Food",
+  "withFood": "With Food",
+  "enterMedicineInformationAndSchedule": "Enter your medicine information and schedule.",
+"addMedicine": "Add Medicine",
+"medicineInformation": "Medicine Information",
+"emptyStomach": "On an empty stomach"
 
 
 }

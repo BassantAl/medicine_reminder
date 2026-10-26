@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:go_router/go_router.dart';
 import 'package:medicine_reminder/core/constants/assets.dart';
+import 'package:medicine_reminder/core/routes/app_routes.dart';
 import 'package:medicine_reminder/features/home/presentation/views/widgets/home_view_body.dart';
 import 'package:medicine_reminder/generated/l10n.dart';
 
@@ -9,14 +11,19 @@ class HomeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
+    return Scaffold(
       appBar: AppBar(
         leading: SvgPicture.asset(Assets.resourceImagesAppIcon),
         centerTitle: false,
-        title: Text(S.of(context).appName + S.of(context).appName1,),
+        title: Text(S.of(context).appName + S.of(context).appName1),
       ),
-      body:HomeViewBody() ,
-      floatingActionButton: FloatingActionButton(onPressed: (){} ,child: Icon(Icons.add),),
+      body: HomeViewBody(),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          GoRouter.of(context).push(AppRoutes.addMedicineView);
+        },
+        child: Icon(Icons.add),
+      ),
     );
   }
 }

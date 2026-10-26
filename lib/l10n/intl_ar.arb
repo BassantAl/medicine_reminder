@@ -17,6 +17,20 @@
   "home": "الرئيسية",
   "analytics": "الإحصائيات",
   "settings": "الإعدادات",
-  "noMedicinesYet": "لا توجد أدوية حتى الآن"
+  "noMedicinesYet": "لا توجد أدوية حتى الآن",
+  "medicineDetails": "تفاصيل الدواء",
+  "medicineName": "اسم الدواء",
+  "enterMedicineName": "أدخل اسم الدواء",
+  "doseAmount": "مقدار الجرعة",
+  "foodInstructions": "تعليمات تناول الطعام",
+  "noInstruction": "بدون تعليمات",
+  "beforeFood": "قبل الطعام",
+  "afterFood": "بعد الطعام",
+  "withFood": "مع الطعام",
+  "enterMedicineInformationAndSchedule": "أدخل بيانات الدواء ومواعيد تناوله.",
+  "addMedicine": "إضافة دواء",
+  "medicineInformation": "معلومات الدواء",
+  "emptyStomach": "على معدة فارغة"
+
 
 }

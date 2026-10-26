@@ -22,13 +22,33 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+    "addMedicine": MessageLookupByLibrary.simpleMessage("Add Medicine"),
+    "afterFood": MessageLookupByLibrary.simpleMessage("After Food"),
     "analytics": MessageLookupByLibrary.simpleMessage("Analytics"),
     "appName": MessageLookupByLibrary.simpleMessage("Medicine "),
     "appName1": MessageLookupByLibrary.simpleMessage("Reminder"),
     "back": MessageLookupByLibrary.simpleMessage("Back"),
+    "beforeFood": MessageLookupByLibrary.simpleMessage("Before Food"),
+    "doseAmount": MessageLookupByLibrary.simpleMessage("Dose Amount"),
+    "emptyStomach": MessageLookupByLibrary.simpleMessage("On an empty stomach"),
+    "enterMedicineInformationAndSchedule": MessageLookupByLibrary.simpleMessage(
+      "Enter your medicine information and schedule.",
+    ),
+    "enterMedicineName": MessageLookupByLibrary.simpleMessage(
+      "Enter medicine name",
+    ),
+    "foodInstructions": MessageLookupByLibrary.simpleMessage(
+      "Food Instructions",
+    ),
     "getStarted": MessageLookupByLibrary.simpleMessage("Get Started"),
     "home": MessageLookupByLibrary.simpleMessage("Home"),
+    "medicineDetails": MessageLookupByLibrary.simpleMessage("Medicine Details"),
+    "medicineInformation": MessageLookupByLibrary.simpleMessage(
+      "Medicine Information",
+    ),
+    "medicineName": MessageLookupByLibrary.simpleMessage("Medicine Name"),
     "next": MessageLookupByLibrary.simpleMessage("Next"),
+    "noInstruction": MessageLookupByLibrary.simpleMessage("No Instruction"),
     "noMedicinesYet": MessageLookupByLibrary.simpleMessage("No Medicines Yet"),
     "noMedicinesYetDescription": MessageLookupByLibrary.simpleMessage(
       "You haven\'t added any medicines yet. Add your first medicine to start tracking your doses.",
@@ -56,5 +76,6 @@ class MessageLookup extends MessageLookupByLibrary {
     "splashTitle": MessageLookupByLibrary.simpleMessage(
       "Your medicines, on time.",
     ),
+    "withFood": MessageLookupByLibrary.simpleMessage("With Food"),
   };
 }

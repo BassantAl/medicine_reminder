@@ -189,6 +189,116 @@ class S {
       args: [],
     );
   }
+
+  /// `Medicine Details`
+  String get medicineDetails {
+    return Intl.message(
+      'Medicine Details',
+      name: 'medicineDetails',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Medicine Name`
+  String get medicineName {
+    return Intl.message(
+      'Medicine Name',
+      name: 'medicineName',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter medicine name`
+  String get enterMedicineName {
+    return Intl.message(
+      'Enter medicine name',
+      name: 'enterMedicineName',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Dose Amount`
+  String get doseAmount {
+    return Intl.message('Dose Amount', name: 'doseAmount', desc: '', args: []);
+  }
+
+  /// `Food Instructions`
+  String get foodInstructions {
+    return Intl.message(
+      'Food Instructions',
+      name: 'foodInstructions',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No Instruction`
+  String get noInstruction {
+    return Intl.message(
+      'No Instruction',
+      name: 'noInstruction',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Before Food`
+  String get beforeFood {
+    return Intl.message('Before Food', name: 'beforeFood', desc: '', args: []);
+  }
+
+  /// `After Food`
+  String get afterFood {
+    return Intl.message('After Food', name: 'afterFood', desc: '', args: []);
+  }
+
+  /// `With Food`
+  String get withFood {
+    return Intl.message('With Food', name: 'withFood', desc: '', args: []);
+  }
+
+  /// `Enter your medicine information and schedule.`
+  String get enterMedicineInformationAndSchedule {
+    return Intl.message(
+      'Enter your medicine information and schedule.',
+      name: 'enterMedicineInformationAndSchedule',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add Medicine`
+  String get addMedicine {
+    return Intl.message(
+      'Add Medicine',
+      name: 'addMedicine',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Medicine Information`
+  String get medicineInformation {
+    return Intl.message(
+      'Medicine Information',
+      name: 'medicineInformation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `On an empty stomach`
+  String get emptyStomach {
+    return Intl.message(
+      'On an empty stomach',
+      name: 'emptyStomach',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

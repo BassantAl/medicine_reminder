@@ -22,13 +22,33 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+    "addMedicine": MessageLookupByLibrary.simpleMessage("إضافة دواء"),
+    "afterFood": MessageLookupByLibrary.simpleMessage("بعد الطعام"),
     "analytics": MessageLookupByLibrary.simpleMessage("الإحصائيات"),
     "appName": MessageLookupByLibrary.simpleMessage("منبّه "),
     "appName1": MessageLookupByLibrary.simpleMessage("الدواء"),
     "back": MessageLookupByLibrary.simpleMessage("رجوع"),
+    "beforeFood": MessageLookupByLibrary.simpleMessage("قبل الطعام"),
+    "doseAmount": MessageLookupByLibrary.simpleMessage("مقدار الجرعة"),
+    "emptyStomach": MessageLookupByLibrary.simpleMessage("على معدة فارغة"),
+    "enterMedicineInformationAndSchedule": MessageLookupByLibrary.simpleMessage(
+      "أدخل بيانات الدواء ومواعيد تناوله.",
+    ),
+    "enterMedicineName": MessageLookupByLibrary.simpleMessage(
+      "أدخل اسم الدواء",
+    ),
+    "foodInstructions": MessageLookupByLibrary.simpleMessage(
+      "تعليمات تناول الطعام",
+    ),
     "getStarted": MessageLookupByLibrary.simpleMessage("ابدأ الآن"),
     "home": MessageLookupByLibrary.simpleMessage("الرئيسية"),
+    "medicineDetails": MessageLookupByLibrary.simpleMessage("تفاصيل الدواء"),
+    "medicineInformation": MessageLookupByLibrary.simpleMessage(
+      "معلومات الدواء",
+    ),
+    "medicineName": MessageLookupByLibrary.simpleMessage("اسم الدواء"),
     "next": MessageLookupByLibrary.simpleMessage("التالي"),
+    "noInstruction": MessageLookupByLibrary.simpleMessage("بدون تعليمات"),
     "noMedicinesYet": MessageLookupByLibrary.simpleMessage(
       "لا توجد أدوية حتى الآن",
     ),
@@ -58,5 +78,6 @@ class MessageLookup extends MessageLookupByLibrary {
     "splashTitle": MessageLookupByLibrary.simpleMessage(
       "رفيقك اليومي لتذكيرك بمواعيد أدويتك",
     ),
+    "withFood": MessageLookupByLibrary.simpleMessage("مع الطعام"),
   };
 }
