@@ -26,10 +26,13 @@ class _ManageRemoveAndAddDoseTimesState
             padding: const EdgeInsets.only(bottom: 16),
             child: DoseTimesWithRemove(
               onTap: () {
-                doseTimesWithRemoveItems.removeAt(index);
+                if(doseTimesWithRemoveItems.length>1){
+                   doseTimesWithRemoveItems.removeAt(index);
                 setState(() {
                   
                 });
+                }
+               
               },
             ),
           ),

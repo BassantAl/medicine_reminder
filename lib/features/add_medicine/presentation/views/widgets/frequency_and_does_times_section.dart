@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:medicine_reminder/features/add_medicine/presentation/views/widgets/dose_times_widget.dart';
-import 'package:medicine_reminder/features/add_medicine/presentation/views/widgets/dose_times_with_remove.dart';
 import 'package:medicine_reminder/features/add_medicine/presentation/views/widgets/frequency_widget.dart';
 import 'package:medicine_reminder/features/add_medicine/presentation/views/widgets/manage_remove_and_add_does_times.dart';
 import 'package:medicine_reminder/generated/l10n.dart';
