@@ -299,6 +299,196 @@ class S {
       args: [],
     );
   }
+
+  /// `Schedule`
+  String get schedule {
+    return Intl.message('Schedule', name: 'schedule', desc: '', args: []);
+  }
+
+  /// `Start Date`
+  String get startDate {
+    return Intl.message('Start Date', name: 'startDate', desc: '', args: []);
+  }
+
+  /// `End Date`
+  String get endDate {
+    return Intl.message('End Date', name: 'endDate', desc: '', args: []);
+  }
+
+  /// `Frequency`
+  String get frequency {
+    return Intl.message('Frequency', name: 'frequency', desc: '', args: []);
+  }
+
+  /// `Once daily`
+  String get onceDaily {
+    return Intl.message('Once daily', name: 'onceDaily', desc: '', args: []);
+  }
+
+  /// `Twice daily`
+  String get twiceDaily {
+    return Intl.message('Twice daily', name: 'twiceDaily', desc: '', args: []);
+  }
+
+  /// `Three times daily`
+  String get threeTimesDaily {
+    return Intl.message(
+      'Three times daily',
+      name: 'threeTimesDaily',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Custom`
+  String get custom {
+    return Intl.message('Custom', name: 'custom', desc: '', args: []);
+  }
+
+  /// `Dose Times`
+  String get doseTimes {
+    return Intl.message('Dose Times', name: 'doseTimes', desc: '', args: []);
+  }
+
+  /// `Add Dose Time`
+  String get addDoseTime {
+    return Intl.message(
+      'Add Dose Time',
+      name: 'addDoseTime',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Ongoing Medication`
+  String get ongoingMedication {
+    return Intl.message(
+      'Ongoing Medication',
+      name: 'ongoingMedication',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `There is no planned end date`
+  String get noPlannedEndDate {
+    return Intl.message(
+      'There is no planned end date',
+      name: 'noPlannedEndDate',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Reminders`
+  String get reminders {
+    return Intl.message('Reminders', name: 'reminders', desc: '', args: []);
+  }
+
+  /// `Enable Reminders`
+  String get enableReminders {
+    return Intl.message(
+      'Enable Reminders',
+      name: 'enableReminders',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Get notified at each scheduled dose`
+  String get getNotifiedAtEachScheduledDose {
+    return Intl.message(
+      'Get notified at each scheduled dose',
+      name: 'getNotifiedAtEachScheduledDose',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Additional Notes`
+  String get additionalNotes {
+    return Intl.message(
+      'Additional Notes',
+      name: 'additionalNotes',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add instructions or notes (optional)`
+  String get addInstructionsOrNotesOptional {
+    return Intl.message(
+      'Add instructions or notes (optional)',
+      name: 'addInstructionsOrNotesOptional',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Mon`
+  String get monday {
+    return Intl.message('Mon', name: 'monday', desc: '', args: []);
+  }
+
+  /// `Tue`
+  String get tuesday {
+    return Intl.message('Tue', name: 'tuesday', desc: '', args: []);
+  }
+
+  /// `Wed`
+  String get wednesday {
+    return Intl.message('Wed', name: 'wednesday', desc: '', args: []);
+  }
+
+  /// `Thu`
+  String get thursday {
+    return Intl.message('Thu', name: 'thursday', desc: '', args: []);
+  }
+
+  /// `Fri`
+  String get friday {
+    return Intl.message('Fri', name: 'friday', desc: '', args: []);
+  }
+
+  /// `Sat`
+  String get saturday {
+    return Intl.message('Sat', name: 'saturday', desc: '', args: []);
+  }
+
+  /// `Sun`
+  String get sunday {
+    return Intl.message('Sun', name: 'sunday', desc: '', args: []);
+  }
+
+  /// `Every day`
+  String get scheduleEveryDay {
+    return Intl.message(
+      'Every day',
+      name: 'scheduleEveryDay',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Selected days`
+  String get selectedDays {
+    return Intl.message(
+      'Selected days',
+      name: 'selectedDays',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Choose the days you take your medicine`
+  String get chooseMedicationDays {
+    return Intl.message(
+      'Choose the days you take your medicine',
+      name: 'chooseMedicationDays',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:medicine_reminder/core/theme/app_styles.dart';
 import 'package:medicine_reminder/features/add_medicine/presentation/views/widgets/medicine_details_section.dart';
+import 'package:medicine_reminder/features/add_medicine/presentation/views/widgets/schedule_section.dart';
 import 'package:medicine_reminder/generated/l10n.dart';
 
 class AddMedicineViewBody extends StatelessWidget {
@@ -26,7 +27,9 @@ class AddMedicineViewBody extends StatelessWidget {
               style: AppStyles.regular14(context: context),
             ),
             const SizedBox(height: 24),
-            const MedicineDetailsSection()
+            const MedicineDetailsSection(),
+            const SizedBox(height: 8),
+            const ScheduleSection(),
           ],
         ),
       ),

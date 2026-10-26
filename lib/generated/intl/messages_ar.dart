@@ -22,15 +22,27 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+    "addDoseTime": MessageLookupByLibrary.simpleMessage("إضافة موعد جرعة"),
+    "addInstructionsOrNotesOptional": MessageLookupByLibrary.simpleMessage(
+      "أضف تعليمات أو ملاحظات (اختياري)",
+    ),
     "addMedicine": MessageLookupByLibrary.simpleMessage("إضافة دواء"),
+    "additionalNotes": MessageLookupByLibrary.simpleMessage("ملاحظات إضافية"),
     "afterFood": MessageLookupByLibrary.simpleMessage("بعد الطعام"),
     "analytics": MessageLookupByLibrary.simpleMessage("الإحصائيات"),
     "appName": MessageLookupByLibrary.simpleMessage("منبّه "),
     "appName1": MessageLookupByLibrary.simpleMessage("الدواء"),
     "back": MessageLookupByLibrary.simpleMessage("رجوع"),
     "beforeFood": MessageLookupByLibrary.simpleMessage("قبل الطعام"),
+    "chooseMedicationDays": MessageLookupByLibrary.simpleMessage(
+      "اختر أيام تناول الدواء",
+    ),
+    "custom": MessageLookupByLibrary.simpleMessage("مخصص"),
     "doseAmount": MessageLookupByLibrary.simpleMessage("مقدار الجرعة"),
+    "doseTimes": MessageLookupByLibrary.simpleMessage("مواعيد الجرعات"),
     "emptyStomach": MessageLookupByLibrary.simpleMessage("على معدة فارغة"),
+    "enableReminders": MessageLookupByLibrary.simpleMessage("تفعيل التذكيرات"),
+    "endDate": MessageLookupByLibrary.simpleMessage("تاريخ الانتهاء"),
     "enterMedicineInformationAndSchedule": MessageLookupByLibrary.simpleMessage(
       "أدخل بيانات الدواء ومواعيد تناوله.",
     ),
@@ -40,6 +52,11 @@ class MessageLookup extends MessageLookupByLibrary {
     "foodInstructions": MessageLookupByLibrary.simpleMessage(
       "تعليمات تناول الطعام",
     ),
+    "frequency": MessageLookupByLibrary.simpleMessage("عدد مرات التناول"),
+    "friday": MessageLookupByLibrary.simpleMessage("الجمعة"),
+    "getNotifiedAtEachScheduledDose": MessageLookupByLibrary.simpleMessage(
+      "احصل على إشعار عند كل موعد جرعة محدد",
+    ),
     "getStarted": MessageLookupByLibrary.simpleMessage("ابدأ الآن"),
     "home": MessageLookupByLibrary.simpleMessage("الرئيسية"),
     "medicineDetails": MessageLookupByLibrary.simpleMessage("تفاصيل الدواء"),
@@ -47,6 +64,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "معلومات الدواء",
     ),
     "medicineName": MessageLookupByLibrary.simpleMessage("اسم الدواء"),
+    "monday": MessageLookupByLibrary.simpleMessage("الإثنين"),
     "next": MessageLookupByLibrary.simpleMessage("التالي"),
     "noInstruction": MessageLookupByLibrary.simpleMessage("بدون تعليمات"),
     "noMedicinesYet": MessageLookupByLibrary.simpleMessage(
@@ -54,6 +72,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "noMedicinesYetDescription": MessageLookupByLibrary.simpleMessage(
       "لم تضف أي أدوية حتى الآن. أضف دواءك الأول لبدء متابعة جرعاتك.",
+    ),
+    "noPlannedEndDate": MessageLookupByLibrary.simpleMessage(
+      "لا يوجد تاريخ انتهاء محدد",
     ),
     "onboardingPage1Subtitle": MessageLookupByLibrary.simpleMessage(
       "نظّم أدويتك وحدّد مواعيد جرعاتك\nبسهولة وفي مكان واحد.",
@@ -73,11 +94,25 @@ class MessageLookup extends MessageLookupByLibrary {
     "onboardingPage3Title": MessageLookupByLibrary.simpleMessage(
       "تابع مدى التزامك بالعلاج",
     ),
+    "onceDaily": MessageLookupByLibrary.simpleMessage("مرة واحدة يوميًا"),
+    "ongoingMedication": MessageLookupByLibrary.simpleMessage("دواء مستمر"),
+    "reminders": MessageLookupByLibrary.simpleMessage("التذكيرات"),
+    "saturday": MessageLookupByLibrary.simpleMessage("السبت"),
+    "schedule": MessageLookupByLibrary.simpleMessage("الجدول الزمني"),
+    "scheduleEveryDay": MessageLookupByLibrary.simpleMessage("كل يوم"),
+    "selectedDays": MessageLookupByLibrary.simpleMessage("أيام محددة"),
     "settings": MessageLookupByLibrary.simpleMessage("الإعدادات"),
     "skip": MessageLookupByLibrary.simpleMessage("تخطي"),
     "splashTitle": MessageLookupByLibrary.simpleMessage(
       "رفيقك اليومي لتذكيرك بمواعيد أدويتك",
     ),
+    "startDate": MessageLookupByLibrary.simpleMessage("تاريخ البدء"),
+    "sunday": MessageLookupByLibrary.simpleMessage("الأحد"),
+    "threeTimesDaily": MessageLookupByLibrary.simpleMessage("ثلاث مرات يوميًا"),
+    "thursday": MessageLookupByLibrary.simpleMessage("الخميس"),
+    "tuesday": MessageLookupByLibrary.simpleMessage("الثلاثاء"),
+    "twiceDaily": MessageLookupByLibrary.simpleMessage("مرتين يوميًا"),
+    "wednesday": MessageLookupByLibrary.simpleMessage("الأربعاء"),
     "withFood": MessageLookupByLibrary.simpleMessage("مع الطعام"),
   };
 }
