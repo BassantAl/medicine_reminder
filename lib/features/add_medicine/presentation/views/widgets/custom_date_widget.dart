@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:medicine_reminder/core/theme/app_decoration.dart';
 import 'package:medicine_reminder/core/theme/app_styles.dart';
-import 'package:medicine_reminder/generated/l10n.dart';
 import 'package:intl/intl.dart';
 
-class StartDateWidget extends StatefulWidget {
-  const StartDateWidget({super.key});
+class CustomDateWidget extends StatefulWidget {
+  const CustomDateWidget({super.key, required this.title});
+  final String title;
+
 
   @override
-  State<StartDateWidget> createState() => _StartDateWidgetState();
+  State<CustomDateWidget> createState() => _CustomDateWidgetState();
 }
 
-class _StartDateWidgetState extends State<StartDateWidget> {
+class _CustomDateWidgetState extends State<CustomDateWidget> {
   DateTime selectedDate = DateTime.now();
 
   Future<void> selectDate() async {
@@ -40,13 +41,13 @@ class _StartDateWidgetState extends State<StartDateWidget> {
           color: Theme.of(context).colorScheme.primary,
         ),
         title: Text(
-          S.of(context).startDate,
+          widget.title,
           style: AppStyles.regular16(context: context),
         ),
         subtitle: Text(
           DateFormat.yMMMd(
-            Localizations.localeOf(context).languageCode
-          ).format(selectedDate)
+            Localizations.localeOf(context).languageCode,
+          ).format(selectedDate),
         ),
       ),
     );
