@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:medicine_reminder/features/add_medicine/presentation/views/widgets/add_medicine_section.dart';
 import 'package:medicine_reminder/features/add_medicine/presentation/views/widgets/frequency_and_does_times_section.dart';
 import 'package:medicine_reminder/features/add_medicine/presentation/views/widgets/selected_days_section.dart';
+import 'package:medicine_reminder/features/add_medicine/presentation/views/widgets/start_date_widget.dart';
 import 'package:medicine_reminder/generated/l10n.dart';
 
 class ScheduleSection extends StatelessWidget {
@@ -12,10 +13,12 @@ class ScheduleSection extends StatelessWidget {
     return AddMedicineSection(
       title: S.of(context).schedule,
       icon: Icons.calendar_month_outlined,
-      children: const[
-       FrequencyAndDoesTimesSection(),
+      children: const [
+        FrequencyAndDoesTimesSection(),
         SizedBox(height: 20),
-       SelectedDaysSection()
+        SelectedDaysSection(),
+        SizedBox(height: 20),
+        StartDateWidget(),
       ],
     );
   }

@@ -36,10 +36,10 @@ class MyApp extends StatelessWidget {
       builder: (context, state) {
         return MaterialApp.router(
           debugShowCheckedModeBanner: false,
-          theme: AppTheme.darkTheme,
+          theme: AppTheme.lightTheme,
           darkTheme: AppTheme.darkTheme,
           themeMode: state,
-          locale: Locale('en'),
+          locale: Locale('ar'),
           localizationsDelegates: [
             S.delegate,
             GlobalMaterialLocalizations.delegate,
