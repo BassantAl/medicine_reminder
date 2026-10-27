@@ -22,6 +22,7 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+    "Dose": MessageLookupByLibrary.simpleMessage("Dose"),
     "addDoseTime": MessageLookupByLibrary.simpleMessage("Add Dose Time"),
     "addInstructionsOrNotesOptional": MessageLookupByLibrary.simpleMessage(
       "Add instructions or notes (optional)",
@@ -38,7 +39,11 @@ class MessageLookup extends MessageLookupByLibrary {
       "Choose the days you take your medicine",
     ),
     "custom": MessageLookupByLibrary.simpleMessage("Custom"),
+    "differentDoseDescription": MessageLookupByLibrary.simpleMessage(
+      "Set a different dose for each day",
+    ),
     "doseAmount": MessageLookupByLibrary.simpleMessage("Dose Amount"),
+    "doseForEachDay": MessageLookupByLibrary.simpleMessage("Dose for each day"),
     "doseTimes": MessageLookupByLibrary.simpleMessage("Dose Times"),
     "emptyStomach": MessageLookupByLibrary.simpleMessage("On an empty stomach"),
     "enableReminders": MessageLookupByLibrary.simpleMessage("Enable Reminders"),
@@ -97,10 +102,19 @@ class MessageLookup extends MessageLookupByLibrary {
       "Ongoing Medication",
     ),
     "reminders": MessageLookupByLibrary.simpleMessage("Reminders"),
+    "sameDoseDescription": MessageLookupByLibrary.simpleMessage(
+      "Use the same dose on all days",
+    ),
+    "sameDoseEveryDay": MessageLookupByLibrary.simpleMessage(
+      "Same dose every day",
+    ),
     "saturday": MessageLookupByLibrary.simpleMessage("Sat"),
     "schedule": MessageLookupByLibrary.simpleMessage("Schedule"),
     "scheduleEveryDay": MessageLookupByLibrary.simpleMessage("Every day"),
     "selectedDays": MessageLookupByLibrary.simpleMessage("Selected days"),
+    "setDoseForEachDay": MessageLookupByLibrary.simpleMessage(
+      "Enter the dose for each day",
+    ),
     "settings": MessageLookupByLibrary.simpleMessage("Settings"),
     "skip": MessageLookupByLibrary.simpleMessage("Skip"),
     "splashTitle": MessageLookupByLibrary.simpleMessage(

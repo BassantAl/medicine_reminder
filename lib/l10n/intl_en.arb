@@ -57,5 +57,13 @@
   "sunday": "Sun",
   "scheduleEveryDay": "Every day",
   "selectedDays": "Selected days",
-    "chooseMedicationDays": "Choose the days you take your medicine"
+    "chooseMedicationDays": "Choose the days you take your medicine",
+    
+  "sameDoseEveryDay": "Same dose every day",
+  "sameDoseDescription": "Use the same dose on all days",
+  "differentDoseDescription": "Set a different dose for each day",
+  "doseForEachDay": "Dose for each day",
+  "setDoseForEachDay": "Enter the dose for each day",
+  "Dose": "Dose"
+
 }

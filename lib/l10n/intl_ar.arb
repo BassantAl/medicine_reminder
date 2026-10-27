@@ -58,5 +58,11 @@
   "sunday": "الأحد",
     "scheduleEveryDay": "كل يوم",
   "selectedDays": "أيام محددة",
-  "chooseMedicationDays": "اختر أيام تناول الدواء"
+  "chooseMedicationDays": "اختر أيام تناول الدواء",
+  "sameDoseEveryDay": "نفس الجرعة كل يوم",
+  "sameDoseDescription": "استخدام نفس الجرعة في جميع الأيام",
+  "differentDoseDescription": "تحديد جرعة مختلفة لكل يوم",
+  "doseForEachDay": "الجرعة لكل يوم",
+  "setDoseForEachDay": "أدخلي الجرعة لكل يوم",
+"Dose": "الجرعة"
 }

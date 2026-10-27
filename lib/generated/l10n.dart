@@ -489,6 +489,61 @@ class S {
       args: [],
     );
   }
+
+  /// `Same dose every day`
+  String get sameDoseEveryDay {
+    return Intl.message(
+      'Same dose every day',
+      name: 'sameDoseEveryDay',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Use the same dose on all days`
+  String get sameDoseDescription {
+    return Intl.message(
+      'Use the same dose on all days',
+      name: 'sameDoseDescription',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Set a different dose for each day`
+  String get differentDoseDescription {
+    return Intl.message(
+      'Set a different dose for each day',
+      name: 'differentDoseDescription',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Dose for each day`
+  String get doseForEachDay {
+    return Intl.message(
+      'Dose for each day',
+      name: 'doseForEachDay',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter the dose for each day`
+  String get setDoseForEachDay {
+    return Intl.message(
+      'Enter the dose for each day',
+      name: 'setDoseForEachDay',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Dose`
+  String get Dose {
+    return Intl.message('Dose', name: 'Dose', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

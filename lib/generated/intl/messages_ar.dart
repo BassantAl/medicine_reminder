@@ -22,6 +22,7 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+    "Dose": MessageLookupByLibrary.simpleMessage("الجرعة"),
     "addDoseTime": MessageLookupByLibrary.simpleMessage("إضافة موعد جرعة"),
     "addInstructionsOrNotesOptional": MessageLookupByLibrary.simpleMessage(
       "أضف تعليمات أو ملاحظات (اختياري)",
@@ -38,7 +39,11 @@ class MessageLookup extends MessageLookupByLibrary {
       "اختر أيام تناول الدواء",
     ),
     "custom": MessageLookupByLibrary.simpleMessage("مخصص"),
+    "differentDoseDescription": MessageLookupByLibrary.simpleMessage(
+      "تحديد جرعة مختلفة لكل يوم",
+    ),
     "doseAmount": MessageLookupByLibrary.simpleMessage("مقدار الجرعة"),
+    "doseForEachDay": MessageLookupByLibrary.simpleMessage("الجرعة لكل يوم"),
     "doseTimes": MessageLookupByLibrary.simpleMessage("مواعيد الجرعات"),
     "emptyStomach": MessageLookupByLibrary.simpleMessage("على معدة فارغة"),
     "enableReminders": MessageLookupByLibrary.simpleMessage("تفعيل التذكيرات"),
@@ -97,10 +102,19 @@ class MessageLookup extends MessageLookupByLibrary {
     "onceDaily": MessageLookupByLibrary.simpleMessage("مرة واحدة يوميًا"),
     "ongoingMedication": MessageLookupByLibrary.simpleMessage("دواء مستمر"),
     "reminders": MessageLookupByLibrary.simpleMessage("التذكيرات"),
+    "sameDoseDescription": MessageLookupByLibrary.simpleMessage(
+      "استخدام نفس الجرعة في جميع الأيام",
+    ),
+    "sameDoseEveryDay": MessageLookupByLibrary.simpleMessage(
+      "نفس الجرعة كل يوم",
+    ),
     "saturday": MessageLookupByLibrary.simpleMessage("السبت"),
     "schedule": MessageLookupByLibrary.simpleMessage("الجدول الزمني"),
     "scheduleEveryDay": MessageLookupByLibrary.simpleMessage("كل يوم"),
     "selectedDays": MessageLookupByLibrary.simpleMessage("أيام محددة"),
+    "setDoseForEachDay": MessageLookupByLibrary.simpleMessage(
+      "أدخلي الجرعة لكل يوم",
+    ),
     "settings": MessageLookupByLibrary.simpleMessage("الإعدادات"),
     "skip": MessageLookupByLibrary.simpleMessage("تخطي"),
     "splashTitle": MessageLookupByLibrary.simpleMessage(
