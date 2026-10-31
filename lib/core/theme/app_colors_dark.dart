@@ -23,4 +23,7 @@ abstract final class AppColorsDark {
   static const Color pending = Color(0xFFFBBF24);
   static const Color missed = Color(0xFFF87171);
   static const Color skipped = Color(0xFF94A3B8);
+
+  static const Color adherenceProgress = Color(0xFF4ADE80);
+static const Color adherenceBackground = Color(0xFF34463A);
 }

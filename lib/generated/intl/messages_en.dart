@@ -20,6 +20,8 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'en';
 
+  static String m0(completed, total) => "${completed} of ${total} doses taken";
+
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
     "Dose": MessageLookupByLibrary.simpleMessage("Dose"),
@@ -45,6 +47,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "doseAmount": MessageLookupByLibrary.simpleMessage("Dose Amount"),
     "doseForEachDay": MessageLookupByLibrary.simpleMessage("Dose for each day"),
     "doseTimes": MessageLookupByLibrary.simpleMessage("Dose Times"),
+    "dosesTaken": m0,
     "emptyStomach": MessageLookupByLibrary.simpleMessage("On an empty stomach"),
     "enableReminders": MessageLookupByLibrary.simpleMessage("Enable Reminders"),
     "endDate": MessageLookupByLibrary.simpleMessage("End Date"),
@@ -70,6 +73,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Medicine Information",
     ),
     "medicineName": MessageLookupByLibrary.simpleMessage("Medicine Name"),
+    "missed": MessageLookupByLibrary.simpleMessage("Missed"),
     "monday": MessageLookupByLibrary.simpleMessage("Mon"),
     "next": MessageLookupByLibrary.simpleMessage("Next"),
     "noInstruction": MessageLookupByLibrary.simpleMessage("No Instruction"),
@@ -102,6 +106,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "ongoingMedication": MessageLookupByLibrary.simpleMessage(
       "Ongoing Medication",
     ),
+    "pending": MessageLookupByLibrary.simpleMessage("Pending"),
     "pleaseEnterDoseAmount": MessageLookupByLibrary.simpleMessage(
       "Please enter dose amount",
     ),
@@ -133,10 +138,17 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "startDate": MessageLookupByLibrary.simpleMessage("Start Date"),
     "sunday": MessageLookupByLibrary.simpleMessage("Sun"),
+    "taken": MessageLookupByLibrary.simpleMessage("Taken"),
     "threeTimesDaily": MessageLookupByLibrary.simpleMessage(
       "Three times daily",
     ),
     "thursday": MessageLookupByLibrary.simpleMessage("Thu"),
+    "todaysAdherence": MessageLookupByLibrary.simpleMessage(
+      "Today\'s Adherence",
+    ),
+    "todaysMedicines": MessageLookupByLibrary.simpleMessage(
+      "Today\'s Medicines",
+    ),
     "tuesday": MessageLookupByLibrary.simpleMessage("Tue"),
     "twiceDaily": MessageLookupByLibrary.simpleMessage("Twice daily"),
     "wednesday": MessageLookupByLibrary.simpleMessage("Wed"),

@@ -20,10 +20,11 @@ abstract class AppStyles {
     );
   }
 
-  static TextStyle regular16({required BuildContext context}) {
+  static TextStyle regular16({required BuildContext context , Color? color}) {
     return Theme.of(context).textTheme.bodySmall!.copyWith(
       fontSize: getResponsiveFontsize(context: context, fontSize: 16),
       fontWeight: FontWeight.w400,
+      color: color
     );
   }
 
@@ -31,6 +32,21 @@ abstract class AppStyles {
     return TextStyle(
       color: isLight(context) ? Colors.white : Colors.black,
       fontSize: getResponsiveFontsize(context: context, fontSize: 18),
+      fontWeight: FontWeight.bold,
+    );
+  }
+
+  static TextStyle semiBold18({required BuildContext context}) {
+    return TextStyle(
+      color: isLight(context) ? Colors.black : Colors.white,
+      fontSize: getResponsiveFontsize(context: context, fontSize: 18),
+      fontWeight: FontWeight.w600,
+    );
+  }
+
+  static TextStyle bold20({required BuildContext context}) {
+    return  Theme.of(context).textTheme.headlineLarge!.copyWith(
+      fontSize: getResponsiveFontsize(context: context, fontSize: 20),
       fontWeight: FontWeight.bold,
     );
   }

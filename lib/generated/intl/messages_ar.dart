@@ -20,6 +20,9 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'ar';
 
+  static String m0(completed, total) =>
+      "تم تناول ${completed} من أصل ${total} جرعات";
+
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
     "Dose": MessageLookupByLibrary.simpleMessage("الجرعة"),
@@ -45,6 +48,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "doseAmount": MessageLookupByLibrary.simpleMessage("مقدار الجرعة"),
     "doseForEachDay": MessageLookupByLibrary.simpleMessage("الجرعة لكل يوم"),
     "doseTimes": MessageLookupByLibrary.simpleMessage("مواعيد الجرعات"),
+    "dosesTaken": m0,
     "emptyStomach": MessageLookupByLibrary.simpleMessage("على معدة فارغة"),
     "enableReminders": MessageLookupByLibrary.simpleMessage("تفعيل التذكيرات"),
     "endDate": MessageLookupByLibrary.simpleMessage("تاريخ الانتهاء"),
@@ -70,6 +74,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "معلومات الدواء",
     ),
     "medicineName": MessageLookupByLibrary.simpleMessage("اسم الدواء"),
+    "missed": MessageLookupByLibrary.simpleMessage("لم يتم التناول"),
     "monday": MessageLookupByLibrary.simpleMessage("الإثنين"),
     "next": MessageLookupByLibrary.simpleMessage("التالي"),
     "noInstruction": MessageLookupByLibrary.simpleMessage("بدون تعليمات"),
@@ -102,6 +107,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "onceDaily": MessageLookupByLibrary.simpleMessage("مرة واحدة يوميًا"),
     "ongoingMedication": MessageLookupByLibrary.simpleMessage("دواء مستمر"),
+    "pending": MessageLookupByLibrary.simpleMessage("قيد الانتظار"),
     "pleaseEnterDoseAmount": MessageLookupByLibrary.simpleMessage(
       "من فضلك أدخل مقدار الجرعة",
     ),
@@ -133,8 +139,11 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "startDate": MessageLookupByLibrary.simpleMessage("تاريخ البدء"),
     "sunday": MessageLookupByLibrary.simpleMessage("الأحد"),
+    "taken": MessageLookupByLibrary.simpleMessage("تم التناول"),
     "threeTimesDaily": MessageLookupByLibrary.simpleMessage("ثلاث مرات يوميًا"),
     "thursday": MessageLookupByLibrary.simpleMessage("الخميس"),
+    "todaysAdherence": MessageLookupByLibrary.simpleMessage("الالتزام اليوم"),
+    "todaysMedicines": MessageLookupByLibrary.simpleMessage("أدوية اليوم"),
     "tuesday": MessageLookupByLibrary.simpleMessage("الثلاثاء"),
     "twiceDaily": MessageLookupByLibrary.simpleMessage("مرتين يوميًا"),
     "wednesday": MessageLookupByLibrary.simpleMessage("الأربعاء"),

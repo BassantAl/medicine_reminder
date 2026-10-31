@@ -69,6 +69,12 @@
   "pleaseEnterDoseAmount": "Please enter dose amount",
   "pleaseEnterValidDose": "Please enter a valid dose",
   "invalidDose": "Invalid dose",
-  "requiredField": "Required"
+  "requiredField": "Required",
+    "todaysMedicines": "Today's Medicines",
+     "todaysAdherence": "Today's Adherence",
+     "taken": "Taken",
+  "pending": "Pending",
+  "missed": "Missed",
+   "dosesTaken": "{completed} of {total} doses taken"
 
 }

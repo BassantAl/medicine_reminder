@@ -589,6 +589,51 @@ class S {
   String get requiredField {
     return Intl.message('Required', name: 'requiredField', desc: '', args: []);
   }
+
+  /// `Today's Medicines`
+  String get todaysMedicines {
+    return Intl.message(
+      'Today\'s Medicines',
+      name: 'todaysMedicines',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Today's Adherence`
+  String get todaysAdherence {
+    return Intl.message(
+      'Today\'s Adherence',
+      name: 'todaysAdherence',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Taken`
+  String get taken {
+    return Intl.message('Taken', name: 'taken', desc: '', args: []);
+  }
+
+  /// `Pending`
+  String get pending {
+    return Intl.message('Pending', name: 'pending', desc: '', args: []);
+  }
+
+  /// `Missed`
+  String get missed {
+    return Intl.message('Missed', name: 'missed', desc: '', args: []);
+  }
+
+  /// `{completed} of {total} doses taken`
+  String dosesTaken(Object completed, Object total) {
+    return Intl.message(
+      '$completed of $total doses taken',
+      name: 'dosesTaken',
+      desc: '',
+      args: [completed, total],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

@@ -69,5 +69,13 @@
 "pleaseEnterDoseAmount": "من فضلك أدخل مقدار الجرعة",
 "pleaseEnterValidDose": "من فضلك أدخل جرعة صحيحة",
 "requiredField": "مطلوب",
-"invalidDose": "جرعة غير صالحة"
+"invalidDose": "جرعة غير صالحة",
+"todaysMedicines": "أدوية اليوم",
+"todaysAdherence": "الالتزام اليوم",
+"taken": "تم التناول",
+  "pending": "قيد الانتظار",
+  "missed": "لم يتم التناول",
+
+  "dosesTaken": "تم تناول {completed} من أصل {total} جرعات"
+
 }

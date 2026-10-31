@@ -9,15 +9,22 @@ class AddMedicineButton extends StatelessWidget {
   final GlobalKey<FormState> formkey;
   @override
   Widget build(BuildContext context) {
-    return CustomPrimaryButton(
-      showIcon: false,
-      text: S.of(context).addMedicine,
-      onPressed: () {
-        if (formkey.currentState!.validate()) {
-          formkey.currentState!.save();
-          context.read<AddMedicineCubit>().addMedicine();
+    return BlocListener<AddMedicineCubit, AddMedicineState>(
+      listener: (context, state) {
+        if (state is AddMedicineSuccess) {
+          Navigator.pop(context);
         }
       },
+      child: CustomPrimaryButton(
+        showIcon: false,
+        text: S.of(context).addMedicine,
+        onPressed: () {
+          if (formkey.currentState!.validate()) {
+            formkey.currentState!.save();
+            context.read<AddMedicineCubit>().addMedicine();
+          }
+        },
+      ),
     );
   }
 }
