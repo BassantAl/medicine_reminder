@@ -8,6 +8,7 @@ class DoesScheduleModel {
   final List<String> doseTimes;
   final DateTime startDate;
   final DateTime? endDate;
+  final bool enableNotifications;
   DoesScheduleModel({
     this.id,
     required this.medicineId,
@@ -15,7 +16,7 @@ class DoesScheduleModel {
     required this.selectedDays,
     required this.doseTimes,
     required this.startDate,
-    this.endDate,
+    this.endDate, required this.enableNotifications,
   });
   Map<String, Object?> toMap() {
     return {
@@ -25,6 +26,7 @@ class DoesScheduleModel {
       'doseTimes': jsonEncode(doseTimes),
       'startDate': startDate.toIso8601String(),
       'endDate': endDate?.toIso8601String(),
+      'enableNotifications': enableNotifications ? 1 : 0,
     };
   }
 }

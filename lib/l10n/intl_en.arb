@@ -64,6 +64,11 @@
   "differentDoseDescription": "Set a different dose for each day",
   "doseForEachDay": "Dose for each day",
   "setDoseForEachDay": "Enter the dose for each day",
-  "Dose": "Dose"
+  "Dose": "Dose",
+  "pleaseEnterMedicineName": "Please enter medicine name",
+  "pleaseEnterDoseAmount": "Please enter dose amount",
+  "pleaseEnterValidDose": "Please enter a valid dose",
+  "invalidDose": "Invalid dose",
+  "requiredField": "Required"
 
 }

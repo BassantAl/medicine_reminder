@@ -4,6 +4,7 @@ part of 'add_medicine_cubit.dart';
 sealed class AddMedicineState {}
 
 final class AddMedicineInitial extends AddMedicineState {}
+class AddMedicineFormUpdated extends AddMedicineState {}
 
 class AddMedicineLoading extends AddMedicineState {}
 

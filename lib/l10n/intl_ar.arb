@@ -64,5 +64,10 @@
   "differentDoseDescription": "تحديد جرعة مختلفة لكل يوم",
   "doseForEachDay": "الجرعة لكل يوم",
   "setDoseForEachDay": "أدخلي الجرعة لكل يوم",
-"Dose": "الجرعة"
+"Dose": "الجرعة",
+"pleaseEnterMedicineName": "من فضلك أدخل اسم الدواء",
+"pleaseEnterDoseAmount": "من فضلك أدخل مقدار الجرعة",
+"pleaseEnterValidDose": "من فضلك أدخل جرعة صحيحة",
+"requiredField": "مطلوب",
+"invalidDose": "جرعة غير صالحة"
 }

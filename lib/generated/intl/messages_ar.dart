@@ -64,6 +64,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "getStarted": MessageLookupByLibrary.simpleMessage("ابدأ الآن"),
     "home": MessageLookupByLibrary.simpleMessage("الرئيسية"),
+    "invalidDose": MessageLookupByLibrary.simpleMessage("جرعة غير صالحة"),
     "medicineDetails": MessageLookupByLibrary.simpleMessage("تفاصيل الدواء"),
     "medicineInformation": MessageLookupByLibrary.simpleMessage(
       "معلومات الدواء",
@@ -101,7 +102,17 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "onceDaily": MessageLookupByLibrary.simpleMessage("مرة واحدة يوميًا"),
     "ongoingMedication": MessageLookupByLibrary.simpleMessage("دواء مستمر"),
+    "pleaseEnterDoseAmount": MessageLookupByLibrary.simpleMessage(
+      "من فضلك أدخل مقدار الجرعة",
+    ),
+    "pleaseEnterMedicineName": MessageLookupByLibrary.simpleMessage(
+      "من فضلك أدخل اسم الدواء",
+    ),
+    "pleaseEnterValidDose": MessageLookupByLibrary.simpleMessage(
+      "من فضلك أدخل جرعة صحيحة",
+    ),
     "reminders": MessageLookupByLibrary.simpleMessage("التذكيرات"),
+    "requiredField": MessageLookupByLibrary.simpleMessage("مطلوب"),
     "sameDoseDescription": MessageLookupByLibrary.simpleMessage(
       "استخدام نفس الجرعة في جميع الأيام",
     ),

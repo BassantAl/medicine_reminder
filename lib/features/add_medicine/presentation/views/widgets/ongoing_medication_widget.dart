@@ -30,7 +30,8 @@ class _OngoingMedicationWidgetState extends State<OngoingMedicationWidget> {
             },
           ),
         ),
-        if (isOngoing == false) CustomDateWidget(title: localization.endDate),
+        if (isOngoing == false)
+          CustomDateWidget(title: localization.endDate, isStartDate: false),
       ],
     );
   }

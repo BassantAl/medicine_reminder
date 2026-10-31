@@ -544,6 +544,51 @@ class S {
   String get Dose {
     return Intl.message('Dose', name: 'Dose', desc: '', args: []);
   }
+
+  /// `Please enter medicine name`
+  String get pleaseEnterMedicineName {
+    return Intl.message(
+      'Please enter medicine name',
+      name: 'pleaseEnterMedicineName',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter dose amount`
+  String get pleaseEnterDoseAmount {
+    return Intl.message(
+      'Please enter dose amount',
+      name: 'pleaseEnterDoseAmount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter a valid dose`
+  String get pleaseEnterValidDose {
+    return Intl.message(
+      'Please enter a valid dose',
+      name: 'pleaseEnterValidDose',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Invalid dose`
+  String get invalidDose {
+    return Intl.message(
+      'Invalid dose',
+      name: 'invalidDose',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Required`
+  String get requiredField {
+    return Intl.message('Required', name: 'requiredField', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

@@ -5,7 +5,10 @@ import 'package:medicine_reminder/features/add_medicine/data/models/medicine_mod
 
 class MedicineLocalDataSource {
   final AppDatabase appDatabase;
-  MedicineLocalDataSource({required this.appDatabase});
+
+  MedicineLocalDataSource({
+    required this.appDatabase,
+  });
 
   Future<int> saveMedicine({
     required MedicineModel medicineModel,
@@ -13,9 +16,15 @@ class MedicineLocalDataSource {
     required List<DailyDoesModel> dailyDoses,
   }) async {
     final db = await appDatabase.database;
-    return await db.transaction((txn) async {
-      final medicineId = await txn.insert('Medicine', medicineModel.toMap());
 
+    return await db.transaction((txn) async {
+      // 1. Save medicine
+      final medicineId = await txn.insert(
+        'Medicine',
+        medicineModel.toMap(),
+      );
+
+      // 2. Save schedule using the generated medicineId
       final schedule = DoesScheduleModel(
         medicineId: medicineId,
         frequency: doesScheduleModel.frequency,
@@ -23,16 +32,28 @@ class MedicineLocalDataSource {
         doseTimes: doesScheduleModel.doseTimes,
         startDate: doesScheduleModel.startDate,
         endDate: doesScheduleModel.endDate,
+        enableNotifications: doesScheduleModel.enableNotifications,
       );
-      final scheduleId = await txn.insert('DoesSchedule', schedule.toMap());
+
+      final scheduleId = await txn.insert(
+        'DoesSchedule',
+        schedule.toMap(),
+      );
+
+      // 3. Save daily doses using the generated scheduleId
       for (final dailyDose in dailyDoses) {
         final dailyDoseModel = DailyDoesModel(
           scheduleId: scheduleId,
           dayOfWeek: dailyDose.dayOfWeek,
           doseAmount: dailyDose.doseAmount,
         );
-        await txn.insert('DailyDoes', dailyDoseModel.toMap());
+
+        await txn.insert(
+          'DailyDoes',
+          dailyDoseModel.toMap(),
+        );
       }
+
       return medicineId;
     });
   }

@@ -13,34 +13,38 @@ class AddMedicineViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final localization = S.of(context);
+      final formKey = GlobalKey<FormState>();
     debugPrint('Direction: ${Directionality.of(context)}');
     return SingleChildScrollView(
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal:  16.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              localization.medicineDetails,
-              style: AppStyles.bold24(context: context),
-            ),
-            const SizedBox(height: 5),
-            Text(
-              localization.enterMedicineInformationAndSchedule,
-              style: AppStyles.regular14(context: context),
-            ),
-            const SizedBox(height: 24),
-            const MedicineDetailsSection(),
-            const SizedBox(height: 8),
-            const ScheduleSection(),
-            const SizedBox(height: 8),
-            const RemindersSection(),
-            const SizedBox(height: 8),
-            const AdditionalNotesSection(),
-            const SizedBox(height: 8),
-            const AddMedicineButton(),
-            const SizedBox(height: 40),
-          ],
+        child: Form(
+          key: formKey,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                localization.medicineDetails,
+                style: AppStyles.bold24(context: context),
+              ),
+              const SizedBox(height: 5),
+              Text(
+                localization.enterMedicineInformationAndSchedule,
+                style: AppStyles.regular14(context: context),
+              ),
+              const SizedBox(height: 24),
+              const MedicineDetailsSection(),
+              const SizedBox(height: 8),
+              const ScheduleSection(),
+              const SizedBox(height: 8),
+              const RemindersSection(),
+              const SizedBox(height: 8),
+              const AdditionalNotesSection(),
+              const SizedBox(height: 8),
+               AddMedicineButton(formkey: formKey,),
+              const SizedBox(height: 40),
+            ],
+          ),
         ),
       ),
     );

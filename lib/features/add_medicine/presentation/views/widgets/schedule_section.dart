@@ -19,7 +19,7 @@ class ScheduleSection extends StatelessWidget {
         const SizedBox(height: 20),
         const SelectedDaysSection(),
         const SizedBox(height: 20),
-        CustomDateWidget(title: S.of(context).startDate ,),
+        CustomDateWidget(title: S.of(context).startDate , isStartDate: true,) ,
         const SizedBox(height: 20),
         const OngoingMedicationWidget()
       ],

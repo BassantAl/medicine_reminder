@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:medicine_reminder/features/add_medicine/presentation/manager/cubit/add_medicine_cubit.dart';
 import 'package:medicine_reminder/features/add_medicine/presentation/views/widgets/custom_drop_down_button_form_feild.dart';
 import 'package:medicine_reminder/generated/l10n.dart';
 
@@ -53,6 +55,9 @@ class _FoodInstructionDropDownButtonFormFeildState
       }).toList(),
       onChanged: (value) {
         selectedInstruction = value;
+        context.read<AddMedicineCubit>().updateFoodInstruction(
+          selectedInstruction.toString(),
+        );
       },
     );
   }

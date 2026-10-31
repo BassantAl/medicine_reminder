@@ -7,11 +7,13 @@ import 'package:medicine_reminder/core/services/shared_refernces_singletone.dart
 import 'package:medicine_reminder/core/theme/app_theme.dart';
 import 'package:medicine_reminder/core/theme/cubit/theme_cubit.dart';
 import 'package:medicine_reminder/generated/l10n.dart';
+import 'package:medicine_reminder/my_block_observer.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await SharedReferncesSingletone.init();
   setUp();
+  Bloc.observer = MyBlockObserver();
 
   runApp(
     // BlocProvider(

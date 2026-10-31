@@ -44,7 +44,7 @@ class DailyDoseFields extends StatelessWidget {
                         decoration: AppDecoration.boxDecoration(
                           context: context,
                         ),
-                        child: DailyDoseItem(day: day),
+                        child: DailyDoseItem(day: day ,sameDoseEveryDay: sameDoseEveryDay,),
                       ),
                     );
                   }),

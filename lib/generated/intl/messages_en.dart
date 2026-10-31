@@ -64,6 +64,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "getStarted": MessageLookupByLibrary.simpleMessage("Get Started"),
     "home": MessageLookupByLibrary.simpleMessage("Home"),
+    "invalidDose": MessageLookupByLibrary.simpleMessage("Invalid dose"),
     "medicineDetails": MessageLookupByLibrary.simpleMessage("Medicine Details"),
     "medicineInformation": MessageLookupByLibrary.simpleMessage(
       "Medicine Information",
@@ -101,7 +102,17 @@ class MessageLookup extends MessageLookupByLibrary {
     "ongoingMedication": MessageLookupByLibrary.simpleMessage(
       "Ongoing Medication",
     ),
+    "pleaseEnterDoseAmount": MessageLookupByLibrary.simpleMessage(
+      "Please enter dose amount",
+    ),
+    "pleaseEnterMedicineName": MessageLookupByLibrary.simpleMessage(
+      "Please enter medicine name",
+    ),
+    "pleaseEnterValidDose": MessageLookupByLibrary.simpleMessage(
+      "Please enter a valid dose",
+    ),
     "reminders": MessageLookupByLibrary.simpleMessage("Reminders"),
+    "requiredField": MessageLookupByLibrary.simpleMessage("Required"),
     "sameDoseDescription": MessageLookupByLibrary.simpleMessage(
       "Use the same dose on all days",
     ),

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:medicine_reminder/features/add_medicine/presentation/manager/cubit/add_medicine_cubit.dart';
 import 'package:medicine_reminder/features/add_medicine/presentation/views/widgets/add_medicine_section.dart';
 import 'package:medicine_reminder/features/add_medicine/presentation/views/widgets/custom_dose_amount.dart';
 import 'package:medicine_reminder/features/add_medicine/presentation/views/widgets/custom_text_feild.dart';
@@ -17,7 +19,19 @@ class MedicineDetailsSection extends StatelessWidget {
       children: [
         Text(localization.medicineName),
         const SizedBox(height: 5),
-        CustomTextFeild(hintText: localization.enterMedicineName),
+        CustomTextFeild(
+          validator: (value) {
+            if (value == null || value.trim().isEmpty) {
+              return localization.pleaseEnterMedicineName;
+            }
+
+            return null;
+          },
+          hintText: localization.enterMedicineName,
+          onSaved: (medicineName) {
+            context.read<AddMedicineCubit>().updateMedicineName(medicineName!);
+          },
+        ),
         const SizedBox(height: 20),
         const CustomDoseAmount(),
         const SizedBox(height: 20),

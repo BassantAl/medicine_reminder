@@ -1,19 +1,34 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:intl/intl.dart';
 import 'package:medicine_reminder/core/theme/app_decoration.dart';
 import 'package:medicine_reminder/core/theme/app_styles.dart';
-import 'package:intl/intl.dart';
+import 'package:medicine_reminder/features/add_medicine/presentation/manager/cubit/add_medicine_cubit.dart';
 
 class CustomDateWidget extends StatefulWidget {
-  const CustomDateWidget({super.key, required this.title});
-  final String title;
+  const CustomDateWidget({
+    super.key,
+    required this.title,
+    required this.isStartDate,
+    this.initialDate,
+  });
 
+  final String title;
+  final bool isStartDate;
+  final DateTime? initialDate;
 
   @override
   State<CustomDateWidget> createState() => _CustomDateWidgetState();
 }
 
 class _CustomDateWidgetState extends State<CustomDateWidget> {
-  DateTime selectedDate = DateTime.now();
+  late DateTime selectedDate;
+
+  @override
+  void initState() {
+    super.initState();
+    selectedDate = widget.initialDate ?? DateTime.now();
+  }
 
   Future<void> selectDate() async {
     final DateTime? pickedDate = await showDatePicker(
@@ -23,10 +38,18 @@ class _CustomDateWidgetState extends State<CustomDateWidget> {
       lastDate: DateTime(2100),
     );
 
-    if (pickedDate != null) {
-      setState(() {
-        selectedDate = pickedDate;
-      });
+    if (pickedDate == null || !mounted) return;
+
+    setState(() {
+      selectedDate = pickedDate;
+    });
+
+    final cubit = context.read<AddMedicineCubit>();
+
+    if (widget.isStartDate) {
+      cubit.updateStartDate(pickedDate);
+    } else {
+      cubit.updateEndDate(pickedDate);
     }
   }
 
