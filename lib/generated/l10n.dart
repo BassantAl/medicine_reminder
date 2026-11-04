@@ -634,6 +634,26 @@ class S {
       args: [completed, total],
     );
   }
+
+  /// `MORNING`
+  String get morning {
+    return Intl.message('MORNING', name: 'morning', desc: '', args: []);
+  }
+
+  /// `AFTERNOON`
+  String get afternoon {
+    return Intl.message('AFTERNOON', name: 'afternoon', desc: '', args: []);
+  }
+
+  /// `EVENING`
+  String get evening {
+    return Intl.message('EVENING', name: 'evening', desc: '', args: []);
+  }
+
+  /// `NIGHT`
+  String get night {
+    return Intl.message('NIGHT', name: 'night', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

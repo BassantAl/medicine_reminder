@@ -33,6 +33,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "addMedicine": MessageLookupByLibrary.simpleMessage("إضافة دواء"),
     "additionalNotes": MessageLookupByLibrary.simpleMessage("ملاحظات إضافية"),
     "afterFood": MessageLookupByLibrary.simpleMessage("بعد الطعام"),
+    "afternoon": MessageLookupByLibrary.simpleMessage("بعد الظهر"),
     "analytics": MessageLookupByLibrary.simpleMessage("الإحصائيات"),
     "appName": MessageLookupByLibrary.simpleMessage("منبّه "),
     "appName1": MessageLookupByLibrary.simpleMessage("الدواء"),
@@ -58,6 +59,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "enterMedicineName": MessageLookupByLibrary.simpleMessage(
       "أدخل اسم الدواء",
     ),
+    "evening": MessageLookupByLibrary.simpleMessage("المساء"),
     "foodInstructions": MessageLookupByLibrary.simpleMessage(
       "تعليمات تناول الطعام",
     ),
@@ -76,7 +78,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "medicineName": MessageLookupByLibrary.simpleMessage("اسم الدواء"),
     "missed": MessageLookupByLibrary.simpleMessage("لم يتم التناول"),
     "monday": MessageLookupByLibrary.simpleMessage("الإثنين"),
+    "morning": MessageLookupByLibrary.simpleMessage("الصباح"),
     "next": MessageLookupByLibrary.simpleMessage("التالي"),
+    "night": MessageLookupByLibrary.simpleMessage("الليل"),
     "noInstruction": MessageLookupByLibrary.simpleMessage("بدون تعليمات"),
     "noMedicinesYet": MessageLookupByLibrary.simpleMessage(
       "لا توجد أدوية حتى الآن",

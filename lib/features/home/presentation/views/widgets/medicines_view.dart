@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:medicine_reminder/core/theme/app_styles.dart';
+import 'package:medicine_reminder/features/home/presentation/views/widgets/medicines_schedule.dart';
 import 'package:medicine_reminder/features/home/presentation/views/widgets/todays_adherence_widget.dart';
 import 'package:medicine_reminder/generated/l10n.dart';
 
@@ -20,7 +21,9 @@ class MedicinesView extends StatelessWidget {
               style: AppStyles.bold20(context: context),
             ),
             const SizedBox(height: 20),
-            const TodaysAdherenceWidget()
+            const TodaysAdherenceWidget(),
+            const SizedBox(height: 20),
+            const MedicinesSchedule(),
           ],
         ),
       ),

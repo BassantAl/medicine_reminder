@@ -18,7 +18,7 @@ class BuildStatusItem extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 8),
       decoration: BoxDecoration(
-        color: color.withValues(alpha: 0.18),
+        color: color.withValues(alpha: 0.125),
         borderRadius: BorderRadius.circular(12),
       ),
       child: Column(
@@ -26,12 +26,12 @@ class BuildStatusItem extends StatelessWidget {
         children: [
           Text(
             count.toString(),
-            style: AppStyles.regular16(context: context, color: color),
+            style: AppStyles.semiBold16(context: context,color: color)
           ),
           const SizedBox(height: 4),
           Text(
             title,
-            style: AppStyles.regular14(context: context, color: color),
+            style: AppStyles.semiBold16(context: context, color: color),
           ),
         ],
       ),

@@ -28,7 +28,7 @@ abstract class AppStyles {
     );
   }
 
-  static TextStyle bold18({required BuildContext context}) {
+  static TextStyle bold18({required BuildContext context }) {
     return TextStyle(
       color: isLight(context) ? Colors.white : Colors.black,
       fontSize: getResponsiveFontsize(context: context, fontSize: 18),
@@ -36,6 +36,21 @@ abstract class AppStyles {
     );
   }
 
+    static TextStyle semiBold16({required BuildContext context ,Color? color}) {
+    return TextStyle(
+      color: color,
+      fontSize: getResponsiveFontsize(context: context, fontSize: 16),
+      fontWeight: FontWeight.bold,
+    );
+  }
+
+   static TextStyle semiBold14({required BuildContext context ,Color? color}) {
+    return TextStyle(
+      color: color,
+      fontSize: getResponsiveFontsize(context: context, fontSize: 14),
+      fontWeight: FontWeight.bold,
+    );
+  }
   static TextStyle semiBold18({required BuildContext context}) {
     return TextStyle(
       color: isLight(context) ? Colors.black : Colors.white,

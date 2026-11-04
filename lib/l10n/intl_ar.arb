@@ -76,6 +76,9 @@
   "pending": "قيد الانتظار",
   "missed": "لم يتم التناول",
 
-  "dosesTaken": "تم تناول {completed} من أصل {total} جرعات"
-
+  "dosesTaken": "تم تناول {completed} من أصل {total} جرعات",
+  "morning": "الصباح",
+  "afternoon": "بعد الظهر",
+  "evening": "المساء",
+  "night": "الليل"
 }

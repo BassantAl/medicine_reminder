@@ -32,6 +32,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "addMedicine": MessageLookupByLibrary.simpleMessage("Add Medicine"),
     "additionalNotes": MessageLookupByLibrary.simpleMessage("Additional Notes"),
     "afterFood": MessageLookupByLibrary.simpleMessage("After Food"),
+    "afternoon": MessageLookupByLibrary.simpleMessage("AFTERNOON"),
     "analytics": MessageLookupByLibrary.simpleMessage("Analytics"),
     "appName": MessageLookupByLibrary.simpleMessage("Medicine "),
     "appName1": MessageLookupByLibrary.simpleMessage("Reminder"),
@@ -57,6 +58,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "enterMedicineName": MessageLookupByLibrary.simpleMessage(
       "Enter medicine name",
     ),
+    "evening": MessageLookupByLibrary.simpleMessage("EVENING"),
     "foodInstructions": MessageLookupByLibrary.simpleMessage(
       "Food Instructions",
     ),
@@ -75,7 +77,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "medicineName": MessageLookupByLibrary.simpleMessage("Medicine Name"),
     "missed": MessageLookupByLibrary.simpleMessage("Missed"),
     "monday": MessageLookupByLibrary.simpleMessage("Mon"),
+    "morning": MessageLookupByLibrary.simpleMessage("MORNING"),
     "next": MessageLookupByLibrary.simpleMessage("Next"),
+    "night": MessageLookupByLibrary.simpleMessage("NIGHT"),
     "noInstruction": MessageLookupByLibrary.simpleMessage("No Instruction"),
     "noMedicinesYet": MessageLookupByLibrary.simpleMessage("No Medicines Yet"),
     "noMedicinesYetDescription": MessageLookupByLibrary.simpleMessage(

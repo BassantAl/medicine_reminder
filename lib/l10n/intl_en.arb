@@ -75,6 +75,12 @@
      "taken": "Taken",
   "pending": "Pending",
   "missed": "Missed",
-   "dosesTaken": "{completed} of {total} doses taken"
+   "dosesTaken": "{completed} of {total} doses taken",
+   
+  "morning": "MORNING",
+  "afternoon": "AFTERNOON",
+  "evening": "EVENING",
+  "night": "NIGHT"
+
 
 }
