@@ -4,9 +4,9 @@ import 'package:medicine_reminder/features/home/presentation/views/widgets/empty
 import 'package:medicine_reminder/generated/l10n.dart';
 
 class EmptyMedicinesView extends StatelessWidget {
-  const EmptyMedicinesView({super.key, required this.onAddMedicine});
+  const EmptyMedicinesView({super.key,});
 
-  final VoidCallback onAddMedicine;
+
 
   @override
   Widget build(BuildContext context) {
