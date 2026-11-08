@@ -1,5 +1,5 @@
 import 'package:bloc/bloc.dart';
-import 'package:medicine_reminder/features/add_medicine/data/models/medicine_model.dart';
+import 'package:medicine_reminder/features/home/data/models/home_medicines_model.dart';
 import 'package:medicine_reminder/features/home/domain/use_cases/get_medicines_use_case.dart';
 import 'package:meta/meta.dart';
 

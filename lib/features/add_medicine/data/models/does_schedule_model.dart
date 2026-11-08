@@ -16,7 +16,8 @@ class DoesScheduleModel {
     required this.selectedDays,
     required this.doseTimes,
     required this.startDate,
-    this.endDate, required this.enableNotifications,
+    this.endDate,
+    required this.enableNotifications,
   });
   Map<String, Object?> toMap() {
     return {
@@ -28,5 +29,20 @@ class DoesScheduleModel {
       'endDate': endDate?.toIso8601String(),
       'enableNotifications': enableNotifications ? 1 : 0,
     };
+  }
+
+  factory DoesScheduleModel.fromMap({required Map<String, dynamic> data}) {
+    return DoesScheduleModel(
+      id: data['scheduleId'] as int,
+      medicineId: data['medicineId'] as int,
+      frequency: data['frequency'] as String,
+      selectedDays: List<int>.from(jsonDecode(data['selectedDays'] as String)),
+      doseTimes: List<String>.from(jsonDecode(data['doseTimes'] as String)),
+      startDate: DateTime.parse(data['startDate'] as String),
+      endDate: data['endDate'] == null
+          ? null
+          : DateTime.parse(data['endDate'] as String),
+      enableNotifications: data['enableNotifications'] == 1,
+    );
   }
 }

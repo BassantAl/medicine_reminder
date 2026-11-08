@@ -16,4 +16,15 @@ class DailyDoesModel {
       'doseAmount': doseAmount,
     };
   }
+
+  factory DailyDoesModel.fromMap({
+  required Map<String, dynamic> data,
+}) {
+  return DailyDoesModel(
+    id: data['dailyDoseId'] as int?,
+    scheduleId: data['scheduleId'] as int,
+    dayOfWeek: data['dayOfWeek'] as int,
+    doseAmount: (data['doseAmount'] as num).toDouble(),
+  );
+}
 }

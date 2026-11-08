@@ -13,6 +13,6 @@ final class GetAllMedicinesFailure extends GetAllMedicinesState {
 }
 
 final class GetAllMedicinesSuccess extends GetAllMedicinesState {
-  final List<MedicineModel> medicines;
+  final List<HomeMedicineModel> medicines;
   GetAllMedicinesSuccess({required this.medicines});
 }
