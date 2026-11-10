@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -13,6 +14,7 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await SharedReferncesSingletone.init();
   setUp();
+
   Bloc.observer = MyBlockObserver();
 
   runApp(
@@ -36,7 +38,7 @@ class MyApp extends StatelessWidget {
       builder: (context, state) {
         return MaterialApp.router(
           debugShowCheckedModeBanner: false,
-          theme: AppTheme.darkTheme,
+          theme: AppTheme.lightTheme,
           darkTheme: AppTheme.darkTheme,
           themeMode: state,
           locale: Locale('en'),

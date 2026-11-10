@@ -1,13 +1,17 @@
-
 import 'package:flutter/material.dart';
 import 'package:medicine_reminder/core/theme/app_styles.dart';
+import 'package:medicine_reminder/features/home/data/models/home_medicines_model.dart';
 import 'package:medicine_reminder/features/home/presentation/views/widgets/custom_list_title_trailing_widget.dart';
+import 'package:medicine_reminder/features/home/presentation/views/widgets/custom_skip_or_take_button.dart';
 
 class MedicineDoseCard extends StatelessWidget {
   const MedicineDoseCard({
     super.key,
+    required this.medicine,
+    required this.doseTime,
   });
-
+  final HomeMedicineModel medicine;
+  final String doseTime;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -21,14 +25,31 @@ class MedicineDoseCard extends StatelessWidget {
         children: [
           ListTile(
             title: Text(
-              'Vitamin D3 1 Dose',
+              medicine.medicine.name,
               style: AppStyles.semiBold16(context: context),
             ),
             subtitle: Text(
-              'With water',
+              doseTime,
               style: AppStyles.regular16(context: context),
             ),
             trailing: const CustomListTitleTrailingWidget(),
+          ),
+          Row(
+            children: [
+              Expanded(
+                child: CustomSkipOrTakeButton(
+                  action: DoseAction.take,
+                  onPressed: () {},
+                ),
+              ),
+              const SizedBox(width: 20),
+              Expanded(
+                child: CustomSkipOrTakeButton(
+                  action: DoseAction.skip,
+                  onPressed: () {},
+                ),
+              ),
+            ],
           ),
         ],
       ),
