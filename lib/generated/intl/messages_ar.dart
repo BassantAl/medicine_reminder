@@ -150,6 +150,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "todaysMedicines": MessageLookupByLibrary.simpleMessage("أدوية اليوم"),
     "tuesday": MessageLookupByLibrary.simpleMessage("الثلاثاء"),
     "twiceDaily": MessageLookupByLibrary.simpleMessage("مرتين يوميًا"),
+    "upcoming": MessageLookupByLibrary.simpleMessage("قادمة"),
     "wednesday": MessageLookupByLibrary.simpleMessage("الأربعاء"),
     "withFood": MessageLookupByLibrary.simpleMessage("مع الطعام"),
   };

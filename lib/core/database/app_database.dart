@@ -21,7 +21,7 @@ class AppDatabase {
 
     _database = await openDatabase(
       path,
-      version: 2,
+      version: 3,
       onConfigure: (db) async {
         await db.execute('PRAGMA foreign_keys = ON');
       },
@@ -63,8 +63,40 @@ class AppDatabase {
             UNIQUE (scheduleId, dayOfWeek)
           )
         ''');
+        await db.execute('''
+  CREATE TABLE DoseHistory (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    dailyDoseId INTEGER NOT NULL,
+    scheduledDate TEXT NOT NULL,
+    scheduledTime TEXT NOT NULL,
+    status TEXT NOT NULL DEFAULT 'pending',
+
+    FOREIGN KEY (dailyDoseId)
+      REFERENCES DailyDoes(id)
+      ON DELETE CASCADE,
+
+    UNIQUE (dailyDoseId, scheduledDate, scheduledTime)
+  )
+''');
       },
       onUpgrade: (db, oldVersion, newVersion) async {
+        if (oldVersion < 3) {
+          await db.execute('''
+    CREATE TABLE DoseHistory (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      dailyDoseId INTEGER NOT NULL,
+      scheduledDate TEXT NOT NULL,
+      scheduledTime TEXT NOT NULL,
+      status TEXT NOT NULL DEFAULT 'pending',
+
+      FOREIGN KEY (dailyDoseId)
+        REFERENCES DailyDoes(id)
+        ON DELETE CASCADE,
+
+      UNIQUE (dailyDoseId, scheduledDate, scheduledTime)
+    )
+  ''');
+        }
         if (oldVersion < 2) {
           await db.execute('''
             ALTER TABLE Medicine ADD COLUMN notes TEXT

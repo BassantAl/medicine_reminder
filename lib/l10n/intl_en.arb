@@ -80,7 +80,8 @@
   "morning": "MORNING",
   "afternoon": "AFTERNOON",
   "evening": "EVENING",
-  "night": "NIGHT"
+  "night": "NIGHT",
+  "upcoming": "Upcoming"
 
 
 }

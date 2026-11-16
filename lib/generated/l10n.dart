@@ -654,6 +654,11 @@ class S {
   String get night {
     return Intl.message('NIGHT', name: 'night', desc: '', args: []);
   }
+
+  /// `Upcoming`
+  String get upcoming {
+    return Intl.message('Upcoming', name: 'upcoming', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

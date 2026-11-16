@@ -155,6 +155,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "tuesday": MessageLookupByLibrary.simpleMessage("Tue"),
     "twiceDaily": MessageLookupByLibrary.simpleMessage("Twice daily"),
+    "upcoming": MessageLookupByLibrary.simpleMessage("Upcoming"),
     "wednesday": MessageLookupByLibrary.simpleMessage("Wed"),
     "withFood": MessageLookupByLibrary.simpleMessage("With Food"),
   };
