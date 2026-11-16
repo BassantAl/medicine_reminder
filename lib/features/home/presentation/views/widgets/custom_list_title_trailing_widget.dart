@@ -1,31 +1,27 @@
 import 'package:flutter/material.dart';
+import 'package:medicine_reminder/core/enums/does_status_enum.dart';
 import 'package:medicine_reminder/core/theme/app_styles.dart';
-import 'package:medicine_reminder/core/theme/medicine_status_colors.dart';
-import 'package:medicine_reminder/generated/l10n.dart';
 
 class CustomListTitleTrailingWidget extends StatelessWidget {
-  const CustomListTitleTrailingWidget({super.key,});
-
+  const CustomListTitleTrailingWidget({super.key, required this.status});
+  final DoesStatusEnum status;
 
   @override
   Widget build(BuildContext context) {
-    final localization = S.of(context);
     return Container(
-      width: 70,
+      width: 80,
       height: 28,
 
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(24),
-        color: Theme.of(
-          context,
-        ).extension<MedicineStatusColors>()!.taken.withValues(alpha: 0.145),
+        color: status.color(context: context).withValues(alpha: 0.145),
       ),
       child: Center(
         child: Text(
-          localization.taken,
+          status.name(context: context),
           style: AppStyles.semiBold14(
             context: context,
-            color: Theme.of(context).extension<MedicineStatusColors>()!.taken,
+            color: status.color(context: context)
           ),
         ),
       ),

@@ -80,6 +80,17 @@ class AppDatabase {
 ''');
       },
       onUpgrade: (db, oldVersion, newVersion) async {
+        if (oldVersion < 2) {
+          await db.execute('''
+            ALTER TABLE Medicine ADD COLUMN notes TEXT
+          ''');
+
+          await db.execute('''
+            ALTER TABLE DoesSchedule
+            ADD COLUMN enableNotifications INTEGER NOT NULL DEFAULT 1
+          ''');
+        }
+
         if (oldVersion < 3) {
           await db.execute('''
     CREATE TABLE DoseHistory (
@@ -96,16 +107,6 @@ class AppDatabase {
       UNIQUE (dailyDoseId, scheduledDate, scheduledTime)
     )
   ''');
-        }
-        if (oldVersion < 2) {
-          await db.execute('''
-            ALTER TABLE Medicine ADD COLUMN notes TEXT
-          ''');
-
-          await db.execute('''
-            ALTER TABLE DoesSchedule
-            ADD COLUMN enableNotifications INTEGER NOT NULL DEFAULT 1
-          ''');
         }
       },
     );

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:medicine_reminder/core/enums/does_status_enum.dart';
 import 'package:medicine_reminder/core/theme/app_styles.dart';
 import 'package:medicine_reminder/features/home/data/models/home_medicines_model.dart';
 import 'package:medicine_reminder/features/home/presentation/views/widgets/custom_list_title_trailing_widget.dart';
@@ -32,7 +33,7 @@ class MedicineDoseCard extends StatelessWidget {
               doseTime,
               style: AppStyles.regular16(context: context),
             ),
-            trailing: const CustomListTitleTrailingWidget(),
+            trailing:  CustomListTitleTrailingWidget(status: DoesStatusEnum.pending,),
           ),
           Row(
             children: [

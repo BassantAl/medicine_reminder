@@ -9,7 +9,7 @@ import 'package:medicine_reminder/features/add_medicine/data/models/medicine_mod
 import 'package:medicine_reminder/features/home/data/models/home_medicines_model.dart';
 import 'package:medicine_reminder/features/home/data/models/dose_history_model.dart';
 
-class HomeLocalDataSource {
+class HomeGetLocalDataSource {
   final database = getIt<AppDatabase>();
 
   Future<List<HomeMedicineModel>> getAllMedicines() async {
