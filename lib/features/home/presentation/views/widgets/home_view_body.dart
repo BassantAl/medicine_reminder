@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:medicine_reminder/features/home/presentation/manager/cubit/get_all_medicines_cubit.dart';
+import 'package:medicine_reminder/features/home/presentation/manager/get_all_medicines_cubit/get_all_medicines_cubit.dart';
 import 'package:medicine_reminder/features/home/presentation/views/widgets/empty_medicines_view.dart';
 import 'package:medicine_reminder/features/home/presentation/views/widgets/medicines_error_view.dart';
 import 'package:medicine_reminder/features/home/presentation/views/widgets/medicines_loading_view.dart';
