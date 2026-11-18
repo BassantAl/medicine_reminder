@@ -659,6 +659,16 @@ class S {
   String get upcoming {
     return Intl.message('Upcoming', name: 'upcoming', desc: '', args: []);
   }
+
+  /// `Please enter at least one dose.`
+  String get pleaseEnterAtLeastOneDose {
+    return Intl.message(
+      'Please enter at least one dose.',
+      name: 'pleaseEnterAtLeastOneDose',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

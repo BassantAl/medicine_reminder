@@ -81,7 +81,8 @@
   "afternoon": "AFTERNOON",
   "evening": "EVENING",
   "night": "NIGHT",
-  "upcoming": "Upcoming"
+  "upcoming": "Upcoming",
+  "pleaseEnterAtLeastOneDose": "Please enter at least one dose."
 
 
 }

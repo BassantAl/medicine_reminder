@@ -46,21 +46,7 @@ class DailyDoseItem extends StatelessWidget {
             keyboardType: const TextInputType.numberWithOptions(
               decimal: true,
             ),
-            validator: (value) {
-              if (sameDoseEveryDay) return null;
-
-              if (value == null || value.trim().isEmpty) {
-                return localization.requiredField;
-              }
-
-              final dose = double.tryParse(value.trim());
-
-              if (dose == null || dose <= 0) {
-                return localization.invalidDose;
-              }
-
-              return null;
-            },
+            
             onSaved: (value) {
               if (sameDoseEveryDay) return;
 

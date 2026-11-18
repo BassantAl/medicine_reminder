@@ -21,16 +21,25 @@ class MedicinesScheduleManage extends StatelessWidget {
           //  تجميع الجرعات
           for (final medicine in state.medicines) {
             final schedule = medicine.schedule;
+
+            if (schedule == null) continue;
+
             final todayDoes = medicine.dailyDoses.where(
               (element) => element.dayOfWeek == getCurrentDayIndex(),
             );
-            for (final doesTime in schedule!.doseTimes) {
+
+            if (todayDoes.isEmpty) continue;
+
+            final dailyDose = todayDoes.first;
+
+            for (final doesTime in schedule.doseTimes) {
               final period = getDoseTimePeriod(doesTime);
+
               groupedDoses[period]!.add(
                 MedicineDoseData(
                   medicine: medicine,
                   doseTime: doesTime,
-                  dailyDose: todayDoes.first,
+                  dailyDose: dailyDose,
                 ),
               );
             }

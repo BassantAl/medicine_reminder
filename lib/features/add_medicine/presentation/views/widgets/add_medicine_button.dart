@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:medicine_reminder/core/theme/app_styles.dart';
 import 'package:medicine_reminder/core/widgets/custom_button.dart';
 import 'package:medicine_reminder/features/add_medicine/presentation/manager/cubit/add_medicine_cubit.dart';
 import 'package:medicine_reminder/generated/l10n.dart';
@@ -19,10 +20,28 @@ class AddMedicineButton extends StatelessWidget {
         showIcon: false,
         text: S.of(context).addMedicine,
         onPressed: () {
-          if (formkey.currentState!.validate()) {
-            formkey.currentState!.save();
-            context.read<AddMedicineCubit>().addMedicine();
+          final form = formkey.currentState!;
+
+          if (!form.validate()) return;
+
+          form.save();
+
+          final cubit = context.read<AddMedicineCubit>();
+
+          if (!cubit.hasAtLeastOneDose()) {
+            ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(
+                content: Text(
+                  S.of(context).pleaseEnterAtLeastOneDose,
+                  style: AppStyles.bold18(context: context),
+                ),
+              ),
+            );
+
+            return;
           }
+
+          cubit.addMedicine();
         },
       ),
     );

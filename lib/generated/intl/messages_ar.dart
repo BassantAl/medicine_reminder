@@ -112,6 +112,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "onceDaily": MessageLookupByLibrary.simpleMessage("مرة واحدة يوميًا"),
     "ongoingMedication": MessageLookupByLibrary.simpleMessage("دواء مستمر"),
     "pending": MessageLookupByLibrary.simpleMessage("قيد الانتظار"),
+    "pleaseEnterAtLeastOneDose": MessageLookupByLibrary.simpleMessage(
+      "يرجى إدخال جرعة واحدة على الأقل.",
+    ),
     "pleaseEnterDoseAmount": MessageLookupByLibrary.simpleMessage(
       "من فضلك أدخل مقدار الجرعة",
     ),

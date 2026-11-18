@@ -113,6 +113,11 @@ void removeDoseTime(int index) {
     dosesByDay[day] = dose;
   }
 
+
+  bool hasAtLeastOneDose() {
+  return dosesByDay.values.any((dose) => dose > 0);
+}
+
   // Save Medicine
   Future<void> addMedicine() async {
     emit(AddMedicineLoading());

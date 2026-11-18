@@ -81,5 +81,6 @@
   "afternoon": "بعد الظهر",
   "evening": "المساء",
   "night": "الليل",
-  "upcoming": "قادمة"
+  "upcoming": "قادمة",
+  "pleaseEnterAtLeastOneDose": "يرجى إدخال جرعة واحدة على الأقل."
 }

@@ -111,6 +111,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "Ongoing Medication",
     ),
     "pending": MessageLookupByLibrary.simpleMessage("Pending"),
+    "pleaseEnterAtLeastOneDose": MessageLookupByLibrary.simpleMessage(
+      "Please enter at least one dose.",
+    ),
     "pleaseEnterDoseAmount": MessageLookupByLibrary.simpleMessage(
       "Please enter dose amount",
     ),
