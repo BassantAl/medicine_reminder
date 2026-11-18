@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:medicine_reminder/core/enums/does_status_enum.dart';
 import 'package:medicine_reminder/core/theme/app_styles.dart';
 import 'package:medicine_reminder/features/home/data/models/home_medicines_model.dart';
-import 'package:medicine_reminder/features/home/presentation/manager/manage_does_history_cubit/manage_does_history_cubit.dart';
 import 'package:medicine_reminder/features/home/presentation/views/widgets/custom_list_title_trailing_widget.dart';
 import 'package:medicine_reminder/features/home/presentation/views/widgets/custom_skip_or_take_button.dart';
 

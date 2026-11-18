@@ -1,6 +1,6 @@
-
 import 'package:medicine_reminder/core/database/app_database.dart';
 import 'package:medicine_reminder/core/di/service_locator.dart';
+import 'package:medicine_reminder/core/methods/get_current_day_index.dart';
 
 import 'package:medicine_reminder/features/add_medicine/data/models/daily_does_model.dart';
 import 'package:medicine_reminder/features/add_medicine/data/models/does_schedule_model.dart';
@@ -15,11 +15,12 @@ class HomeGetLocalDataSource {
   Future<List<HomeMedicineModel>> getAllMedicines() async {
     final db = await database.database;
 
-    // Get today's date in YYYY-MM-DD format.
     final today = DateTime.now();
 
     final todayString =
         '${today.year}-${today.month.toString().padLeft(2, '0')}-${today.day.toString().padLeft(2, '0')}';
+
+    final currentDayIndex = getCurrentDayIndex();
 
     final result = await db.rawQuery(
       '''
@@ -53,9 +54,15 @@ class HomeGetLocalDataSource {
 
       LEFT JOIN DoesSchedule
         ON Medicine.id = DoesSchedule.medicineId
+        AND date(?) >= date(DoesSchedule.startDate)
+        AND (
+          DoesSchedule.endDate IS NULL
+          OR date(?) <= date(DoesSchedule.endDate)
+        )
 
       LEFT JOIN DailyDoes
         ON DoesSchedule.id = DailyDoes.scheduleId
+        AND DailyDoes.dayOfWeek = ?
 
       LEFT JOIN DoseHistory
         ON DailyDoes.id = DoseHistory.dailyDoseId
@@ -63,7 +70,7 @@ class HomeGetLocalDataSource {
 
       ORDER BY Medicine.id DESC
       ''',
-      [todayString],
+      [todayString, todayString, currentDayIndex, todayString],
     );
 
     final Map<int, MedicineModel> medicines = {};
@@ -81,13 +88,11 @@ class HomeGetLocalDataSource {
     for (final item in result) {
       final medicineId = item['medicineId'] as int;
 
-      // Store medicine.
       medicines.putIfAbsent(
         medicineId,
         () => MedicineModel.fromMap(data: item),
       );
 
-      // Store schedule.
       schedules.putIfAbsent(
         medicineId,
         () => item['scheduleId'] == null
@@ -95,25 +100,19 @@ class HomeGetLocalDataSource {
             : DoesScheduleModel.fromMap(data: item),
       );
 
-      // Store daily doses without duplicates.
       dailyDoses.putIfAbsent(medicineId, () => []);
 
       final dailyDoseId = item['dailyDoseId'] as int?;
 
-      if (dailyDoseId != null &&
-          addedDailyDoseIds.add(dailyDoseId)) {
-        dailyDoses[medicineId]!.add(
-          DailyDoesModel.fromMap(data: item),
-        );
+      if (dailyDoseId != null && addedDailyDoseIds.add(dailyDoseId)) {
+        dailyDoses[medicineId]!.add(DailyDoesModel.fromMap(data: item));
       }
 
-      // Store today's dose history without duplicates.
       doseHistories.putIfAbsent(medicineId, () => []);
 
       final doseHistoryId = item['doseHistoryId'] as int?;
 
-      if (doseHistoryId != null &&
-          addedDoseHistoryIds.add(doseHistoryId)) {
+      if (doseHistoryId != null && addedDoseHistoryIds.add(doseHistoryId)) {
         doseHistories[medicineId]!.add(
           DoseHistoryModel.fromMap(
             data: {
@@ -128,15 +127,25 @@ class HomeGetLocalDataSource {
       }
     }
 
-    return medicines.entries.map((entry) {
-      final medicineId = entry.key;
+    // Return medicines that have an active schedule
+    // and a dose for today.
+    return medicines.entries
+        .where((entry) {
+          final medicineId = entry.key;
 
-      return HomeMedicineModel(
-        medicine: entry.value,
-        schedule: schedules[medicineId],
-        dailyDoses: dailyDoses[medicineId]!,
-        doseHistories: doseHistories[medicineId]!,
-      );
-    }).toList();
+          return schedules[medicineId] != null &&
+              dailyDoses[medicineId]!.isNotEmpty;
+        })
+        .map((entry) {
+          final medicineId = entry.key;
+
+          return HomeMedicineModel(
+            medicine: entry.value,
+            schedule: schedules[medicineId],
+            dailyDoses: dailyDoses[medicineId]!,
+            doseHistories: doseHistories[medicineId]!,
+          );
+        })
+        .toList();
   }
 }
