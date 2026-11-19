@@ -1,3 +1,4 @@
+import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -27,9 +28,7 @@ void main() async {
   runApp(
     MultiBlocProvider(
       providers: [
-        BlocProvider(
-          create: (context) => ThemeCubit(),
-        ),
+        BlocProvider(create: (context) => ThemeCubit()),
         BlocProvider(
           create: (context) => GetAllMedicinesCubit(
             getMedicinesUseCase: getIt<GetMedicinesUseCase>(),
@@ -41,8 +40,59 @@ void main() async {
   );
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({super.key});
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
+  DateTime _lastKnownDate = DateUtils.dateOnly(DateTime.now());
+
+  Timer? _midnightTimer;
+
+  void _scheduleMidnightRefresh() {
+    final now = DateTime.now();
+    final nextMidnight = DateTime(now.year, now.month, now.day + 1);
+
+    final durationUntilMidnight = nextMidnight.difference(now);
+    _midnightTimer = Timer(durationUntilMidnight, () {
+      _checkForNewDay();
+      _scheduleMidnightRefresh();
+    });
+  }
+
+  void _checkForNewDay() {
+    final currentDate = DateUtils.dateOnly(DateTime.now());
+
+    if (currentDate != _lastKnownDate) {
+      _lastKnownDate = currentDate;
+      context.read<GetAllMedicinesCubit>().getAllMedicines();
+    }
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addObserver(this);
+    _scheduleMidnightRefresh();
+  }
+
+  @override
+  void didChangeAppLifecycleState(AppLifecycleState state) {
+    super.didChangeAppLifecycleState(state);
+    if (state == AppLifecycleState.resumed) {
+      _checkForNewDay();
+    }
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    WidgetsBinding.instance.removeObserver(this);
+    _midnightTimer?.cancel();
+  }
 
   @override
   Widget build(BuildContext context) {
