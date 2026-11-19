@@ -18,7 +18,7 @@ class CustomListTitleTrailingWidget extends StatelessWidget {
       ),
       child: Center(
         child: Text(
-          status.name(context: context),
+          status.localizedName(context: context),
           style: AppStyles.semiBold14(
             context: context,
             color: status.color(context: context)

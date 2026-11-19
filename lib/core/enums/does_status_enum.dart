@@ -2,39 +2,55 @@ import 'package:flutter/material.dart';
 import 'package:medicine_reminder/core/theme/medicine_status_colors.dart';
 import 'package:medicine_reminder/generated/l10n.dart';
 
-enum DoesStatusEnum { taken, pending, missed, skipped, upcoming }
+enum DoesStatusEnum {
+  taken,
+  pending,
+  missed,
+  skipped,
+  upcoming,
+}
 
 extension DoesStatusEnumExtension on DoesStatusEnum {
-  String  name({required BuildContext context}) {
-    final loclization = S.of(context);
+  String localizedName({required BuildContext context}) {
+    final localization = S.of(context);
+
     switch (this) {
       case DoesStatusEnum.taken:
-        return loclization.taken;
+        return localization.taken;
+
       case DoesStatusEnum.pending:
-        return loclization.pending;
+        return localization.pending;
+
       case DoesStatusEnum.missed:
-        return loclization.missed;
+        return localization.missed;
+
       case DoesStatusEnum.skipped:
-        return loclization.skip;
+        return localization.skip;
+
       case DoesStatusEnum.upcoming:
-        return loclization.upcoming;
+        return localization.upcoming;
     }
   }
 
   Color color({required BuildContext context}) {
-    final colors = Theme.of(context).extension<MedicineStatusColors>()!;
+    final colors = Theme.of(context)
+        .extension<MedicineStatusColors>()!;
 
     switch (this) {
       case DoesStatusEnum.taken:
         return colors.taken;
+
       case DoesStatusEnum.pending:
         return colors.pending;
+
       case DoesStatusEnum.missed:
         return colors.missed;
+
       case DoesStatusEnum.skipped:
         return colors.skipped;
+
       case DoesStatusEnum.upcoming:
-        return colors.pending;
+        return Theme.of(context).colorScheme.secondary ;
     }
   }
 }

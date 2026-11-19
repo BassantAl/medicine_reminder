@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:medicine_reminder/core/methods/get_current_day_index.dart';
 import 'package:medicine_reminder/core/methods/get_does_time_period.dart';
 import 'package:medicine_reminder/features/home/data/models/medicine_does_data.dart';
 import 'package:medicine_reminder/features/home/presentation/manager/get_all_medicines_cubit/get_all_medicines_cubit.dart';
@@ -14,37 +13,27 @@ class MedicinesScheduleManage extends StatelessWidget {
     return BlocBuilder<GetAllMedicinesCubit, GetAllMedicinesState>(
       builder: (context, state) {
         if (state is GetAllMedicinesSuccess) {
-          //  إنشاء قائمة لكل فترة
           final Map<DoseTimePeriod, List<MedicineDoseData>> groupedDoses = {
             for (final period in DoseTimePeriod.values) period: [],
           };
-          //  تجميع الجرعات
+
           for (final medicine in state.medicines) {
-            final schedule = medicine.schedule;
+            final schedule = medicine.schedule!;
+            final dailyDose = medicine.dailyDoses.first;
 
-            if (schedule == null) continue;
-
-            final todayDoes = medicine.dailyDoses.where(
-              (element) => element.dayOfWeek == getCurrentDayIndex(),
-            );
-
-            if (todayDoes.isEmpty) continue;
-
-            final dailyDose = todayDoes.first;
-
-            for (final doesTime in schedule.doseTimes) {
-              final period = getDoseTimePeriod(doesTime);
+            for (final doseTime in schedule.doseTimes) {
+              final period = getDoseTimePeriod(doseTime);
 
               groupedDoses[period]!.add(
                 MedicineDoseData(
                   medicine: medicine,
-                  doseTime: doesTime,
+                  doseTime: doseTime,
                   dailyDose: dailyDose,
                 ),
               );
             }
           }
-          //  عرض الأقسام
+
           return MedicinesScheduleBody(groupedDoses: groupedDoses);
         }
 

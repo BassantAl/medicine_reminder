@@ -1,35 +1,49 @@
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+
 import 'package:medicine_reminder/core/di/service_locator.dart';
 import 'package:medicine_reminder/core/routes/app_routes.dart';
 import 'package:medicine_reminder/core/services/shared_refernces_singletone.dart';
 import 'package:medicine_reminder/core/theme/app_theme.dart';
 import 'package:medicine_reminder/core/theme/cubit/theme_cubit.dart';
+
+import 'package:medicine_reminder/features/home/domain/use_cases/get_medicines_use_case.dart';
+import 'package:medicine_reminder/features/home/presentation/manager/get_all_medicines_cubit/get_all_medicines_cubit.dart';
+
 import 'package:medicine_reminder/generated/l10n.dart';
 import 'package:medicine_reminder/my_block_observer.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
   await SharedReferncesSingletone.init();
+
   setUp();
+
   Bloc.observer = MyBlockObserver();
 
   runApp(
-    // BlocProvider(
-    //   create: (context) => ThemeCubit(preferences),
-    //   child: DevicePreview(
-    //   enabled: true,
-    //   builder:(context)=> const MyApp()),
-    // )
-    BlocProvider(create: (context) => ThemeCubit(), child: const MyApp()),
+    MultiBlocProvider(
+      providers: [
+        BlocProvider(
+          create: (context) => ThemeCubit(),
+        ),
+        BlocProvider(
+          create: (context) => GetAllMedicinesCubit(
+            getMedicinesUseCase: getIt<GetMedicinesUseCase>(),
+          )..getAllMedicines(),
+        ),
+      ],
+      child: const MyApp(),
+    ),
   );
 }
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<ThemeCubit, ThemeMode>(
@@ -39,7 +53,7 @@ class MyApp extends StatelessWidget {
           theme: AppTheme.lightTheme,
           darkTheme: AppTheme.darkTheme,
           themeMode: state,
-          locale: Locale('en'),
+          locale: const Locale('en'),
           localizationsDelegates: [
             S.delegate,
             GlobalMaterialLocalizations.delegate,

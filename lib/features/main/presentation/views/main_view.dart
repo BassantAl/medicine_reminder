@@ -23,7 +23,7 @@ class MainView extends StatelessWidget {
           BottomNavigationBarItem(
             icon: Icon(Icons.analytics_outlined),
             activeIcon: Icon(Icons.analytics),
-
+    
             label: S.of(context).analytics,
           ),
           BottomNavigationBarItem(

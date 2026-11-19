@@ -5,12 +5,12 @@ enum DoseAction { take, skip }
 
 class CustomSkipOrTakeButton extends StatelessWidget {
   final DoseAction action;
-  final VoidCallback onPressed;
+  final VoidCallback? onPressed;
 
   const CustomSkipOrTakeButton({
     super.key,
     required this.action,
-    required this.onPressed,
+     this.onPressed,
   });
 
   @override

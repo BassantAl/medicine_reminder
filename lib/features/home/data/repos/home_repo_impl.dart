@@ -1,4 +1,6 @@
 import 'package:dartz/dartz.dart';
+import 'package:flutter/material.dart';
+import 'package:medicine_reminder/core/enums/does_status_enum.dart';
 import 'package:medicine_reminder/core/errors/failure.dart';
 import 'package:medicine_reminder/features/home/data/data_sources/does_history_local_data_source.dart';
 import 'package:medicine_reminder/features/home/data/data_sources/home_get_local_data_source.dart';
@@ -24,20 +26,28 @@ class HomeRepoImpl extends HomeRepo {
   }
 
   @override
-  Future<Either<Failure, void>> manageDoesHistory({
-    required int dailyDoseId,
-    required DateTime date,
-    required List<String> doseTimes,
-  }) async {
-    try {
-      await doseHistoryLocalDataSource.addDoesHistory(
-        dailyDoseId: dailyDoseId,
-        date: date,
-        doseTimes: doseTimes,
-      );
-      return right(null);
-    } catch (e) {
-      return left(Failure(errorMessage: e.toString()));
-    }
-  }
+Future<Either<Failure, void>> manageDoesHistory({
+  required int dailyDoseId,
+  required DateTime date,
+  required String doseTime,
+  required DoesStatusEnum status,
+}) async {
+  try {
+    await doseHistoryLocalDataSource.manageDoesHistory(
+      dailyDoseId: dailyDoseId,
+      date: date,
+      doseTime: doseTime,
+      status: status,
+    );
+
+    return right(null);
+  } catch (e, stackTrace) {
+  debugPrint('Manage Dose History Error: $e');
+  debugPrintStack(stackTrace: stackTrace);
+
+  return left(
+    Failure(errorMessage: e.toString()),
+  );
+}
+}
 }
