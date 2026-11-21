@@ -30,7 +30,8 @@ class MedicineDoseCard extends StatelessWidget {
     final shouldHideButtons =
         doseStatus == DoesStatusEnum.taken ||
         doseStatus == DoesStatusEnum.skipped ||
-        doseStatus == DoesStatusEnum.missed;
+        doseStatus == DoesStatusEnum.missed ||
+        doseStatus == DoesStatusEnum.upcoming;
 
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),

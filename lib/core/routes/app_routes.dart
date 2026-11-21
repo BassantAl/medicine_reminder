@@ -1,6 +1,7 @@
 import 'package:go_router/go_router.dart';
 import 'package:medicine_reminder/features/add_medicine/presentation/views/add_medicine_view.dart';
 import 'package:medicine_reminder/features/analytics/presentation/views/analytics_view.dart';
+import 'package:medicine_reminder/features/edit_medicine/presentation/views/edit_medicine_view.dart';
 import 'package:medicine_reminder/features/home/presentation/views/home_view.dart';
 import 'package:medicine_reminder/features/main/presentation/views/main_view.dart';
 import 'package:medicine_reminder/features/onboarding/presentation/views/onboarding_view.dart';
@@ -14,6 +15,7 @@ abstract class AppRoutes {
   static const analyticsView = '/analyticsView';
   static const settingsView = '/settingsView';
   static const addMedicineView = '/addMedicineView';
+  static const editMedicineView = '/editMedicineView';
 
   static final router = GoRouter(
     routes: [
@@ -33,6 +35,12 @@ abstract class AppRoutes {
         path: addMedicineView,
         builder: (context, state) {
           return AddMedicineView();
+        },
+      ),
+      GoRoute(
+        path: editMedicineView,
+        builder: (context, state) {
+          return EditMedicineView();
         },
       ),
       StatefulShellRoute.indexedStack(

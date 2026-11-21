@@ -21,13 +21,24 @@ DoesStatusEnum getDoseStatus({
   }
 
   final parts = doseTime.split(':');
+      final hour = int.tryParse(parts[0]);
+    final minute = int.tryParse(parts[1]);
+
+   if (hour == null ||
+    minute == null ||
+    hour < 0 ||
+    hour > 23 ||
+    minute < 0 ||
+    minute > 59) {
+  return DoesStatusEnum.upcoming;
+}
 
   final scheduledDateTime = DateTime(
     date.year,
     date.month,
     date.day,
-    int.parse(parts[0]),
-    int.parse(parts[1]),
+    hour,
+    minute,
   );
 
   final now = DateTime.now();

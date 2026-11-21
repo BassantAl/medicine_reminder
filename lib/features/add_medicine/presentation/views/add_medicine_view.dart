@@ -17,7 +17,9 @@ class AddMedicineView extends StatelessWidget {
           AddMedicineCubit(addMedicineUseCase: getIt<AddMedicineUseCase>()),
       child: Scaffold(
         appBar: AppBar(title: Text(localization.addMedicine)),
-        body: const AddMedicineViewBody(),
+        body: const AddMedicineViewBody(
+          
+        ),
       ),
     );
   }

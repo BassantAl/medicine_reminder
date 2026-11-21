@@ -1,10 +1,12 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 import 'package:medicine_reminder/core/di/service_locator.dart';
 import 'package:medicine_reminder/core/methods/get_does_time_header.dart';
 import 'package:medicine_reminder/core/methods/get_does_time_period.dart';
 import 'package:medicine_reminder/core/methods/get_next_dose_update.dart';
+import 'package:medicine_reminder/core/routes/app_routes.dart';
 import 'package:medicine_reminder/features/home/data/models/medicine_does_data.dart';
 import 'package:medicine_reminder/features/home/domain/use_cases/manage_does_history_use_case.dart';
 import 'package:medicine_reminder/features/home/presentation/manager/manage_does_history_cubit/manage_does_history_cubit.dart';
@@ -90,10 +92,15 @@ class _MedicinesScheduleBodyState extends State<MedicinesScheduleBody> {
                   ...widget.groupedDoses[period]!.map(
                     (dose) => Padding(
                       padding: const EdgeInsets.only(bottom: 20),
-                      child: MedicineDoseCard(
-                        medicine: dose.medicine,
-                        doseTime: dose.doseTime,
-                        dailyDose: dose.dailyDose,
+                      child: GestureDetector(
+                        onTap: () {
+                          context.go(AppRoutes.editMedicineView);
+                        },
+                        child: MedicineDoseCard(
+                          medicine: dose.medicine,
+                          doseTime: dose.doseTime,
+                          dailyDose: dose.dailyDose,
+                        ),
                       ),
                     ),
                   ),
