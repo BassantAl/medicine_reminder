@@ -45,55 +45,50 @@ class AddMedicineCubit extends Cubit<AddMedicineState> {
     frequency = value;
   }
 
-void updateSelectedDays(List<int> value) {
-  selectedDays = List<int>.from(value);
-  emit(AddMedicineFormUpdated());
-}
-void selectEveryDay() {
-  selectedDays = List.generate(7, (index) => index);
-  emit(AddMedicineFormUpdated());
-}
+  void updateSelectedDays(List<int> value) {
+    selectedDays = List<int>.from(value);
+    emit(AddMedicineFormUpdated());
+  }
 
+  void selectEveryDay() {
+    selectedDays = List.generate(7, (index) => index);
+    emit(AddMedicineFormUpdated());
+  }
 
   void updateDoseTimes(List<String> value) {
     doseTimes = value;
   }
 
   void updateDoseTime(int index, String value) {
-  if (index < 0) return;
+    if (index < 0) return;
 
-  if (index >= doseTimes.length) {
-    doseTimes.addAll(
-      List.filled(index - doseTimes.length + 1, ''),
-    );
+    if (index >= doseTimes.length) {
+      doseTimes.addAll(List.filled(index - doseTimes.length + 1, ''));
+    }
+
+    doseTimes[index] = value;
   }
-
-  doseTimes[index] = value;
-}
 
   void resetDoseTimes(int count) {
-  if (count < 0) return;
+    if (count < 0) return;
 
-  if (count < doseTimes.length) {
-    doseTimes = doseTimes.take(count).toList();
-  } else {
-    doseTimes = [
-      ...doseTimes,
-      ...List.filled(count - doseTimes.length, ''),
-    ];
+    if (count < doseTimes.length) {
+      doseTimes = doseTimes.take(count).toList();
+    } else {
+      doseTimes = [...doseTimes, ...List.filled(count - doseTimes.length, '')];
+    }
   }
-}
 
- void addDoseTime() {
-  doseTimes.add('');
-}
+  void addDoseTime() {
+    doseTimes.add('');
+  }
 
-void removeDoseTime(int index) {
-  if (index < 0 || index >= doseTimes.length) return;
-  if (doseTimes.length <= 1) return;
+  void removeDoseTime(int index) {
+    if (index < 0 || index >= doseTimes.length) return;
+    if (doseTimes.length <= 1) return;
 
-  doseTimes.removeAt(index);
-}
+    doseTimes.removeAt(index);
+  }
 
   void updateStartDate(DateTime value) {
     startDate = value;
@@ -102,9 +97,10 @@ void removeDoseTime(int index) {
   void updateEndDate(DateTime? value) {
     endDate = value;
   }
+
   void updateEnableNotifications(bool value) {
-  enableNotifications = value;
-}
+    enableNotifications = value;
+  }
 
   // Daily Doses
   Map<int, double> dosesByDay = {};
@@ -113,10 +109,18 @@ void removeDoseTime(int index) {
     dosesByDay[day] = dose;
   }
 
-
   bool hasAtLeastOneDose() {
-  return dosesByDay.values.any((dose) => dose > 0);
-}
+    return dosesByDay.values.any((dose) => dose > 0);
+  }
+
+  bool validateDailyDoses() {
+    for (int day in selectedDays) {
+      if (!dosesByDay.containsKey(day)) {
+        return false;
+      }
+    }
+    return true;
+  }
 
   // Save Medicine
   Future<void> addMedicine() async {
@@ -134,11 +138,10 @@ void removeDoseTime(int index) {
       selectedDays: selectedDays,
       doseTimes: doseTimes,
       startDate: startDate,
-      endDate: endDate, enableNotifications: enableNotifications,
+      endDate: endDate,
+      enableNotifications: enableNotifications,
     );
-    log(
-  'Schedule Map: ${doesScheduleModel.toMap()}',
-);
+    log('Schedule Map: ${doesScheduleModel.toMap()}');
 
     final dailyDoses = dosesByDay.entries.map((entry) {
       return DailyDoesModel(

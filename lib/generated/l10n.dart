@@ -669,6 +669,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Please set a dose for all selected days.`
+  String get pleaseSetDoseForAllSelectedDays {
+    return Intl.message(
+      'Please set a dose for all selected days.',
+      name: 'pleaseSetDoseForAllSelectedDays',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

@@ -82,7 +82,8 @@
   "evening": "EVENING",
   "night": "NIGHT",
   "upcoming": "Upcoming",
-  "pleaseEnterAtLeastOneDose": "Please enter at least one dose."
+  "pleaseEnterAtLeastOneDose": "Please enter at least one dose.",
+  "pleaseSetDoseForAllSelectedDays": "Please set a dose for all selected days."
 
 
 }

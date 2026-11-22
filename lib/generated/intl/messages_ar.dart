@@ -124,6 +124,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "pleaseEnterValidDose": MessageLookupByLibrary.simpleMessage(
       "من فضلك أدخل جرعة صحيحة",
     ),
+    "pleaseSetDoseForAllSelectedDays": MessageLookupByLibrary.simpleMessage(
+      "يرجى تحديد جرعة لكل الأيام المختارة.",
+    ),
     "reminders": MessageLookupByLibrary.simpleMessage("التذكيرات"),
     "requiredField": MessageLookupByLibrary.simpleMessage("مطلوب"),
     "sameDoseDescription": MessageLookupByLibrary.simpleMessage(
