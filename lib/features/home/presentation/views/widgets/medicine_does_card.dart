@@ -27,6 +27,7 @@ class MedicineDoseCard extends StatelessWidget {
       doseTime: doseTime,
     );
 
+
     final shouldHideButtons =
         doseStatus == DoesStatusEnum.taken ||
         doseStatus == DoesStatusEnum.skipped ||
