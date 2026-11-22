@@ -679,6 +679,21 @@ class S {
       args: [],
     );
   }
+
+  /// `Schedule Information`
+  String get scheduleInformation {
+    return Intl.message(
+      'Schedule Information',
+      name: 'scheduleInformation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Daily Doses`
+  String get dailyDoses {
+    return Intl.message('Daily Doses', name: 'dailyDoses', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

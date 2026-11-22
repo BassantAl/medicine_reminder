@@ -9,7 +9,7 @@ enum FoodInstruction {
   withFood,
   afterFood,
   emptyStomach,
-  noRestriction,
+  noInstruction,
 }
 
 extension FoodInstructionExtension on FoodInstruction {
@@ -23,7 +23,7 @@ extension FoodInstructionExtension on FoodInstruction {
         return localization.afterFood;
       case FoodInstruction.withFood:
         return localization.withFood;
-      case FoodInstruction.noRestriction:
+      case FoodInstruction.noInstruction:
         return localization.noInstruction;
       case FoodInstruction.emptyStomach:
         return localization.emptyStomach;

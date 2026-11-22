@@ -94,7 +94,7 @@ class _MedicinesScheduleBodyState extends State<MedicinesScheduleBody> {
                       padding: const EdgeInsets.only(bottom: 20),
                       child: GestureDetector(
                         onTap: () {
-                          context.go(AppRoutes.editMedicineView);
+                          context.go(AppRoutes.medicineDetailsView ,extra:dose );
                         },
                         child: MedicineDoseCard(
                           medicine: dose.medicine,

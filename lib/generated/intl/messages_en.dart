@@ -42,6 +42,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Choose the days you take your medicine",
     ),
     "custom": MessageLookupByLibrary.simpleMessage("Custom"),
+    "dailyDoses": MessageLookupByLibrary.simpleMessage("Daily Doses"),
     "differentDoseDescription": MessageLookupByLibrary.simpleMessage(
       "Set a different dose for each day",
     ),
@@ -137,6 +138,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "saturday": MessageLookupByLibrary.simpleMessage("Sat"),
     "schedule": MessageLookupByLibrary.simpleMessage("Schedule"),
     "scheduleEveryDay": MessageLookupByLibrary.simpleMessage("Every day"),
+    "scheduleInformation": MessageLookupByLibrary.simpleMessage(
+      "Schedule Information",
+    ),
     "selectedDays": MessageLookupByLibrary.simpleMessage("Selected days"),
     "setDoseForEachDay": MessageLookupByLibrary.simpleMessage(
       "Enter the dose for each day",

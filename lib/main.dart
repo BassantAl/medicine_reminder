@@ -22,7 +22,6 @@ void main() async {
   await SharedReferncesSingletone.init();
 
   setUp();
-
   Bloc.observer = MyBlockObserver();
 
   runApp(
@@ -100,10 +99,10 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
       builder: (context, state) {
         return MaterialApp.router(
           debugShowCheckedModeBanner: false,
-          theme: AppTheme.lightTheme,
+          theme: AppTheme.darkTheme,
           darkTheme: AppTheme.darkTheme,
           themeMode: state,
-          locale: const Locale('ar'),
+          locale: const Locale('en'),
           localizationsDelegates: [
             S.delegate,
             GlobalMaterialLocalizations.delegate,

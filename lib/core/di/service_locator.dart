@@ -10,6 +10,11 @@ import 'package:medicine_reminder/features/home/data/repos/home_repo_impl.dart';
 import 'package:medicine_reminder/features/home/domain/repos/home_repo.dart';
 import 'package:medicine_reminder/features/home/domain/use_cases/get_medicines_use_case.dart';
 import 'package:medicine_reminder/features/home/domain/use_cases/manage_does_history_use_case.dart';
+import 'package:medicine_reminder/features/medicine_details/data/data_sources/medicine_details_local_data_source.dart';
+import 'package:medicine_reminder/features/medicine_details/data/repos/medicine_details_repo_impl.dart';
+import 'package:medicine_reminder/features/medicine_details/domain/repos/medicine_details_repo.dart';
+import 'package:medicine_reminder/features/medicine_details/domain/use_cases/get_medicine_details_use_case.dart';
+import 'package:medicine_reminder/features/medicine_details/presentation/manager/cubit/get_medicine_details_cubit.dart';
 
 final getIt = GetIt.instance;
 void setUp() {
@@ -45,5 +50,23 @@ void setUp() {
 
   getIt.registerLazySingleton<GetMedicinesUseCase>(() {
     return GetMedicinesUseCase(homeRepo: getIt<HomeRepo>());
+  });
+
+  getIt.registerLazySingleton<MedicineDetailsLocalDataSource>(() {
+    return MedicineDetailsLocalDataSource();
+  });
+
+  getIt.registerLazySingleton<MedicineDetailsRepo>(() {
+    return MedicineDetailsRepoImpl(
+      localDataSource: getIt<MedicineDetailsLocalDataSource>(),
+    );
+  });
+
+  getIt.registerLazySingleton<GetMedicineDetailsUseCase>(() {
+    return GetMedicineDetailsUseCase(getIt<MedicineDetailsRepo>());
+  });
+
+  getIt.registerLazySingleton<GetMedicineDetailsCubit>(() {
+    return GetMedicineDetailsCubit(getIt<GetMedicineDetailsUseCase>());
   });
 }

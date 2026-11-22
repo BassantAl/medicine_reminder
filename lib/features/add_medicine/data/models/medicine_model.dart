@@ -13,12 +13,14 @@ class MedicineModel {
     return {'name': name, 'foodInstruction': foodInstruction, 'notes': notes};
   }
 
-  factory MedicineModel.fromMap({required Map<String, dynamic> data}) {
-    return MedicineModel(
-      id: data['id'],
-      name: data['name'],
-      foodInstruction: data['foodInstruction'],
-      notes: data['notes']
-    );
-  }
+factory MedicineModel.fromMap({
+  required Map<String, dynamic> data,
+}) {
+  return MedicineModel(
+    id: data['medicineId'] as int?,
+    name: data['name'],
+    foodInstruction: data['foodInstruction'],
+    notes: data['notes'],
+  );
+}
 }

@@ -43,6 +43,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "اختر أيام تناول الدواء",
     ),
     "custom": MessageLookupByLibrary.simpleMessage("مخصص"),
+    "dailyDoses": MessageLookupByLibrary.simpleMessage("الجرعات اليومية"),
     "differentDoseDescription": MessageLookupByLibrary.simpleMessage(
       "تحديد جرعة مختلفة لكل يوم",
     ),
@@ -138,6 +139,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "saturday": MessageLookupByLibrary.simpleMessage("السبت"),
     "schedule": MessageLookupByLibrary.simpleMessage("الجدول الزمني"),
     "scheduleEveryDay": MessageLookupByLibrary.simpleMessage("كل يوم"),
+    "scheduleInformation": MessageLookupByLibrary.simpleMessage(
+      "معلومات الجدول",
+    ),
     "selectedDays": MessageLookupByLibrary.simpleMessage("أيام محددة"),
     "setDoseForEachDay": MessageLookupByLibrary.simpleMessage(
       "أدخلي الجرعة لكل يوم",

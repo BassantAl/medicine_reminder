@@ -83,5 +83,10 @@
   "night": "الليل",
   "upcoming": "قادمة",
   "pleaseEnterAtLeastOneDose": "يرجى إدخال جرعة واحدة على الأقل.",
-"pleaseSetDoseForAllSelectedDays": "يرجى تحديد جرعة لكل الأيام المختارة."
+"pleaseSetDoseForAllSelectedDays": "يرجى تحديد جرعة لكل الأيام المختارة.",
+
+  "scheduleInformation": "معلومات الجدول",
+  "dailyDoses": "الجرعات اليومية"
+
+
 }

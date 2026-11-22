@@ -113,4 +113,14 @@ class AppDatabase {
 
     return _database!;
   }
+  Future<void> deleteAllData() async {
+  final db = await database;
+
+  await db.transaction((txn) async {
+    await txn.delete('DoseHistory');
+    await txn.delete('DailyDoes');
+    await txn.delete('DoesSchedule');
+    await txn.delete('Medicine');
+  });
+}
 }
