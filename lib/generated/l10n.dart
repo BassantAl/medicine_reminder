@@ -694,6 +694,16 @@ class S {
   String get dailyDoses {
     return Intl.message('Daily Doses', name: 'dailyDoses', desc: '', args: []);
   }
+
+  /// `Duration`
+  String get duration {
+    return Intl.message('Duration', name: 'duration', desc: '', args: []);
+  }
+
+  /// `Ongoing`
+  String get ongoing {
+    return Intl.message('Ongoing', name: 'ongoing', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

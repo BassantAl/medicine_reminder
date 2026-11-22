@@ -50,6 +50,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "doseForEachDay": MessageLookupByLibrary.simpleMessage("Dose for each day"),
     "doseTimes": MessageLookupByLibrary.simpleMessage("Dose Times"),
     "dosesTaken": m0,
+    "duration": MessageLookupByLibrary.simpleMessage("Duration"),
     "emptyStomach": MessageLookupByLibrary.simpleMessage("On an empty stomach"),
     "enableReminders": MessageLookupByLibrary.simpleMessage("Enable Reminders"),
     "endDate": MessageLookupByLibrary.simpleMessage("End Date"),
@@ -108,6 +109,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Track Your Progress",
     ),
     "onceDaily": MessageLookupByLibrary.simpleMessage("Once daily"),
+    "ongoing": MessageLookupByLibrary.simpleMessage("Ongoing"),
     "ongoingMedication": MessageLookupByLibrary.simpleMessage(
       "Ongoing Medication",
     ),

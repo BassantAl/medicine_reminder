@@ -66,7 +66,9 @@ void setUp() {
     return GetMedicineDetailsUseCase(getIt<MedicineDetailsRepo>());
   });
 
-  getIt.registerLazySingleton<GetMedicineDetailsCubit>(() {
-    return GetMedicineDetailsCubit(getIt<GetMedicineDetailsUseCase>());
-  });
+ getIt.registerFactory(
+  () => GetMedicineDetailsCubit(
+    getIt<GetMedicineDetailsUseCase>(),
+  ),
+);
 }

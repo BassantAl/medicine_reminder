@@ -23,26 +23,28 @@ class MedicineDetailsView extends StatelessWidget {
           child: const Icon(Icons.arrow_back),
         ),
       ),
-      body: BlocBuilder<GetMedicineDetailsCubit, GetMedicineDetailsState>(
-        builder: (context, state) {
-          if (state is GetMedicineDetailsLoading) {
-            return const Center(child: CircularProgressIndicator());
-          }
-
-          if (state is GetMedicineDetailsSuccess) {
-            return MedicineDetailsBody(medicine: state.medicine);
-          }
-
-          if (state is GetMedicineDetailsFailure) {
-            return Center(child: Text(state.errorMessage));
-          }
-
-          if (state is GetMedicineDetailsNotFound) {
-            return const Center(child: Text('Medicine not found'));
-          }
-
-          return const SizedBox.shrink();
-        },
+      body: SingleChildScrollView(
+        child: BlocBuilder<GetMedicineDetailsCubit, GetMedicineDetailsState>(
+          builder: (context, state) {
+            if (state is GetMedicineDetailsLoading) {
+              return const Center(child: CircularProgressIndicator());
+            }
+        
+            if (state is GetMedicineDetailsSuccess) {
+              return MedicineDetailsBody(medicine: state.medicine);
+            }
+        
+            if (state is GetMedicineDetailsFailure) {
+              return Center(child: Text(state.errorMessage));
+            }
+        
+            if (state is GetMedicineDetailsNotFound) {
+              return const Center(child: Text('Medicine not found'));
+            }
+        
+            return const SizedBox.shrink();
+          },
+        ),
       ),
     );
   }

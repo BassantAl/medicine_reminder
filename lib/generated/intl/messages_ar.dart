@@ -51,6 +51,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "doseForEachDay": MessageLookupByLibrary.simpleMessage("الجرعة لكل يوم"),
     "doseTimes": MessageLookupByLibrary.simpleMessage("مواعيد الجرعات"),
     "dosesTaken": m0,
+    "duration": MessageLookupByLibrary.simpleMessage("المدة"),
     "emptyStomach": MessageLookupByLibrary.simpleMessage("على معدة فارغة"),
     "enableReminders": MessageLookupByLibrary.simpleMessage("تفعيل التذكيرات"),
     "endDate": MessageLookupByLibrary.simpleMessage("تاريخ الانتهاء"),
@@ -111,6 +112,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "تابع مدى التزامك بالعلاج",
     ),
     "onceDaily": MessageLookupByLibrary.simpleMessage("مرة واحدة يوميًا"),
+    "ongoing": MessageLookupByLibrary.simpleMessage("مستمر"),
     "ongoingMedication": MessageLookupByLibrary.simpleMessage("دواء مستمر"),
     "pending": MessageLookupByLibrary.simpleMessage("قيد الانتظار"),
     "pleaseEnterAtLeastOneDose": MessageLookupByLibrary.simpleMessage(

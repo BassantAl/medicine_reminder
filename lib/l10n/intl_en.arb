@@ -86,7 +86,9 @@
   "pleaseSetDoseForAllSelectedDays": "Please set a dose for all selected days.",
   
   "scheduleInformation": "Schedule Information",
-  "dailyDoses": "Daily Doses"
+  "dailyDoses": "Daily Doses",
+  "duration": "Duration",
+  "ongoing": "Ongoing"
 
 
 

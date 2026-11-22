@@ -86,7 +86,9 @@
 "pleaseSetDoseForAllSelectedDays": "يرجى تحديد جرعة لكل الأيام المختارة.",
 
   "scheduleInformation": "معلومات الجدول",
-  "dailyDoses": "الجرعات اليومية"
+  "dailyDoses": "الجرعات اليومية",
+  "duration": "المدة",
+  "ongoing": "مستمر"
 
 
 }
