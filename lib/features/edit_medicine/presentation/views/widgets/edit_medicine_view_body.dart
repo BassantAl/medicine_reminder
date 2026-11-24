@@ -4,7 +4,6 @@ import 'package:medicine_reminder/features/add_medicine/presentation/views/widge
 import 'package:medicine_reminder/features/add_medicine/presentation/views/widgets/medicine_details_section.dart';
 import 'package:medicine_reminder/features/add_medicine/presentation/views/widgets/reminders_section.dart';
 import 'package:medicine_reminder/features/add_medicine/presentation/views/widgets/schedule_section.dart';
-import 'package:medicine_reminder/features/edit_medicine/presentation/views/widgets/edit_medicine_details_section.dart';
 import 'package:medicine_reminder/features/home/data/models/home_medicines_model.dart';
 import 'package:medicine_reminder/generated/l10n.dart';
 
@@ -34,7 +33,6 @@ class EditMedicineViewBody extends StatelessWidget {
                 style: AppStyles.regular14(context: context),
               ),
               const SizedBox(height: 24),
-               EditMedicineDetailsSection(homeMedicineModel: homeMedicineModel),
               // const SizedBox(height: 8),
               // const ScheduleSection(),
               // const SizedBox(height: 8),
