@@ -704,6 +704,46 @@ class S {
   String get ongoing {
     return Intl.message('Ongoing', name: 'ongoing', desc: '', args: []);
   }
+
+  /// `Delete Medicine`
+  String get DeleteMedicine {
+    return Intl.message(
+      'Delete Medicine',
+      name: 'DeleteMedicine',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Edit Medicine`
+  String get EditMedicine {
+    return Intl.message(
+      'Edit Medicine',
+      name: 'EditMedicine',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Are you sure you want to delete this medicine?`
+  String get deleteMedicineConfirmation {
+    return Intl.message(
+      'Are you sure you want to delete this medicine?',
+      name: 'deleteMedicineConfirmation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Cancel`
+  String get cancel {
+    return Intl.message('Cancel', name: 'cancel', desc: '', args: []);
+  }
+
+  /// `Delete`
+  String get delete {
+    return Intl.message('Delete', name: 'delete', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

@@ -24,7 +24,9 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+    "DeleteMedicine": MessageLookupByLibrary.simpleMessage("Delete Medicine"),
     "Dose": MessageLookupByLibrary.simpleMessage("Dose"),
+    "EditMedicine": MessageLookupByLibrary.simpleMessage("Edit Medicine"),
     "addDoseTime": MessageLookupByLibrary.simpleMessage("Add Dose Time"),
     "addInstructionsOrNotesOptional": MessageLookupByLibrary.simpleMessage(
       "Add instructions or notes (optional)",
@@ -38,11 +40,16 @@ class MessageLookup extends MessageLookupByLibrary {
     "appName1": MessageLookupByLibrary.simpleMessage("Reminder"),
     "back": MessageLookupByLibrary.simpleMessage("Back"),
     "beforeFood": MessageLookupByLibrary.simpleMessage("Before Food"),
+    "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
     "chooseMedicationDays": MessageLookupByLibrary.simpleMessage(
       "Choose the days you take your medicine",
     ),
     "custom": MessageLookupByLibrary.simpleMessage("Custom"),
     "dailyDoses": MessageLookupByLibrary.simpleMessage("Daily Doses"),
+    "delete": MessageLookupByLibrary.simpleMessage("Delete"),
+    "deleteMedicineConfirmation": MessageLookupByLibrary.simpleMessage(
+      "Are you sure you want to delete this medicine?",
+    ),
     "differentDoseDescription": MessageLookupByLibrary.simpleMessage(
       "Set a different dose for each day",
     ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:medicine_reminder/core/methods/is_light.dart';
+import 'package:medicine_reminder/generated/l10n.dart';
 
 enum DoseAction { take, skip }
 
@@ -10,11 +11,12 @@ class CustomSkipOrTakeButton extends StatelessWidget {
   const CustomSkipOrTakeButton({
     super.key,
     required this.action,
-     this.onPressed,
+    this.onPressed,
   });
 
   @override
   Widget build(BuildContext context) {
+    final localization = S.of(context);
     final theme = Theme.of(context).colorScheme;
 
     final isTake = action == DoseAction.take;
@@ -47,7 +49,7 @@ class CustomSkipOrTakeButton extends StatelessWidget {
             ),
             const SizedBox(width: 8),
             Text(
-              isTake ? 'Take' : 'Skip',
+              isTake ? localization.taken : localization.skip,
               style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w600),
             ),
           ],

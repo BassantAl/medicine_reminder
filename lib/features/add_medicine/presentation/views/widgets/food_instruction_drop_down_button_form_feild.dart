@@ -41,12 +41,12 @@ class FoodInstructionDropDownButtonFormFeild extends StatefulWidget {
 
 class _FoodInstructionDropDownButtonFormFeildState
     extends State<FoodInstructionDropDownButtonFormFeild> {
-  FoodInstruction? selectedInstruction;
+  late FoodInstruction selectedInstruction;
 
   @override
   Widget build(BuildContext context) {
     return CustomDropDownButtonFormFeild(
-      initialValue: selectedInstruction,
+      initialValue: FoodInstruction.noInstruction,
       items: FoodInstruction.values.map((instruction) {
         return DropdownMenuItem(
           value: instruction,
@@ -54,9 +54,9 @@ class _FoodInstructionDropDownButtonFormFeildState
         );
       }).toList(),
       onChanged: (value) {
-        selectedInstruction = value;
+        selectedInstruction = value!;
         context.read<AddMedicineCubit>().updateFoodInstruction(
-          selectedInstruction.toString(),
+          selectedInstruction.name,
         );
       },
     );

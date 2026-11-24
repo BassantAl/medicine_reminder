@@ -6,4 +6,7 @@ abstract class MedicineDetailsRepo {
   Future<Either<Failure, HomeMedicineModel?>> getMedicineDetails({
     required int medicineId,
   });
+  Future<void> deleteMedicine(int medicineId);
+
+
 }

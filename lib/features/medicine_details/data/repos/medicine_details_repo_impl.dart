@@ -7,9 +7,7 @@ import 'package:medicine_reminder/features/medicine_details/domain/repos/medicin
 class MedicineDetailsRepoImpl extends MedicineDetailsRepo {
   final MedicineDetailsLocalDataSource localDataSource;
 
-  MedicineDetailsRepoImpl({
-    required this.localDataSource,
-  });
+  MedicineDetailsRepoImpl({required this.localDataSource});
 
   @override
   Future<Either<Failure, HomeMedicineModel?>> getMedicineDetails({
@@ -22,11 +20,13 @@ class MedicineDetailsRepoImpl extends MedicineDetailsRepo {
 
       return Right(result);
     } catch (e) {
-      return Left(
-        Failure(
-          errorMessage: e.toString(),
-        ),
-      );
+      return Left(Failure(errorMessage: e.toString()));
     }
   }
+
+  @override
+  Future<void> deleteMedicine(int medicineId) async {
+    await localDataSource.deleteMedicine(medicineId);
+  }
+
 }

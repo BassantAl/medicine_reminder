@@ -23,4 +23,18 @@ factory MedicineModel.fromMap({
     notes: data['notes'],
   );
 }
+MedicineModel copyWith({
+    int? id,
+    String? name,
+    String? foodInstruction,
+    String? notes,
+  }) {
+    return MedicineModel(
+      id: id ?? this.id,
+      name: name ?? this.name,
+      foodInstruction: foodInstruction ?? this.foodInstruction,
+      notes: notes ?? this.notes,
+    );
+  }
+
 }

@@ -25,7 +25,9 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+    "DeleteMedicine": MessageLookupByLibrary.simpleMessage("حذف الدواء"),
     "Dose": MessageLookupByLibrary.simpleMessage("الجرعة"),
+    "EditMedicine": MessageLookupByLibrary.simpleMessage("تعديل الدواء"),
     "addDoseTime": MessageLookupByLibrary.simpleMessage("إضافة موعد جرعة"),
     "addInstructionsOrNotesOptional": MessageLookupByLibrary.simpleMessage(
       "أضف تعليمات أو ملاحظات (اختياري)",
@@ -39,11 +41,16 @@ class MessageLookup extends MessageLookupByLibrary {
     "appName1": MessageLookupByLibrary.simpleMessage("الدواء"),
     "back": MessageLookupByLibrary.simpleMessage("رجوع"),
     "beforeFood": MessageLookupByLibrary.simpleMessage("قبل الطعام"),
+    "cancel": MessageLookupByLibrary.simpleMessage("إلغاء"),
     "chooseMedicationDays": MessageLookupByLibrary.simpleMessage(
       "اختر أيام تناول الدواء",
     ),
     "custom": MessageLookupByLibrary.simpleMessage("مخصص"),
     "dailyDoses": MessageLookupByLibrary.simpleMessage("الجرعات اليومية"),
+    "delete": MessageLookupByLibrary.simpleMessage("حذف"),
+    "deleteMedicineConfirmation": MessageLookupByLibrary.simpleMessage(
+      "هل أنت متأكد من حذف هذا الدواء؟",
+    ),
     "differentDoseDescription": MessageLookupByLibrary.simpleMessage(
       "تحديد جرعة مختلفة لكل يوم",
     ),

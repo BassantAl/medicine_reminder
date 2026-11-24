@@ -4,6 +4,7 @@ import 'package:medicine_reminder/core/theme/app_styles.dart';
 
 class CustomPrimaryButton extends StatelessWidget {
   final String text;
+  final Color? color;
   final VoidCallback onPressed;
   final bool showIcon;
 
@@ -11,7 +12,7 @@ class CustomPrimaryButton extends StatelessWidget {
     super.key,
     required this.text,
     required this.onPressed,
-    this.showIcon = true,
+    this.showIcon = true, this.color,
   });
 
   @override
@@ -23,7 +24,7 @@ class CustomPrimaryButton extends StatelessWidget {
       child: Container(
         decoration: BoxDecoration(
           gradient: LinearGradient(
-            colors: [colorScheme.primary, colorScheme.primary.withAlpha(190)],
+            colors: [color?? colorScheme.primary, color ?? colorScheme.primary.withAlpha(190)],
             begin: Alignment.centerLeft,
             end: Alignment.centerRight,
           ),

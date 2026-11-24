@@ -1,14 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:medicine_reminder/core/theme/app_decoration.dart';
-import 'package:medicine_reminder/features/add_medicine/presentation/views/widgets/daily_dose_item.dart';
+import 'package:medicine_reminder/features/add_medicine/presentation/views/widgets/daily_dose_item_for_add_medicine.dart';
 import 'package:medicine_reminder/features/add_medicine/presentation/views/widgets/manage_active_and_inactive_week_day_widget.dart';
+import 'package:medicine_reminder/features/edit_medicine/presentation/views/widgets/daily_dose_item_for_edit_medicine.dart';
 import 'package:medicine_reminder/generated/l10n.dart';
 
 class DailyDoseFields extends StatelessWidget {
-  const DailyDoseFields({super.key, required this.sameDoseEveryDay});
+  const DailyDoseFields({
+    super.key,
+    required this.sameDoseEveryDay,
+    required this.isEdit,  this.hintText,
+  });
 
   final bool sameDoseEveryDay;
-
+  final bool isEdit;
+  final String? hintText;
   @override
   Widget build(BuildContext context) {
     final localization = S.of(context);
@@ -44,7 +50,16 @@ class DailyDoseFields extends StatelessWidget {
                         decoration: AppDecoration.boxDecoration(
                           context: context,
                         ),
-                        child: DailyDoseItem(day: day ,sameDoseEveryDay: sameDoseEveryDay,),
+                        child: isEdit
+                            ? DailyDoseItemForEditMedicine(
+                              hintText: hintText,
+                                day: day,
+                                sameDoseEveryDay: sameDoseEveryDay,
+                              )
+                            : DailyDoseItemForAddMedicine(
+                                day: day,
+                                sameDoseEveryDay: sameDoseEveryDay,
+                              ),
                       ),
                     );
                   }),

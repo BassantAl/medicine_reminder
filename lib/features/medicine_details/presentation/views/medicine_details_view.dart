@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:medicine_reminder/core/routes/app_routes.dart';
-import 'package:medicine_reminder/features/medicine_details/presentation/manager/cubit/get_medicine_details_cubit.dart';
+import 'package:medicine_reminder/features/medicine_details/presentation/manager/get_medicine_details_cubit/get_medicine_details_cubit.dart';
 import 'package:medicine_reminder/features/medicine_details/presentation/views/widgets/medicine_details_body.dart';
 import 'package:medicine_reminder/generated/l10n.dart';
 

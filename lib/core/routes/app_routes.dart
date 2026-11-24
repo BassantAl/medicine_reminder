@@ -4,10 +4,11 @@ import 'package:medicine_reminder/core/di/service_locator.dart';
 import 'package:medicine_reminder/features/add_medicine/presentation/views/add_medicine_view.dart';
 import 'package:medicine_reminder/features/analytics/presentation/views/analytics_view.dart';
 import 'package:medicine_reminder/features/edit_medicine/presentation/views/edit_medicine_view.dart';
+import 'package:medicine_reminder/features/home/data/models/home_medicines_model.dart';
 import 'package:medicine_reminder/features/home/data/models/medicine_does_data.dart';
 import 'package:medicine_reminder/features/home/presentation/views/home_view.dart';
 import 'package:medicine_reminder/features/main/presentation/views/main_view.dart';
-import 'package:medicine_reminder/features/medicine_details/presentation/manager/cubit/get_medicine_details_cubit.dart';
+import 'package:medicine_reminder/features/medicine_details/presentation/manager/get_medicine_details_cubit/get_medicine_details_cubit.dart';
 import 'package:medicine_reminder/features/medicine_details/presentation/views/medicine_details_view.dart';
 import 'package:medicine_reminder/features/onboarding/presentation/views/onboarding_view.dart';
 import 'package:medicine_reminder/features/settings/presentation/views/settings_view.dart';
@@ -45,7 +46,7 @@ abstract class AppRoutes {
       GoRoute(
         path: editMedicineView,
         builder: (context, state) {
-          return EditMedicineView();
+          return EditMedicineView(homeMedicineModel : state.extra as HomeMedicineModel,);
         },
       ),
      GoRoute(

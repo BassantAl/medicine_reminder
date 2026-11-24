@@ -109,4 +109,48 @@ class MedicineDetailsLocalDataSource {
       doseHistories: doseHistories.values.toList(),
     );
   }
+
+  Future<void> deleteMedicine(int medicineId) async {
+    final db = await database.database;
+
+    await db.transaction((txn) async {
+      final schedules = await txn.query(
+        'DoesSchedule',
+        columns: ['id'],
+        where: 'medicineId = ?',
+        whereArgs: [medicineId],
+      );
+
+      for (final schedule in schedules) {
+        final dailyDoses = await txn.query(
+          'DailyDoes',
+          columns: ['id'],
+          where: 'scheduleId = ?',
+          whereArgs: [schedule['id']],
+        );
+
+        for (final dailyDose in dailyDoses) {
+          await txn.delete(
+            'DoseHistory',
+            where: 'dailyDoseId = ?',
+            whereArgs: [dailyDose['id']],
+          );
+        }
+
+        await txn.delete(
+          'DailyDoes',
+          where: 'scheduleId = ?',
+          whereArgs: [schedule['id']],
+        );
+      }
+
+      await txn.delete(
+        'DoesSchedule',
+        where: 'medicineId = ?',
+        whereArgs: [medicineId],
+      );
+
+      await txn.delete('Medicine', where: 'id = ?', whereArgs: [medicineId]);
+    });
+  }
 }

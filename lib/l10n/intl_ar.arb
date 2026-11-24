@@ -88,7 +88,13 @@
   "scheduleInformation": "معلومات الجدول",
   "dailyDoses": "الجرعات اليومية",
   "duration": "المدة",
-  "ongoing": "مستمر"
+  "ongoing": "مستمر",
+  "DeleteMedicine": "حذف الدواء",
+  "EditMedicine": "تعديل الدواء",
+  "deleteMedicineConfirmation": "هل أنت متأكد من حذف هذا الدواء؟",
+  "cancel": "إلغاء",
+  "delete": "حذف"
+
 
 
 }
