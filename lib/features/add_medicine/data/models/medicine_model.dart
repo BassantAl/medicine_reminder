@@ -1,11 +1,11 @@
 class MedicineModel {
   final int? id;
-  final String name;
+  final String? name;
   final String? foodInstruction;
   final String? notes;
   MedicineModel({
     this.id,
-    required this.name,
+     this.name,
     this.foodInstruction,
     this.notes,
   });

@@ -33,7 +33,7 @@ class MedicineDetailsInformationSection extends StatelessWidget {
           ),
           ListTile(
             title: Text(
-              medicine.medicine.name.trim().capitalize,
+              medicine.medicine.name!.trim().capitalize,
               style: AppStyles.semiBold18(context: context),
             ),
             leading: const Icon(Icons.medication_outlined),

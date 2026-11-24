@@ -8,7 +8,7 @@ import 'package:medicine_reminder/features/add_medicine/presentation/views/widge
 import 'package:medicine_reminder/generated/l10n.dart';
 
 class MedicineDetailsSection extends StatelessWidget {
-  const MedicineDetailsSection({super.key});
+  const MedicineDetailsSection({super.key,});
 
   @override
   Widget build(BuildContext context) {
@@ -20,20 +20,20 @@ class MedicineDetailsSection extends StatelessWidget {
         Text(localization.medicineName),
         const SizedBox(height: 5),
         CustomTextFeild(
-          validator: (value) {
+          validator:  (value) {
             if (value == null || value.trim().isEmpty) {
               return localization.pleaseEnterMedicineName;
             }
 
             return null;
           },
-          hintText: localization.enterMedicineName,
+          hintText:localization.enterMedicineName,
           onSaved: (medicineName) {
             context.read<AddMedicineCubit>().updateMedicineName(medicineName!);
           },
         ),
         const SizedBox(height: 20),
-        const CustomDoseAmount(),
+        const CustomDoseAmount(isEdit: false,),
         const SizedBox(height: 20),
         Text(localization.foodInstructions),
         const SizedBox(height: 5),

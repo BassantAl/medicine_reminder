@@ -20,7 +20,7 @@ class CustomMedicineDoesCardListTitle extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListTile(
       title: Text(
-        medicine.medicine.name,
+        medicine.medicine.name!,
         style: AppStyles.semiBold16(context: context),
       ),
       subtitle: Text(

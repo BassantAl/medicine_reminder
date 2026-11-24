@@ -45,4 +45,27 @@ class DoesScheduleModel {
       enableNotifications: data['enableNotifications'] == 1,
     );
   }
+
+  DoesScheduleModel copyWith({
+  int? id,
+  int? medicineId,
+  String? frequency,
+  List<int>? selectedDays,
+  List<String>? doseTimes,
+  DateTime? startDate,
+  DateTime? endDate,
+  bool? enableNotifications,
+}) {
+  return DoesScheduleModel(
+    id: id ?? this.id,
+    medicineId: medicineId ?? this.medicineId,
+    frequency: frequency ?? this.frequency,
+    selectedDays: selectedDays ?? this.selectedDays,
+    doseTimes: doseTimes ?? this.doseTimes,
+    startDate: startDate ?? this.startDate,
+    endDate: endDate ?? this.endDate,
+    enableNotifications:
+        enableNotifications ?? this.enableNotifications,
+  );
+}
 }
