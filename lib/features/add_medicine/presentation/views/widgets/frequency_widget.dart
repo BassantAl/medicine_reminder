@@ -21,7 +21,8 @@ extension MedicationFrequencyExtension on MedicationFrequency {
 }
 
 class FrequencyWidget extends StatelessWidget {
-  const FrequencyWidget({super.key, this.onChanged});
+  const FrequencyWidget({super.key, this.onChanged, required this.initialValue});
+final MedicationFrequency initialValue;
 
   final ValueChanged<MedicationFrequency?>? onChanged;
 
@@ -33,7 +34,7 @@ class FrequencyWidget extends StatelessWidget {
         Text(S.of(context).frequency),
         const SizedBox(height: 5),
         CustomDropDownButtonFormFeild(
-          initialValue: MedicationFrequency.onceDaily,
+          initialValue: initialValue,
           items: MedicationFrequency.values.map((item) {
             return DropdownMenuItem(
               value: item,

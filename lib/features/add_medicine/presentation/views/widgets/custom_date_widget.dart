@@ -4,6 +4,7 @@ import 'package:intl/intl.dart';
 import 'package:medicine_reminder/core/theme/app_decoration.dart';
 import 'package:medicine_reminder/core/theme/app_styles.dart';
 import 'package:medicine_reminder/features/add_medicine/presentation/manager/cubit/add_medicine_cubit.dart';
+import 'package:medicine_reminder/features/edit_medicine/presentation/manager/update_medicine_cubit/update_medicine_cubit.dart';
 
 class CustomDateWidget extends StatefulWidget {
   const CustomDateWidget({
@@ -11,8 +12,10 @@ class CustomDateWidget extends StatefulWidget {
     required this.title,
     required this.isStartDate,
     this.initialDate,
+    required this.isEdit,
   });
 
+  final bool isEdit;
   final String title;
   final bool isStartDate;
   final DateTime? initialDate;
@@ -27,7 +30,16 @@ class _CustomDateWidgetState extends State<CustomDateWidget> {
   @override
   void initState() {
     super.initState();
-    selectedDate = widget.initialDate ?? DateTime.now();
+
+    if (widget.isEdit) {
+      final cubit = context.read<UpdateMedicineCubit>();
+
+      selectedDate = widget.isStartDate
+          ? cubit.startDate
+          : cubit.endDate ?? DateTime.now();
+    } else {
+      selectedDate = widget.initialDate ?? DateTime.now();
+    }
   }
 
   Future<void> selectDate() async {
@@ -44,12 +56,22 @@ class _CustomDateWidgetState extends State<CustomDateWidget> {
       selectedDate = pickedDate;
     });
 
-    final cubit = context.read<AddMedicineCubit>();
+    if (widget.isEdit) {
+      final cubit = context.read<UpdateMedicineCubit>();
 
-    if (widget.isStartDate) {
-      cubit.updateStartDate(pickedDate);
+      if (widget.isStartDate) {
+        cubit.updateStartDate(pickedDate);
+      } else {
+        cubit.updateEndDate(pickedDate);
+      }
     } else {
-      cubit.updateEndDate(pickedDate);
+      final cubit = context.read<AddMedicineCubit>();
+
+      if (widget.isStartDate) {
+        cubit.updateStartDate(pickedDate);
+      } else {
+        cubit.updateEndDate(pickedDate);
+      }
     }
   }
 

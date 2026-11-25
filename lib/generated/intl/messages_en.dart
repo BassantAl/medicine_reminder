@@ -79,6 +79,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "getStarted": MessageLookupByLibrary.simpleMessage("Get Started"),
     "home": MessageLookupByLibrary.simpleMessage("Home"),
     "invalidDose": MessageLookupByLibrary.simpleMessage("Invalid dose"),
+    "loading": MessageLookupByLibrary.simpleMessage("Loading..."),
     "medicineDetails": MessageLookupByLibrary.simpleMessage("Medicine Details"),
     "medicineInformation": MessageLookupByLibrary.simpleMessage(
       "Medicine Information",
@@ -145,6 +146,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Same dose every day",
     ),
     "saturday": MessageLookupByLibrary.simpleMessage("Sat"),
+    "saveChanges": MessageLookupByLibrary.simpleMessage("Save Changes"),
     "schedule": MessageLookupByLibrary.simpleMessage("Schedule"),
     "scheduleEveryDay": MessageLookupByLibrary.simpleMessage("Every day"),
     "scheduleInformation": MessageLookupByLibrary.simpleMessage(

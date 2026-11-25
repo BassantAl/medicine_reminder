@@ -33,9 +33,11 @@ class EditMedicineDetailsSection extends StatelessWidget {
         CustomTextFeild(
           initialValue: homeMedicineModel.medicine.name,
           onSaved: (value) {
-            context.read<UpdateMedicineCubit>().updateMedicineName(
-              value?.trim() ?? '',
-            );
+            if (value != null && value.trim().isNotEmpty) {
+              context.read<UpdateMedicineCubit>().updateMedicineName(
+                value.trim(),
+              );
+            }
           },
         ),
 
@@ -56,3 +58,5 @@ class EditMedicineDetailsSection extends StatelessWidget {
     );
   }
 }
+
+

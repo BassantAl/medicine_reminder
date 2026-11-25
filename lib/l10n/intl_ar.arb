@@ -93,7 +93,9 @@
   "EditMedicine": "تعديل الدواء",
   "deleteMedicineConfirmation": "هل أنت متأكد من حذف هذا الدواء؟",
   "cancel": "إلغاء",
-  "delete": "حذف"
+  "delete": "حذف",
+"loading": "جاري التحميل...",
+  "saveChanges": "حفظ التعديلات"
 
 
 

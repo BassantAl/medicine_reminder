@@ -1,12 +1,22 @@
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
 import 'package:medicine_reminder/core/theme/app_styles.dart';
 import 'package:medicine_reminder/features/add_medicine/presentation/manager/cubit/add_medicine_cubit.dart';
+import 'package:medicine_reminder/features/edit_medicine/presentation/manager/update_medicine_cubit/update_medicine_cubit.dart';
 
 class DoseTimesWidget extends StatefulWidget {
-  const DoseTimesWidget({super.key, required this.index});
+  const DoseTimesWidget({
+    super.key,
+    required this.index,
+    required this.isEdit,
+    this.initialTime,
+  });
 
+  final bool isEdit;
   final int index;
+  final String? initialTime;
 
   @override
   State<DoseTimesWidget> createState() => _DoseTimesWidgetState();
@@ -19,19 +29,38 @@ class _DoseTimesWidgetState extends State<DoseTimesWidget> {
   void initState() {
     super.initState();
 
-    selectedTime = TimeOfDay.now();
+    if (widget.initialTime != null) {
+      final parts = widget.initialTime!.split(':');
 
-    _updateCubit(selectedTime);
+      selectedTime = TimeOfDay(
+        hour: int.parse(parts[0]),
+        minute: int.parse(parts[1]),
+      );
+    } else {
+      selectedTime = TimeOfDay.now();
+    }
+
+    if (!widget.isEdit) {
+      _updateCubit(selectedTime);
+    }
+  }
+
+  String _formatTime(TimeOfDay time) {
+    return '${time.hour.toString().padLeft(2, '0')}:'
+        '${time.minute.toString().padLeft(2, '0')}';
   }
 
   void _updateCubit(TimeOfDay time) {
-    final formattedTime =
-        '${time.hour.toString().padLeft(2, '0')}:'
-        '${time.minute.toString().padLeft(2, '0')}';
-
     context.read<AddMedicineCubit>().updateDoseTime(
       widget.index,
-      formattedTime,
+      _formatTime(time),
+    );
+  }
+
+  void _updateTime(TimeOfDay time) {
+    context.read<UpdateMedicineCubit>().updateDoseTime(
+      widget.index,
+      _formatTime(time),
     );
   }
 
@@ -47,7 +76,11 @@ class _DoseTimesWidgetState extends State<DoseTimesWidget> {
       selectedTime = time;
     });
 
-    _updateCubit(time);
+    if (widget.isEdit) {
+      _updateTime(time);
+    } else {
+      _updateCubit(time);
+    }
   }
 
   @override

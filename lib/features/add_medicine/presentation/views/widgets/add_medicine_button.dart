@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 
 import 'package:medicine_reminder/core/theme/app_styles.dart';
 import 'package:medicine_reminder/core/widgets/custom_button.dart';
@@ -21,46 +22,56 @@ class AddMedicineButton extends StatelessWidget {
         if (state is AddMedicineSuccess) {
           context.read<GetAllMedicinesCubit>().getAllMedicines();
 
-          Navigator.pop(context);
+          context.pop();
         }
       },
-      child: CustomPrimaryButton(
-        showIcon: false,
-        text: S.of(context).addMedicine,
-        onPressed: () {
-          final form = formkey.currentState!;
+      child: BlocBuilder<AddMedicineCubit, AddMedicineState>(
+        builder: (context, state) {
+          final isLoading = state is AddMedicineLoading;
 
-          if (!form.validate()) return;
+          return CustomPrimaryButton(
+            showIcon: false,
+            text: isLoading ? S.of(context).loading : S.of(context).addMedicine,
+            onPressed: () {
+              if (isLoading) return;
 
-          form.save();
+              final form = formkey.currentState;
 
-          final cubit = context.read<AddMedicineCubit>();
+              if (form == null || !form.validate()) return;
 
-          if (!cubit.hasAtLeastOneDose()) {
-            ScaffoldMessenger.of(context).showSnackBar(
-              SnackBar(
-                content: Text(
-                  S.of(context).pleaseEnterAtLeastOneDose,
-                  style: AppStyles.bold18(context: context),
-                ),
-              ),
-            );
+              form.save();
 
-            return;
-          }
-          if (cubit.validateDailyDoses() == false) {
-            ScaffoldMessenger.of(context).showSnackBar(
-              SnackBar(
-                content: Text(
-                  S.of(context).pleaseSetDoseForAllSelectedDays,
-                  style: AppStyles.bold18(context: context),
-                ),
-              ),
-            );
-            return;
-          }
+              final cubit = context.read<AddMedicineCubit>();
 
-          cubit.addMedicine();
+              if (!cubit.hasAtLeastOneDose()) {
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(
+                    content: Text(
+                      S.of(context).pleaseEnterAtLeastOneDose,
+                      style: AppStyles.bold18(context: context),
+                    ),
+                  ),
+                );
+
+                return;
+              }
+
+              if (!cubit.validateDailyDoses()) {
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(
+                    content: Text(
+                      S.of(context).pleaseSetDoseForAllSelectedDays,
+                      style: AppStyles.bold18(context: context),
+                    ),
+                  ),
+                );
+
+                return;
+              }
+
+              cubit.addMedicine();
+            },
+          );
         },
       ),
     );

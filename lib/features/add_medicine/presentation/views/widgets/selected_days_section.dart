@@ -1,13 +1,20 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
 import 'package:medicine_reminder/features/add_medicine/presentation/manager/cubit/add_medicine_cubit.dart';
 import 'package:medicine_reminder/features/add_medicine/presentation/views/widgets/custom_radio_list_title.dart';
 import 'package:medicine_reminder/features/add_medicine/presentation/views/widgets/manage_active_and_inactive_week_day_widget.dart';
+import 'package:medicine_reminder/features/edit_medicine/presentation/manager/update_medicine_cubit/update_medicine_cubit.dart';
 import 'package:medicine_reminder/generated/l10n.dart';
 
 class SelectedDaysSection extends StatefulWidget {
-  const SelectedDaysSection({super.key});
+  const SelectedDaysSection({
+    super.key,
+    required this.isEdit,
+  });
+
+  final bool isEdit;
 
   @override
   State<SelectedDaysSection> createState() =>
@@ -15,19 +22,25 @@ class SelectedDaysSection extends StatefulWidget {
 }
 
 class _SelectedDaysSectionState extends State<SelectedDaysSection> {
-  String selectedItem = 'daily';
+   String selectedItem  = 'daily';
 
   @override
   void initState() {
     super.initState();
 
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      if (!mounted) return;
+    if (widget.isEdit) {
+      final selectedDays =
+          context.read<UpdateMedicineCubit>().selectedDays;
+
+      selectedItem = selectedDays.length == 7
+          ? 'daily'
+          : 'custom';
+    } else {
 
       context.read<AddMedicineCubit>().updateSelectedDays(
         List.generate(7, (index) => index),
       );
-    });
+    }
   }
 
   void _onSelectionChanged(String? value) {
@@ -37,14 +50,14 @@ class _SelectedDaysSectionState extends State<SelectedDaysSection> {
       selectedItem = value;
     });
 
-    final cubit = context.read<AddMedicineCubit>();
+    final days = value == 'daily'
+        ? List.generate(7, (index) => index)
+        : <int>[];
 
-    if (value == 'daily') {
-      cubit.updateSelectedDays(
-        List.generate(7, (index) => index),
-      );
+    if (widget.isEdit) {
+      context.read<UpdateMedicineCubit>().updateSelectedDays(days);
     } else {
-      cubit.updateSelectedDays([]);
+      context.read<AddMedicineCubit>().updateSelectedDays(days);
     }
   }
 
@@ -78,7 +91,9 @@ class _SelectedDaysSectionState extends State<SelectedDaysSection> {
               ),
 
               if (selectedItem == 'custom')
-                const ManageActiveAndInactiveWeekDayWidget(),
+                ManageActiveAndInactiveWeekDayWidget(
+                  isEdit: widget.isEdit,
+                ),
             ],
           ),
         ),
@@ -86,4 +101,3 @@ class _SelectedDaysSectionState extends State<SelectedDaysSection> {
     );
   }
 }
-

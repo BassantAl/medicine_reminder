@@ -1,11 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:medicine_reminder/features/add_medicine/presentation/manager/cubit/add_medicine_cubit.dart';
-import 'package:medicine_reminder/generated/l10n.dart';
 import 'package:medicine_reminder/features/add_medicine/presentation/views/widgets/dose_times_with_remove.dart';
+import 'package:medicine_reminder/features/edit_medicine/presentation/manager/update_medicine_cubit/update_medicine_cubit.dart';
+import 'package:medicine_reminder/generated/l10n.dart';
 
 class ManageRemoveAndAddDoseTimes extends StatefulWidget {
-  const ManageRemoveAndAddDoseTimes({super.key});
+  const ManageRemoveAndAddDoseTimes({
+    super.key,
+    required this.isEdit,
+  });
+
+  final bool isEdit;
 
   @override
   State<ManageRemoveAndAddDoseTimes> createState() =>
@@ -14,13 +20,22 @@ class ManageRemoveAndAddDoseTimes extends StatefulWidget {
 
 class _ManageRemoveAndAddDoseTimesState
     extends State<ManageRemoveAndAddDoseTimes> {
-  int doseTimeCount = 2;
+  late int doseTimeCount;
 
   @override
   void initState() {
     super.initState();
 
-    context.read<AddMedicineCubit>().resetDoseTimes(doseTimeCount);
+    if (widget.isEdit) {
+      doseTimeCount = context
+          .read<UpdateMedicineCubit>()
+          .doseTimes
+          .length;
+    } else {
+      doseTimeCount = 2;
+
+      context.read<AddMedicineCubit>().resetDoseTimes(doseTimeCount);
+    }
   }
 
   @override
@@ -32,6 +47,7 @@ class _ManageRemoveAndAddDoseTimesState
           Padding(
             padding: const EdgeInsets.only(bottom: 16),
             child: DoseTimesWithRemove(
+              isEdit: widget.isEdit,
               index: index,
               onTap: () {
                 if (doseTimeCount > 1) {
@@ -39,7 +55,11 @@ class _ManageRemoveAndAddDoseTimesState
                     doseTimeCount--;
                   });
 
-                  context.read<AddMedicineCubit>().removeDoseTime(index);
+                  if (widget.isEdit) {
+                    context.read<UpdateMedicineCubit>().removeDoseTime(index);
+                  } else {
+                    context.read<AddMedicineCubit>().removeDoseTime(index);
+                  }
                 }
               },
             ),
@@ -51,7 +71,11 @@ class _ManageRemoveAndAddDoseTimesState
               doseTimeCount++;
             });
 
-            context.read<AddMedicineCubit>().addDoseTime();
+            if (widget.isEdit) {
+              context.read<UpdateMedicineCubit>().addDoseTime();
+            } else {
+              context.read<AddMedicineCubit>().addDoseTime();
+            }
           },
           child: Text(S.of(context).addDoseTime),
         ),

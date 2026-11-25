@@ -80,6 +80,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "getStarted": MessageLookupByLibrary.simpleMessage("ابدأ الآن"),
     "home": MessageLookupByLibrary.simpleMessage("الرئيسية"),
     "invalidDose": MessageLookupByLibrary.simpleMessage("جرعة غير صالحة"),
+    "loading": MessageLookupByLibrary.simpleMessage("جاري التحميل..."),
     "medicineDetails": MessageLookupByLibrary.simpleMessage("تفاصيل الدواء"),
     "medicineInformation": MessageLookupByLibrary.simpleMessage(
       "معلومات الدواء",
@@ -146,6 +147,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "نفس الجرعة كل يوم",
     ),
     "saturday": MessageLookupByLibrary.simpleMessage("السبت"),
+    "saveChanges": MessageLookupByLibrary.simpleMessage("حفظ التعديلات"),
     "schedule": MessageLookupByLibrary.simpleMessage("الجدول الزمني"),
     "scheduleEveryDay": MessageLookupByLibrary.simpleMessage("كل يوم"),
     "scheduleInformation": MessageLookupByLibrary.simpleMessage(
