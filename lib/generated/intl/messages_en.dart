@@ -134,6 +134,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "pleaseEnterValidDose": MessageLookupByLibrary.simpleMessage(
       "Please enter a valid dose",
     ),
+    "pleaseSelectAtLeastOneDay": MessageLookupByLibrary.simpleMessage(
+      "Please select at least one day",
+    ),
     "pleaseSetDoseForAllSelectedDays": MessageLookupByLibrary.simpleMessage(
       "Please set a dose for all selected days.",
     ),

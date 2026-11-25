@@ -25,11 +25,8 @@ class EditMedicineButton extends StatelessWidget {
         if (state is UpdateMedicineSuccess) {
           context.read<GetAllMedicinesCubit>().getAllMedicines();
 
-          WidgetsBinding.instance.addPostFrameCallback((_) {
-            if (context.mounted) {
-              context.pop();
-            }
-          });
+              context.go(AppRoutes.homeView);
+           
         }
 
         if (state is UpdateMedicineFailure) {

@@ -759,6 +759,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Please select at least one day`
+  String get pleaseSelectAtLeastOneDay {
+    return Intl.message(
+      'Please select at least one day',
+      name: 'pleaseSelectAtLeastOneDay',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

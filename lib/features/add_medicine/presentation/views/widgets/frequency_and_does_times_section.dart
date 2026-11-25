@@ -38,15 +38,17 @@ class _FrequencyAndDoesTimesSectionState
   }
 
   // Get the saved time from UpdateMedicineCubit.
-  String? _getInitialTime(int index) {
-    if (!widget.isEdit) return null;
+String? _getInitialTime(int index) {
+  if (!widget.isEdit) return null;
 
-    final doseTimes = context.read<UpdateMedicineCubit>().doseTimes;
+  final doseTimes = context.read<UpdateMedicineCubit>().doseTimes;
 
-    if (index >= doseTimes.length) return null;
+  if (index >= doseTimes.length) return null;
 
-    return doseTimes[index];
-  }
+  final time = doseTimes[index];
+
+  return time.isEmpty ? null : time;
+}
 
   void _updateFrequency(MedicationFrequency value) {
     final count = switch (value) {

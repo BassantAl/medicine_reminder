@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -29,20 +28,37 @@ class _DoseTimesWidgetState extends State<DoseTimesWidget> {
   void initState() {
     super.initState();
 
-    if (widget.initialTime != null) {
-      final parts = widget.initialTime!.split(':');
-
-      selectedTime = TimeOfDay(
-        hour: int.parse(parts[0]),
-        minute: int.parse(parts[1]),
-      );
-    } else {
-      selectedTime = TimeOfDay.now();
-    }
+    selectedTime = _parseInitialTime(widget.initialTime);
 
     if (!widget.isEdit) {
       _updateCubit(selectedTime);
     }
+  }
+
+  TimeOfDay _parseInitialTime(String? value) {
+    if (value == null || value.isEmpty) {
+      return TimeOfDay.now();
+    }
+
+    final parts = value.split(':');
+
+    if (parts.length != 2) {
+      return TimeOfDay.now();
+    }
+
+    final hour = int.tryParse(parts[0]);
+    final minute = int.tryParse(parts[1]);
+
+    if (hour == null ||
+        minute == null ||
+        hour < 0 ||
+        hour > 23 ||
+        minute < 0 ||
+        minute > 59) {
+      return TimeOfDay.now();
+    }
+
+    return TimeOfDay(hour: hour, minute: minute);
   }
 
   String _formatTime(TimeOfDay time) {
@@ -95,19 +111,12 @@ class _DoseTimesWidgetState extends State<DoseTimesWidget> {
         decoration: BoxDecoration(
           color: theme.colorScheme.surface,
           borderRadius: BorderRadius.circular(12),
-          border: Border.all(
-            width: 1,
-            color: theme.colorScheme.primary,
-          ),
+          border: Border.all(width: 1, color: theme.colorScheme.primary),
         ),
         child: Row(
           children: [
             const SizedBox(width: 12),
-            Icon(
-              Icons.schedule,
-              color: theme.colorScheme.primary,
-              size: 20,
-            ),
+            Icon(Icons.schedule, color: theme.colorScheme.primary, size: 20),
             const SizedBox(width: 8),
             Text(
               selectedTime.format(context),

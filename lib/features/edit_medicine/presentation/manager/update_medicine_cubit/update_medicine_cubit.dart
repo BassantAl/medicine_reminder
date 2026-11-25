@@ -1,4 +1,5 @@
 import 'package:bloc/bloc.dart';
+import 'package:flutter/material.dart';
 import 'package:meta/meta.dart';
 
 import 'package:medicine_reminder/core/errors/failure.dart';
@@ -44,6 +45,8 @@ class UpdateMedicineCubit extends Cubit<UpdateMedicineState> {
   String frequency = 'onceDaily';
 
   List<int> selectedDays = [];
+  List<int> customSelectedDays = [];
+
   List<String> doseTimes = [];
 
   DateTime startDate = DateTime.now();
@@ -57,15 +60,28 @@ class UpdateMedicineCubit extends Cubit<UpdateMedicineState> {
     frequency = value;
   }
 
+  // Selected Days
+
   void updateSelectedDays(List<int> value) {
     selectedDays = List<int>.from(value);
+    customSelectedDays = List<int>.from(value);
+
     emit(UpdateMedicineFormUpdated());
   }
 
   void selectEveryDay() {
     selectedDays = List.generate(7, (index) => index);
+
     emit(UpdateMedicineFormUpdated());
   }
+
+  void restoreCustomSelectedDays() {
+    selectedDays = List<int>.from(customSelectedDays);
+
+    emit(UpdateMedicineFormUpdated());
+  }
+
+  // Dose Times
 
   void updateDoseTimes(List<String> value) {
     doseTimes = List<String>.from(value);
@@ -74,8 +90,8 @@ class UpdateMedicineCubit extends Cubit<UpdateMedicineState> {
   void updateDoseTime(int index, String value) {
     if (index < 0) return;
 
-    if (index >= doseTimes.length) {
-      doseTimes.addAll(List.filled(index - doseTimes.length + 1, ''));
+    while (doseTimes.length <= index) {
+      doseTimes.add(_getNextDoseTime());
     }
 
     doseTimes[index] = value;
@@ -86,13 +102,16 @@ class UpdateMedicineCubit extends Cubit<UpdateMedicineState> {
 
     if (count < doseTimes.length) {
       doseTimes = doseTimes.take(count).toList();
-    } else {
-      doseTimes = [...doseTimes, ...List.filled(count - doseTimes.length, '')];
+      return;
+    }
+
+    while (doseTimes.length < count) {
+      doseTimes.add(_getNextDoseTime());
     }
   }
 
   void addDoseTime() {
-    doseTimes.add('');
+    doseTimes.add(_getNextDoseTime());
   }
 
   void removeDoseTime(int index) {
@@ -101,6 +120,13 @@ class UpdateMedicineCubit extends Cubit<UpdateMedicineState> {
 
     doseTimes.removeAt(index);
   }
+
+String _getNextDoseTime() {
+  final now = TimeOfDay.now();
+
+  return '${now.hour.toString().padLeft(2, '0')}:'
+      '${now.minute.toString().padLeft(2, '0')}';
+}
 
   void updateStartDate(DateTime value) {
     startDate = value;
@@ -167,7 +193,10 @@ class UpdateMedicineCubit extends Cubit<UpdateMedicineState> {
       scheduleId = schedule.id;
 
       frequency = schedule.frequency;
+
       selectedDays = List<int>.from(schedule.selectedDays);
+      customSelectedDays = List<int>.from(selectedDays);
+
       doseTimes = List<String>.from(schedule.doseTimes);
 
       startDate = schedule.startDate;

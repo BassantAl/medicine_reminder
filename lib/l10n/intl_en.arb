@@ -95,7 +95,8 @@
   "cancel": "Cancel",
   "delete": "Delete",
     "loading": "Loading...",
-  "saveChanges": "Save Changes"
+  "saveChanges": "Save Changes",
+  "pleaseSelectAtLeastOneDay": "Please select at least one day"
 
 
 

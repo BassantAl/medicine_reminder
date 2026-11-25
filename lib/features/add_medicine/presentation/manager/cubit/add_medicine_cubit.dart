@@ -143,13 +143,13 @@ class AddMedicineCubit extends Cubit<AddMedicineState> {
     );
     log('Schedule Map: ${doesScheduleModel.toMap()}');
 
-    final dailyDoses = dosesByDay.entries.map((entry) {
-      return DailyDoesModel(
-        scheduleId: 0,
-        dayOfWeek: entry.key,
-        doseAmount: entry.value,
-      );
-    }).toList();
+final dailyDoses = selectedDays.map((day) {
+  return DailyDoesModel(
+    scheduleId: 0,
+    dayOfWeek: day,
+    doseAmount: dosesByDay[day]!,
+  );
+}).toList();
 
     final result = await addMedicineUseCase.addMedicine(
       medicineModel: medicineModel,

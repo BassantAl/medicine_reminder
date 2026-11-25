@@ -43,23 +43,32 @@ class _SelectedDaysSectionState extends State<SelectedDaysSection> {
     }
   }
 
-  void _onSelectionChanged(String? value) {
-    if (value == null) return;
+void _onSelectionChanged(String? value) {
+  if (value == null) return;
 
-    setState(() {
-      selectedItem = value;
-    });
+  setState(() {
+    selectedItem = value;
+  });
+
+  if (widget.isEdit) {
+    final cubit = context.read<UpdateMedicineCubit>();
+
+    if (value == 'daily') {
+      cubit.selectEveryDay();
+    }else {
+    cubit.restoreCustomSelectedDays();
+  }
+
+  } else {
+    final cubit = context.read<AddMedicineCubit>();
 
     final days = value == 'daily'
         ? List.generate(7, (index) => index)
         : <int>[];
 
-    if (widget.isEdit) {
-      context.read<UpdateMedicineCubit>().updateSelectedDays(days);
-    } else {
-      context.read<AddMedicineCubit>().updateSelectedDays(days);
-    }
+    cubit.updateSelectedDays(days);
   }
+}
 
   @override
   Widget build(BuildContext context) {

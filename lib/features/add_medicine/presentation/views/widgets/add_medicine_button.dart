@@ -42,6 +42,17 @@ class AddMedicineButton extends StatelessWidget {
               form.save();
 
               final cubit = context.read<AddMedicineCubit>();
+              if (cubit.selectedDays.isEmpty) {
+  ScaffoldMessenger.of(context).showSnackBar(
+    SnackBar(
+      content: Text(
+        S.of(context).pleaseSelectAtLeastOneDay,
+        style: AppStyles.bold18(context: context),
+      ),
+    ),
+  );
+  return;
+}
 
               if (!cubit.hasAtLeastOneDose()) {
                 ScaffoldMessenger.of(context).showSnackBar(
